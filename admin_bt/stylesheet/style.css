@@ -1,0 +1,25 @@
+span.required {color:red !important;}
+th a { color:#5e5e5e !important; }
+.dataTables_wrapper .dataTable > thead > tr > th > a:before,
+.dataTables_wrapper .dataTable > thead > tr > th > a.asc:before,
+.dataTables_wrapper .dataTable > thead > tr > th > a.desc:before {
+    font-family: "iconfont";
+    font-size: 14px;
+    color: #999;
+    position: relative;
+    margin-right: 10px;
+}
+.dataTables_wrapper .dataTable > thead > tr > th > a:before {
+    content: "\e6c3";
+}
+.dataTables_wrapper .dataTable > thead > tr > th > a.asc:before {
+    content: "\e6c4";
+}
+.dataTables_wrapper .dataTable > thead > tr > th > a.desc:before {
+    content: "\e6c5";
+}
+.select2-container{padding:0 !important;}
+.select2-disabled {
+    background: none repeat scroll 0 0 gray;
+}
+.ui-datepicker {z-index:6 !important;}
