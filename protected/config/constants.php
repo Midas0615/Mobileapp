@@ -1,14 +1,16 @@
 <?php
-$PRODUCT_NAME = "Postings";
+$PRODUCT_NAME = "Mobi App";
 $development = file_exists(dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "development");
 $HOST_NAME = "localhost";
-if ($development):
-    $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/postings/';
-    $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/postings/';
+if (true):
+
+    error_reporting(E_ERROR);
+    $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/mobiapp/';
+    $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/mobiapp/';
 
     $DB_USERNAME = "root";
-    $DB_PASSWORD = "root";
-    $DB_NAME = "posting";
+    $DB_PASSWORD = "";
+    $DB_NAME = "mobiapp";
 else:
     error_reporting(E_ERROR);
     $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/postings/';

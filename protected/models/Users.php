@@ -293,6 +293,10 @@ class Users extends CActiveRecord {
         return CHtml::ListData($this->findAll($criteria), "id", "full_name");
     }
 
+    public function getAllUserList() {
+        return CHtml::ListData($this->findAll(), "id", "full_name");
+    }
+
     public function countUserByField($field = false, $value = false) {
         $criteria = new CDbCriteria();
         if (isset($field) && isset($value)):
@@ -308,6 +312,14 @@ class Users extends CActiveRecord {
             $criteria->compare($field, $value);
         endif;
         $criteria->compare("user_group", UsersGroup::AUTHOR);
+        return $this->count($criteria);
+    }
+
+    public function countByField($field = false, $value = false, $user_id = null) {
+        $criteria = new CDbCriteria();
+        if (isset($field) && isset($value)):
+            $criteria->compare($field, $value);
+        endif;
         return $this->count($criteria);
     }
 

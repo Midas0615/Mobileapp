@@ -45,6 +45,7 @@
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/app.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>plugins/jqueryui/js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>plugins/gritter/js/jquery.gritter.min.js"></script>
+        <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/custom.js"></script>
         <!--/ Library script -->
         <!--/ END JAVASCRIPT SECTION -->
         <script>

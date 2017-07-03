@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jun 29, 2017 at 08:51 PM
--- Server version: 5.7.18-0ubuntu0.16.04.1
--- PHP Version: 7.0.20-2~ubuntu16.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: Jul 03, 2017 at 04:15 PM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 7.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `posting`
+-- Database: `mobiapp`
 --
 
 -- --------------------------------------------------------
@@ -291,7 +291,7 @@ INSERT INTO `countries` (`id`, `iso`, `iso3`, `fips`, `country`, `continent`, `c
 (764, 'TH', 'THA', 'TH', 'Thailand', 'AS', 'THB', 'Baht', '66', '^(d{5})$', 'th,en', '1605651'),
 (768, 'TG', 'TGO', 'TO', 'Togo', 'AF', 'XOF', 'Franc', '228', '', 'fr-TG,ee,hna,kbp,dag,ha', '2363686'),
 (772, 'TK', 'TKL', 'TL', 'Tokelau', 'OC', 'NZD', 'Dollar', '690', '', 'tkl,en-TK', '4031074'),
-(776, 'TO', 'TON', 'TN', 'Tonga', 'OC', 'TOP', 'Pa\'anga', '676', '', 'to,en-TO', '4032283'),
+(776, 'TO', 'TON', 'TN', 'Tonga', 'OC', 'TOP', 'Pa''anga', '676', '', 'to,en-TO', '4032283'),
 (780, 'TT', 'TTO', 'TD', 'Trinidad and Tobago', 'NA', 'TTD', 'Dollar', '+1-868', '', 'en-TT,hns,fr,es,zh', '3573591'),
 (784, 'AE', 'ARE', 'AE', 'United Arab Emirates', 'AS', 'AED', 'Dirham', '971', '', 'ar-AE,fa,en,hi,ur', '290557'),
 (788, 'TN', 'TUN', 'TS', 'Tunisia', 'AF', 'TND', 'Dinar', '216', '^(d{4})$', 'ar-TN,fr', '2464461'),
@@ -418,6 +418,38 @@ INSERT INTO `email_templates` (`id`, `email_title`, `email_subject`, `email_cont
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `address` text NOT NULL,
+  `order_amount` int(11) NOT NULL,
+  `summary` text NOT NULL,
+  `order_date` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `is_deleted` int(11) NOT NULL,
+  `created_dt` int(11) NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `updated_dt` int(11) NOT NULL,
+  `updated_by` int(11) NOT NULL,
+  `ip_address` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `user_id`, `product_id`, `qty`, `address`, `order_amount`, `summary`, `order_date`, `status`, `is_deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`, `ip_address`) VALUES
+(1, 3, 1, 2, 'Address', 255, 'Order Summery Order Summery Order Summery', 1483743600, 2, 0, 1499091260, 3, 0, 0, 0),
+(2, 2, 2, 5, 'Address2', 223, 'Order Summery2', 1486422000, 1, 0, 1499091297, 3, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `posts`
 --
 
@@ -450,6 +482,38 @@ INSERT INTO `posts` (`id`, `title`, `start_date`, `end_date`, `author_id`, `cate
 (4, 'asdf', NULL, NULL, 10, '1', '', 'test', 0, 2, NULL, 1474993919, 10, 1474993919, 10),
 (5, 'test', 1474396200, 1473273000, 10, '1', '', 'adsfas', 0, 1, 'testt', 1475001663, 1, 1475001706, 1),
 (6, 'Test Post22', 1475260200, 1475260200, 21, '2', 'small_Screenshot from 2016-09-11 01-27-14.png', 'test', 0, 4, '', 1475336358, 1, 1476843287, 21);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `long_description` text NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  `vendor` int(11) NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL,
+  `is_deleted` int(11) NOT NULL,
+  `created_dt` int(11) NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `updated_dt` int(11) NOT NULL,
+  `updated_by` int(11) NOT NULL,
+  `ip_address` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `title`, `description`, `long_description`, `photo`, `price`, `vendor`, `location`, `status`, `is_deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`, `ip_address`) VALUES
+(1, 'Product1', 'Sort Description Sort Description', '', 'small_images.jpg', 550, 2, 'Location Location', 1, 0, 1499091191, 3, 1499091191, 3, 0),
+(2, 'product2', 'Sort Descreiption2', '', 'small_images.jpg', 660, 0, 'Location2', 2, 0, 1499091231, 3, 1499091231, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -4393,7 +4457,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `salt`, `email_address`, `first_name`, `middle_name`, `last_name`, `phone_number`, `gender`, `birth_date`, `address`, `country_id`, `state_id`, `city`, `zipcode`, `profile_pic`, `user_group`, `status`, `deleted`, `is_verified`, `access_token`, `last_login`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
-(1, 'super.admin', '2e5c7db760a33498023813489cfadc0b', '28b206548469ce62182048fd9cf91760', 'admin@admin.com', 'Supertest', '', 'Admin', '9898989898', 1, NULL, '', 356, 1309, 'Ahmedabad', NULL, 'small_images.jpg', 1, 1, 0, 0, NULL, 1495470612, 1413016773, 1, 1495470612, NULL);
+(1, 'super.admin', 'e10adc3949ba59abbe56e057f20f883e', '28b206548469ce62182048fd9cf91760', 'admin@admin.com', 'Supertest', '', 'Admin', '9898989898', 1, NULL, '', 356, 1309, 'Ahmedabad', NULL, 'small_images.jpg', 1, 1, 0, 0, NULL, 1495470612, 1413016773, 1, 1495470612, NULL),
+(2, 'super.admin1', '21232f297a57a5a743894a0e4a801fc3', '', 'admin@admin.com', 'Super', '', 'Admin', '9898989898', 1, NULL, '', 356, 1309, 'Ahmedabad', NULL, 'small_images.jpg', 1, 1, 0, 0, NULL, 1499090744, 1413016773, 1, 1499090744, NULL),
+(3, 'admin', '9cf6e3b4a7ea3cc466ef1819b2d7137c', '595a4f21b55874.69833656', 'test@test.com', 'Test ', NULL, 'User', '1234567899', 1, NULL, NULL, 356, NULL, 'Ahmedabad', 3780054, '', 1, 1, 0, NULL, NULL, 1499090890, 1499090721, 2, 1499090890, NULL);
 
 -- --------------------------------------------------------
 
@@ -4450,9 +4516,21 @@ ALTER TABLE `email_templates`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -4499,10 +4577,20 @@ ALTER TABLE `email_logs`
 ALTER TABLE `email_templates`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `states`
 --
@@ -4512,7 +4600,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users_group`
 --
