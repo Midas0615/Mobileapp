@@ -47,7 +47,7 @@ class Product extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'product';
+        return 'mob_product';
     }
 
     /**

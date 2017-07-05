@@ -43,7 +43,7 @@ class Posts extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'posts';
+        return 'mob_posts';
     }
 
     public function defaultScope() {

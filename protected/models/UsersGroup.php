@@ -51,7 +51,7 @@ class UsersGroup extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'users_group';
+        return 'mob_users_group';
     }
 
     /**

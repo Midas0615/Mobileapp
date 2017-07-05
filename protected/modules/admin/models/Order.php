@@ -42,7 +42,7 @@ class Order extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'order';
+        return 'mob_order';
     }
 
     /**

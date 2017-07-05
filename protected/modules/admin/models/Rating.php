@@ -1,24 +1,26 @@
 <?php
 
 /**
- * This is the model class for table "email_logs".
+ * This is the model class for table "mob_rating".
  *
- * The followings are the available columns in table 'email_logs':
+ * The followings are the available columns in table 'mob_rating':
  * @property integer $id
- * @property string $email_from
- * @property string $email_to
- * @property string $email_content
- * @property string $email_attachments
- * @property integer $is_email_sent
- * @property integer $created_dt
+ * @property string $name
+ * @property integer $star
+ * @property integer $product_id
+ * @property integer $order_id
  * @property integer $created_by
+ * @property integer $created_dt
+ * @property integer $updated_by
+ * @property integer $updated_date
+ * @property integer $is_deleted
  */
-class EmailLogs extends CActiveRecord {
+class Rating extends CActiveRecord {
 
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
-     * @return EmailLogs the static model class
+     * @return Rating the static model class
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
@@ -28,7 +30,7 @@ class EmailLogs extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'mob_email_logs';
+        return 'mob_rating';
     }
 
     /**
@@ -38,12 +40,12 @@ class EmailLogs extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('email_from, email_to, email_content, email_attachments, is_email_sent, created_dt, created_by', 'required'),
-            array('is_email_sent, created_dt, created_by', 'numerical', 'integerOnly' => true),
-            array('email_from, email_to', 'length', 'max' => 128),
+            array('name, updated_by, updated_date, is_deleted', 'required'),
+            array('star, product_id, order_id, created_by, created_dt, updated_by, updated_date, is_deleted', 'numerical', 'integerOnly' => true),
+            array('name', 'length', 'max' => 255),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, email_from, email_to, email_content, email_attachments, is_email_sent, created_dt, created_by', 'safe', 'on' => 'search'),
+            array('id, name, star, product_id, order_id, created_by, created_dt, updated_by, updated_date, is_deleted', 'safe', 'on' => 'search'),
         );
     }
 
@@ -57,11 +59,28 @@ class EmailLogs extends CActiveRecord {
         );
     }
 
-    public function defaultScope() {
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels() {
+        return array(
+            'id' => 'ID',
+            'name' => 'Name',
+            'star' => 'Star',
+            'product_id' => 'Product',
+            'order_id' => 'Order',
+            'created_by' => 'Created By',
+            'created_dt' => 'Created Dt',
+            'updated_by' => 'Updated By',
+            'updated_date' => 'Updated Date',
+            'is_deleted' => 'Is Deleted',
+        );
+    }
 
+    public function defaultScope() {
         return array(
             'alias' => $this->getTableAlias(false, false),
-            'condition' => "deleted=0 ",
+            'condition' => "is_deleted=0 ",
         );
     }
 
@@ -77,22 +96,6 @@ class EmailLogs extends CActiveRecord {
     }
 
     /**
-     * @return array customized attribute labels (name=>label)
-     */
-    public function attributeLabels() {
-        return array(
-            'id' => 'ID',
-            'email_from' => 'Email From',
-            'email_to' => 'Email To',
-            'email_content' => 'Email Content',
-            'email_attachments' => 'Email Attachments',
-            'is_email_sent' => 'Is Email Sent',
-            'created_dt' => 'Created Dt',
-            'created_by' => 'Created By',
-        );
-    }
-
-    /**
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
      */
@@ -103,19 +106,18 @@ class EmailLogs extends CActiveRecord {
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('email_from', $this->email_from, true);
-        $criteria->compare('email_to', $this->email_to, true);
-        $criteria->compare('email_content', $this->email_content, true);
-        $criteria->compare('email_attachments', $this->email_attachments, true);
-        $criteria->compare('is_email_sent', $this->is_email_sent);
-        $criteria->compare('created_dt', $this->created_dt);
+        $criteria->compare('name', $this->name, true);
+        $criteria->compare('star', $this->star);
+        $criteria->compare('product_id', $this->product_id);
+        $criteria->compare('order_id', $this->order_id);
         $criteria->compare('created_by', $this->created_by);
+        $criteria->compare('created_dt', $this->created_dt);
+        $criteria->compare('updated_by', $this->updated_by);
+        $criteria->compare('updated_date', $this->updated_date);
+        $criteria->compare('is_deleted', $this->is_deleted);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
-            'sort' => array(
-                'defaultOrder' => 't.id DESC'
-            )
         ));
     }
 

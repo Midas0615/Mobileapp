@@ -4302,3 +4302,83 @@ HTTP_REFERER=http://localhost/mobiapp/?r=admin/Product/update&id=1
 2017/07/03 16:17:59 [warning] [application] Failed to set unsafe attribute "long_description" of "Product".
 in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (46)
 in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/04 19:09:34 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/index". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/?r=admin/index
+HTTP_REFERER=http://localhost/mobiapp/?r=admin/login
+---
+2017/07/04 19:09:38 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/index". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/?r=admin/index
+HTTP_REFERER=http://localhost/mobiapp/?r=admin/dashboard
+---
+2017/07/05 17:40:33 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/index". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/?r=admin/index
+HTTP_REFERER=http://localhost/mobiapp/?r=admin/login
+---
+2017/07/05 17:40:36 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/index". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/index')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/?r=admin/index
+HTTP_REFERER=http://localhost/mobiapp/?r=admin/dashboard
+---
+2017/07/05 17:42:03 [warning] [application] Failed to set unsafe attribute "long_description" of "Product".
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (41)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (44)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/05 17:42:06 [warning] [application] Failed to set unsafe attribute "long_description" of "Product".
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (41)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (44)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/05 17:42:06 [warning] [application] Failed to set unsafe attribute "long_description" of "Product".
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (46)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/05 17:42:06 [error] [exception.CException] CException: image file not found in C:\xampp\htdocs\mobiapp\protected\extensions\image\Image.php:78
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\extensions\image\CImageComponent.php(41): Image->__construct('C:/xampp/htdocs...', Array)
+#1 C:\xampp\htdocs\mobiapp\protected\modules\admin\models\Product.php(155): CImageComponent->load('C:/xampp/htdocs...')
+#2 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(48): Product->uploadImage(Object(Product))
+#3 [internal function]: ProductController->actionUpdate('1')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/u...')
+#11 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#13 {main}
+REQUEST_URI=/mobiapp/?r=admin/Product/update&id=1
+HTTP_REFERER=http://localhost/mobiapp/?r=admin/Product/update&id=1
+---
+2017/07/05 17:44:59 [warning] [application] Failed to set unsafe attribute "long_description" of "Product".
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (46)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/05 17:59:48 [warning] [application] Failed to set unsafe attribute "long_description" of "Product".
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (41)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (44)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/05 17:59:50 [warning] [application] Failed to set unsafe attribute "long_description" of "Product".
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (41)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (44)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/05 17:59:50 [warning] [application] Failed to set unsafe attribute "long_description" of "Product".
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (46)
+in C:\xampp\htdocs\mobiapp\index.php (16)
