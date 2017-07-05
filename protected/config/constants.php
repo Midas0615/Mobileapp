@@ -3,22 +3,21 @@ $PRODUCT_NAME = "Mobi App";
 $development = file_exists(dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "development");
 $HOST_NAME = "localhost";
 if (true):
-
     error_reporting(E_ERROR);
     $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/mobiapp/';
     $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/mobiapp/';
 
     $DB_USERNAME = "root";
-    $DB_PASSWORD = "";
+    $DB_PASSWORD = "root";
     $DB_NAME = "mobiapp";
 else:
     error_reporting(E_ERROR);
-    $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/postings/';
-    $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/postings/';
+    $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/mobiapp/';
+    $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/mobiapp/';
 
-    $DB_USERNAME = "sumanmor_posts";
-    $DB_PASSWORD = "8EP1PTlZ=@zF";
-    $DB_NAME = "sumanmor_postings";
+    $DB_USERNAME = "blood_groups";
+    $DB_PASSWORD = "johel";
+    $DB_NAME = "123456";
 endif;
 
 $UPLOADS_PATH = $DOCUMENT_PATH . "uploads/";
