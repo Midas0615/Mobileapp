@@ -1,26 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "mob_rating".
+ * This is the model class for table "mob_user_address".
  *
- * The followings are the available columns in table 'mob_rating':
+ * The followings are the available columns in table 'mob_user_address':
  * @property integer $id
- * @property string $name
- * @property integer $star
- * @property integer $product_id
- * @property integer $order_id
+ * @property string $user_id
+ * @property string $address
+ * @property integer $is_default
  * @property integer $created_by
  * @property integer $created_dt
  * @property integer $updated_by
  * @property integer $updated_dt
  * @property integer $is_deleted
  */
-class Rating extends CActiveRecord {
+class UserAddress extends CActiveRecord {
 
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
-     * @return Rating the static model class
+     * @return UserAddress the static model class
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
@@ -30,7 +29,7 @@ class Rating extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'mob_rating';
+        return 'mob_user_address';
     }
 
     /**
@@ -40,11 +39,12 @@ class Rating extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('star, product_id, order_id, created_by, created_dt, updated_by, updated_dt, is_deleted', 'numerical', 'integerOnly' => true),
-            array('name', 'length', 'max' => 255),
+            array('user_id, address, updated_by, updated_dt, is_deleted', 'required'),
+            array('is_default, created_by, created_dt, updated_by, updated_dt, is_deleted', 'numerical', 'integerOnly' => true),
+            array('user_id', 'length', 'max' => 255),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, name, star, product_id, order_id, created_by, created_dt, updated_by, updated_dt, is_deleted', 'safe', 'on' => 'search'),
+            array('id, user_id, address, is_default, created_by, created_dt, updated_by, updated_dt, is_deleted', 'safe', 'on' => 'search'),
         );
     }
 
@@ -55,8 +55,6 @@ class Rating extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            //'users' => array(self::BELONGS_TO, "Users", "user_id"),
-            'product' => array(self::BELONGS_TO, "Product", "product_id"),
         );
     }
 
@@ -66,14 +64,13 @@ class Rating extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'name' => 'Name',
-            'star' => 'Star',
-            'product_id' => 'Product',
-            'order_id' => 'Order',
+            'user_id' => 'User',
+            'address' => 'Address',
+            'is_default' => 'Is Default',
             'created_by' => 'Created By',
             'created_dt' => 'Created Dt',
             'updated_by' => 'Updated By',
-            'updated_dt' => 'Updated Date',
+            'updated_dt' => 'Updated Dt',
             'is_deleted' => 'Is Deleted',
         );
     }
@@ -107,10 +104,9 @@ class Rating extends CActiveRecord {
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('star', $this->star);
-        $criteria->compare('product_id', $this->product_id);
-        $criteria->compare('order_id', $this->order_id);
+        $criteria->compare('user_id', $this->user_id, true);
+        $criteria->compare('address', $this->address, true);
+        $criteria->compare('is_default', $this->is_default);
         $criteria->compare('created_by', $this->created_by);
         $criteria->compare('created_dt', $this->created_dt);
         $criteria->compare('updated_by', $this->updated_by);

@@ -11,6 +11,12 @@
             <li class="<?php echo!empty(Yii::app()->controller->id == "order") ? "active" : ""; ?>">
                 <?php echo CHtml::Link('<span class="figure"><i class="ico-file"></i></span><span class="text">Orders</span>', array("/".Yii::app()->controller->module->id."/order")); ?>
             </li>
+            <li class="<?php echo!empty(Yii::app()->controller->id == "review") ? "active" : ""; ?>">
+                <?php echo CHtml::Link('<span class="figure"><i class="ico-file"></i></span><span class="text">Review</span>', array("/".Yii::app()->controller->module->id."/review")); ?>
+            </li>
+            <li class="<?php echo!empty(Yii::app()->controller->id == "rating") ? "active" : ""; ?>">
+                <?php echo CHtml::Link('<span class="figure"><i class="ico-file"></i></span><span class="text">Rating</span>', array("/".Yii::app()->controller->module->id."/rating")); ?>
+            </li>
 <!--                <li class="<?php echo!empty(Yii::app()->controller->id == "posts") ? "active" : ""; ?>">
                     <?php echo CHtml::Link('<span class="figure"><i class="ico-file"></i></span><span class="text">Posts</span>', array("/".Yii::app()->controller->module->id."/posts")); ?>
                 </li>

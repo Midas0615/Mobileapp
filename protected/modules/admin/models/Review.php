@@ -12,15 +12,15 @@
  * @property integer $created_by
  * @property integer $created_dt
  * @property integer $updated_by
- * @property integer $updated_date
+ * @property integer $updated_dt
  * @property integer $is_deleted
  */
-class Comments extends CActiveRecord {
+class Review extends CActiveRecord {
 
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
-     * @return Comments the static model class
+     * @return Review the static model class
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
@@ -30,7 +30,7 @@ class Comments extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'mob_comments';
+        return 'mob_review';
     }
 
     /**
@@ -40,11 +40,11 @@ class Comments extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('user_id, product_id, order_id, created_by, created_dt, updated_by, updated_date, is_deleted', 'numerical', 'integerOnly' => true),
+            array('user_id, product_id, order_id, created_by, created_dt, updated_by, updated_dt, is_deleted', 'numerical', 'integerOnly' => true),
             array('comments', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, user_id, product_id, comments, order_id, created_by, created_dt, updated_by, updated_date, is_deleted', 'safe', 'on' => 'search'),
+            array('id, user_id, product_id, comments, order_id, created_by, created_dt, updated_by, updated_dt, is_deleted', 'safe', 'on' => 'search'),
         );
     }
 
@@ -54,7 +54,9 @@ class Comments extends CActiveRecord {
     public function relations() {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
-        return array(
+       return array(
+            //'users' => array(self::BELONGS_TO, "Users", "user_id"),
+            'product' => array(self::BELONGS_TO, "Product", "product_id"),
         );
     }
 
@@ -71,7 +73,7 @@ class Comments extends CActiveRecord {
             'created_by' => 'Created By',
             'created_dt' => 'Created Dt',
             'updated_by' => 'Updated By',
-            'updated_date' => 'Updated Date',
+            'updated_dt' => 'Updated Date',
             'is_deleted' => 'Is Deleted',
         );
     }
@@ -112,7 +114,7 @@ class Comments extends CActiveRecord {
         $criteria->compare('created_by', $this->created_by);
         $criteria->compare('created_dt', $this->created_dt);
         $criteria->compare('updated_by', $this->updated_by);
-        $criteria->compare('updated_date', $this->updated_date);
+        $criteria->compare('updated_dt', $this->updated_dt);
         $criteria->compare('is_deleted', $this->is_deleted);
 
         return new CActiveDataProvider($this, array(
