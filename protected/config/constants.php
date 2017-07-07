@@ -15,9 +15,9 @@ else:
     $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/mobiapp/';
     $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/mobiapp/';
 
-    $DB_USERNAME = "blood_groups";
-    $DB_PASSWORD = "johel";
-    $DB_NAME = "123456";
+    $DB_USERNAME = "johel";
+    $DB_PASSWORD = "123456";
+    $DB_NAME = "blood_groups";
 endif;
 
 $UPLOADS_PATH = $DOCUMENT_PATH . "uploads/";
