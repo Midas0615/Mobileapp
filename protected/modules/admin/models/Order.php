@@ -76,7 +76,7 @@ class Order extends CActiveRecord {
     public function defaultScope() {
         return array(
             'alias' => $this->getTableAlias(false, false),
-            'condition' => "is_deleted=0 ",
+            'condition' => "t.is_deleted=0 ",
         );
     }
 
@@ -117,29 +117,34 @@ class Order extends CActiveRecord {
 
         $criteria = new CDbCriteria;
 
-        $criteria->compare('id', $this->id);
-        $criteria->compare('product_id', $this->product_id, true);
-        $criteria->compare('user_id', $this->user_id, true);
-        $criteria->compare('qty', $this->qty, true);
-        $criteria->compare('address', $this->address, true);
-        $criteria->compare('order_amount', $this->order_amount);
-        $criteria->compare('summary', $this->summary);
-        $criteria->compare('order_date', $this->order_date, true);
-        $criteria->compare('status', $this->status, true);
-        $criteria->compare('is_deleted', $this->is_deleted);
-        $criteria->compare('created_dt', $this->created_dt);
-        $criteria->compare('created_by', $this->created_by);
-        $criteria->compare('updated_dt', $this->updated_dt);
-        $criteria->compare('updated_by', $this->updated_by);
-        $criteria->compare('ip_address', $this->ip_address);
+        $criteria->compare('t.id', $this->id);
+        $criteria->compare('t.product_id', $this->product_id, true);
+        $criteria->compare('t.user_id', $this->user_id, true);
+        $criteria->compare('t.qty', $this->qty, true);
+        $criteria->compare('t.address', $this->address, true);
+        $criteria->compare('t.order_amount', $this->order_amount);
+        $criteria->compare('t.summary', $this->summary);
+        $criteria->compare('t.order_date', $this->order_date, true);
+        $criteria->compare('t.status', $this->status, true);
+        $criteria->compare('t.is_deleted', $this->is_deleted);
+        $criteria->compare('t.created_dt', $this->created_dt);
+        $criteria->compare('t.created_by', $this->created_by);
+        $criteria->compare('t.updated_dt', $this->updated_dt);
+        $criteria->compare('t.updated_by', $this->updated_by);
+        $criteria->compare('t.ip_address', $this->ip_address);
 
         if ($this->id) {
-            $criteria->compare('qty', $this->id, true);
-            $criteria->compare('address', $this->id, true);
-            $criteria->compare('order_amount', $this->id,true);
-            $criteria->compare('summary', $this->id,true);
+            $criteria->compare('t.qty', $this->id, true,'OR');
+            $criteria->compare('t.address', $this->id, true,'OR');
+            $criteria->compare('t.order_amount', $this->id,true,'OR');
+            $criteria->compare('t.summary', $this->id,true,'OR');
+            $criteria->compare('t.order_date', common::getTimeStamp($this->id,"d/m/Y"),true,'OR');
+            $criteria->compare('t.status', array_search ($this->id, self::model()->statusArr),true,'OR');
+            $criteria->compare('users.first_name', $this->id,true,'OR');
+            $criteria->compare('users.last_name', $this->id,true,'OR');
+            $criteria->compare('product.title', $this->id,true,'OR');
         }
-        
+        $criteria->with = array( 'users','product' );
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => array(

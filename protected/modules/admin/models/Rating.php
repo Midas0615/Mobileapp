@@ -81,7 +81,7 @@ class Rating extends CActiveRecord {
     public function defaultScope() {
         return array(
             'alias' => $this->getTableAlias(false, false),
-            'condition' => "is_deleted=0 ",
+            'condition' => "t.is_deleted=0 ",
         );
     }
 
@@ -106,17 +106,22 @@ class Rating extends CActiveRecord {
 
         $criteria = new CDbCriteria;
 
-        $criteria->compare('id', $this->id);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('star', $this->star);
-        $criteria->compare('product_id', $this->product_id);
-        $criteria->compare('order_id', $this->order_id);
-        $criteria->compare('created_by', $this->created_by);
-        $criteria->compare('created_dt', $this->created_dt);
-        $criteria->compare('updated_by', $this->updated_by);
-        $criteria->compare('updated_dt', $this->updated_dt);
-        $criteria->compare('is_deleted', $this->is_deleted);
-
+        $criteria->compare('t.id', $this->id);
+        $criteria->compare('t.name', $this->name, true);
+        $criteria->compare('t.star', $this->star);
+        $criteria->compare('t.product_id', $this->product_id);
+        $criteria->compare('t.order_id', $this->order_id);
+        $criteria->compare('t.created_by', $this->created_by);
+        $criteria->compare('t.created_dt', $this->created_dt);
+        $criteria->compare('t.updated_by', $this->updated_by);
+        $criteria->compare('t.updated_dt', $this->updated_dt);
+        $criteria->compare('t.is_deleted', $this->is_deleted);
+        if ($this->id) {
+            $criteria->compare('t.created_dt', common::getTimeStamp($this->id, "d/m/Y"), false, 'OR');
+            $criteria->compare('t.star', $this->id,false,'OR');
+            $criteria->compare('product.title', $this->id, true, 'OR');
+        }
+        $criteria->with = array('product');
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));

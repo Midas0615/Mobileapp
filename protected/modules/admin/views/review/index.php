@@ -31,7 +31,7 @@
                     $deleteRight = true;
                     $columnClass = (!$updateRight && !$deleteRight) ? "hide" : "";
                     $this->widget("zii.widgets.grid.CGridView", array(
-                        "id" => "order-grid",
+                        "id" => "review-grid",
                         "dataProvider" => $model->search(),
                         "columns" => array(
                             array(

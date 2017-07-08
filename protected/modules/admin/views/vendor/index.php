@@ -82,7 +82,7 @@
                             if(!confirm('" . common::translateText("DELETE_CONFIRM") . "')) return false;                        
                             var url = $(this).attr('href');
                             $.post(url,function(res){
-                                $.fn.yiiGridView.update('users-grid');
+                                $.fn.yiiGridView.update('vendor-grid');
                                 $('#flash-message').html(res).animate({opacity: 1.0}, 3000).fadeOut('slow');
                             });
                             return false;
@@ -100,7 +100,7 @@
                             if(!confirm('Are you sure to perform this action ?')) return false;                        
                             var url = $(this).attr('href');
                             $.post(url,idList,function(res){
-                                $.fn.yiiGridView.update('Vendor-grid');
+                                $.fn.yiiGridView.update('vendor-grid');
                                 $('#flash-message').html(res).animate({opacity: 1.0}, 3000).fadeOut('slow');
                             });
                             return false;

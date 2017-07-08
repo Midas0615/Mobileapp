@@ -54,7 +54,7 @@ class Review extends CActiveRecord {
     public function relations() {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
-       return array(
+        return array(
             //'users' => array(self::BELONGS_TO, "Users", "user_id"),
             'product' => array(self::BELONGS_TO, "Product", "product_id"),
         );
@@ -81,7 +81,7 @@ class Review extends CActiveRecord {
     public function defaultScope() {
         return array(
             'alias' => $this->getTableAlias(false, false),
-            'condition' => "is_deleted=0 ",
+            'condition' => "t.is_deleted=0 ",
         );
     }
 
@@ -106,17 +106,23 @@ class Review extends CActiveRecord {
 
         $criteria = new CDbCriteria;
 
-        $criteria->compare('id', $this->id);
-        $criteria->compare('user_id', $this->user_id);
-        $criteria->compare('product_id', $this->product_id);
-        $criteria->compare('comments', $this->comments, true);
-        $criteria->compare('order_id', $this->order_id);
-        $criteria->compare('created_by', $this->created_by);
-        $criteria->compare('created_dt', $this->created_dt);
-        $criteria->compare('updated_by', $this->updated_by);
-        $criteria->compare('updated_dt', $this->updated_dt);
-        $criteria->compare('is_deleted', $this->is_deleted);
-
+        $criteria->compare('t.id', $this->id);
+        $criteria->compare('t.user_id', $this->user_id);
+        $criteria->compare('t.product_id', $this->product_id);
+        $criteria->compare('t.comments', $this->comments, true);
+        $criteria->compare('t.order_id', $this->order_id);
+        $criteria->compare('t.created_by', $this->created_by);
+        $criteria->compare('t.created_dt', $this->created_dt);
+        $criteria->compare('t.updated_by', $this->updated_by);
+        $criteria->compare('t.updated_dt', $this->updated_dt);
+        $criteria->compare('t.is_deleted', $this->is_deleted);
+        if ($this->id) {
+            $criteria->compare('t.created_dt', common::getTimeStamp($this->id, "d/m/Y"), false, 'OR');
+            $criteria->compare('t.comments', $this->id,true,'OR');
+            //$criteria->compare('t.status', array_search($this->id, self::model()->statusArr), true, 'OR');
+            $criteria->compare('product.title', $this->id, true, 'OR');
+        }
+        $criteria->with = array('product');
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));

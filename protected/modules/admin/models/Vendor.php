@@ -47,7 +47,7 @@ class Vendor extends CActiveRecord {
         return array(
             array('name', 'required'),
             array('status, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'numerical', 'integerOnly' => true),
-            array('name, location', 'length', 'max' => 255),
+            array('name,description, location', 'length', 'max' => 255),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, name, description,  location,status, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'safe', 'on' => 'search'),
@@ -67,7 +67,7 @@ class Vendor extends CActiveRecord {
     public function defaultScope() {
         return array(
             'alias' => $this->getTableAlias(false, false),
-            'condition' => "is_deleted=0 ",
+            'condition' => "t.is_deleted=0 ",
         );
     }
 
@@ -104,17 +104,21 @@ class Vendor extends CActiveRecord {
 
         $criteria = new CDbCriteria;
 
-        $criteria->compare('id', $this->id);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('description', $this->description, true);
-        $criteria->compare('location', $this->location, true);
-        $criteria->compare('status', $this->status, true);
-        $criteria->compare('is_deleted', $this->is_deleted);
-        $criteria->compare('created_dt', $this->created_dt);
-        $criteria->compare('created_by', $this->created_by);
-        $criteria->compare('updated_dt', $this->updated_dt);
-        $criteria->compare('updated_by', $this->updated_by);
-        $criteria->compare('ip_address', $this->ip_address);
+        $criteria->compare('t.id', $this->id);
+        $criteria->compare('t.name', $this->name, true);
+        $criteria->compare('t.description', $this->description, true);
+        $criteria->compare('t.location', $this->location, true);
+        $criteria->compare('t.status', $this->status, true);
+        $criteria->compare('t.is_deleted', $this->is_deleted);
+        $criteria->compare('t.created_dt', $this->created_dt);
+        $criteria->compare('t.created_by', $this->created_by);
+        $criteria->compare('t.updated_dt', $this->updated_dt);
+        $criteria->compare('t.updated_by', $this->updated_by);
+        $criteria->compare('t.ip_address', $this->ip_address);
+        if ($this->id) {
+            $criteria->compare('t.name', $this->id,true,'OR');
+            $criteria->compare('t.description', $this->id,true,'OR');
+        }
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

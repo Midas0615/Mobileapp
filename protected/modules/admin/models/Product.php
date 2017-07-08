@@ -26,6 +26,7 @@ class Product extends CActiveRecord {
     const THUMB_WIDTH = "600";
 
     public $thumbArr = array(self::THUMB_WIDTH, self::THUMB_HEIGHT); //width,height
+    public $search;
 
     const DE_ACTIVE = 0;
     const Active = 1;
@@ -80,7 +81,7 @@ class Product extends CActiveRecord {
     public function defaultScope() {
         return array(
             'alias' => $this->getTableAlias(false, false),
-            'condition' => "is_deleted=0 ",
+            'condition' => "t.is_deleted=0 ",
         );
     }
 
@@ -121,32 +122,33 @@ class Product extends CActiveRecord {
 
         $criteria = new CDbCriteria;
 
-        $criteria->compare('id', $this->id);
-        $criteria->compare('title', $this->title, true);
-        $criteria->compare('description', $this->description, true);
-        $criteria->compare('long_description', $this->long_description, true);
-        $criteria->compare('photo', $this->photo, true);
-        $criteria->compare('price', $this->price);
-        $criteria->compare('vendor', $this->vendor);
-        $criteria->compare('location', $this->location, true);
-        $criteria->compare('status', $this->status, true);
-        $criteria->compare('is_deleted', $this->is_deleted);
-        $criteria->compare('created_dt', $this->created_dt);
-        $criteria->compare('created_by', $this->created_by);
-        $criteria->compare('updated_dt', $this->updated_dt);
-        $criteria->compare('updated_by', $this->updated_by);
-        $criteria->compare('ip_address', $this->ip_address);
+        $criteria->compare('t.id', $this->id);
+        $criteria->compare('t.title', $this->title, true);
+        $criteria->compare('t.description', $this->description, true);
+        $criteria->compare('t.long_description', $this->long_description, true);
+        $criteria->compare('t.photo', $this->photo, true);
+        $criteria->compare('t.price', $this->price);
+        $criteria->compare('t.vendor', $this->vendor);
+        $criteria->compare('t.location', $this->location, true);
+        $criteria->compare('t.status', $this->status, true);
+        $criteria->compare('t.is_deleted', $this->is_deleted);
+        $criteria->compare('t.created_dt', $this->created_dt);
+        $criteria->compare('t.created_by', $this->created_by);
+        $criteria->compare('t.updated_dt', $this->updated_dt);
+        $criteria->compare('t.updated_by', $this->updated_by);
+        $criteria->compare('t.ip_address', $this->ip_address);
         if ($this->id) {
-            $criteria->compare('id', $this->id);
-            $criteria->compare('title', $this->id, true);
-            $criteria->compare('description', $this->id, true);
-            $criteria->compare('long_description', $this->id, true);
-            $criteria->compare('photo', $this->id, true);
-          //  $criteria->compare('price', $this->id);
-          //  $criteria->compare('vendor', $this->id);
-            $criteria->compare('location', $this->id, true);
+            $criteria->compare('t.id', $this->id,false,'OR');
+            $criteria->compare('t.title', $this->id, true,'OR');
+            $criteria->compare('t.description', $this->id, true,'OR');
+            $criteria->compare('t.long_description', $this->id, true,'OR');
+            $criteria->compare('t.photo', $this->id, true,'OR');
+            $criteria->compare('t.price', $this->id,false,'OR');
+            $criteria->compare('t.status', array_search ($this->id, self::model()->statusArr),true,'OR');
+            $criteria->compare('vendorRel.name', $this->id,true,'OR');
+            $criteria->compare('t.location', $this->id, true,'OR');
         }
-
+        $criteria->with = array( 'vendorRel' );
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => array(
