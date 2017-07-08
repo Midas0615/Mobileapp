@@ -69,7 +69,7 @@ return array(
             'errorAction' => 'error/index',
         ),
         'urlManager' => array(
-            'urlFormat' => 'get',
+            'urlFormat' => 'path',
             'showScriptName' => false,
             'appendParams' => false,
             'rules' => require dirname(__FILE__) . '/../extensions/starship/RestfullYii/config/routes.php',

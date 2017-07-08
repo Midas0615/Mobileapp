@@ -46,9 +46,4 @@ class FrontController extends CController {
         return !empty($count) ? $count + 1 : 1;
     }
 
-    public function registerThemeJS() {
-        $cs = Yii::app()->clientScript;
-        $cs->registerScriptFile('https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js', CClientScript::POS_HEAD);
-    }
-
 }
