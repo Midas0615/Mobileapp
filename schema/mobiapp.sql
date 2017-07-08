@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2017 at 04:15 PM
+-- Generation Time: Jul 08, 2017 at 09:52 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 7.0.1
 
@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Table structure for table `mob_categories`
 --
 
-CREATE TABLE `categories` (
+CREATE TABLE `mob_categories` (
   `id` bigint(20) NOT NULL,
   `title` varchar(255) CHARACTER SET latin1 NOT NULL,
   `parent_id` int(20) NOT NULL DEFAULT '0',
@@ -39,20 +39,20 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `categories`
+-- Dumping data for table `mob_categories`
 --
 
-INSERT INTO `categories` (`id`, `title`, `parent_id`, `description`, `deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
+INSERT INTO `mob_categories` (`id`, `title`, `parent_id`, `description`, `deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
 (1, 'Sports', 0, '', 0, 1474655400, 1, 1474655400, 1),
 (2, 'Test category', 0, 'Test Description', 0, 1475336322, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `countries`
+-- Table structure for table `mob_countries`
 --
 
-CREATE TABLE `countries` (
+CREATE TABLE `mob_countries` (
   `id` int(10) UNSIGNED NOT NULL,
   `iso` varchar(45) DEFAULT NULL,
   `iso3` varchar(45) DEFAULT NULL,
@@ -68,10 +68,10 @@ CREATE TABLE `countries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `countries`
+-- Dumping data for table `mob_countries`
 --
 
-INSERT INTO `countries` (`id`, `iso`, `iso3`, `fips`, `country`, `continent`, `currency_code`, `currency_name`, `phone_prefix`, `postal_code`, `languages`, `geonameid`) VALUES
+INSERT INTO `mob_countries` (`id`, `iso`, `iso3`, `fips`, `country`, `continent`, `currency_code`, `currency_name`, `phone_prefix`, `postal_code`, `languages`, `geonameid`) VALUES
 (4, 'AF', 'AFG', 'AF', 'Afghanistan', 'AS', 'AFN', 'Afghani', '93', '', 'fa-AF,ps,uz-AF,tk', '1149361'),
 (8, 'AL', 'ALB', 'AL', 'Albania', 'EU', 'ALL', 'Lek', '355', '', 'sq,el', '783754'),
 (10, 'AQ', 'ATA', 'AY', 'Antarctica', 'AN', '', '', '', '', '', '6697173'),
@@ -324,10 +324,10 @@ INSERT INTO `countries` (`id`, `iso`, `iso3`, `fips`, `country`, `continent`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `email_logs`
+-- Table structure for table `mob_email_logs`
 --
 
-CREATE TABLE `email_logs` (
+CREATE TABLE `mob_email_logs` (
   `id` int(11) NOT NULL,
   `email_from` varchar(128) NOT NULL,
   `email_to` varchar(128) DEFAULT NULL,
@@ -340,10 +340,10 @@ CREATE TABLE `email_logs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `email_logs`
+-- Dumping data for table `mob_email_logs`
 --
 
-INSERT INTO `email_logs` (`id`, `email_from`, `email_to`, `email_content`, `email_attachments`, `is_email_sent`, `deleted`, `created_dt`, `created_by`) VALUES
+INSERT INTO `mob_email_logs` (`id`, `email_from`, `email_to`, `email_content`, `email_attachments`, `is_email_sent`, `deleted`, `created_dt`, `created_by`) VALUES
 (1, 'noreplay@website.com', 'abc@gmail.com', '<p>Hello test aeafs,</p><p>Welcome to our website<br></p><p>Thanks for register with us.</p><p>Also please use follow below link to activate your account,</p><p><a href="http://localhost/postings/signup/verify/8">Click here to verify you account</a> <br></p>', NULL, 0, 0, 1474911179, NULL),
 (2, 'noreplay@website.com', 'alpeshspce20@gmail.com', '<p> Dear Alpesh Vaghela, <br></p><p>Someone tried to reset your password, If did this attempt please follow below link to continue otherwise ignore it.</p><p><a href="http://localhost/postings/home/changepassword?access_token=6D5F88DE15C423D1523C8178946EEBC9">http://localhost/postings/home/changepassword?access_token=6D5F88DE15C423D1523C8178946EEBC9</a></p>', NULL, 0, 0, 1474940959, NULL),
 (3, 'noreplay@website.com', 'alpeshspce20@gmail.com', '<p> Dear Alpesh Vaghela, <br></p><p>Someone tried to reset your password, If did this attempt please follow below link to continue otherwise ignore it.</p><p><a href="http://localhost/postings/home/changepassword?access_token=FF40923D0F322208EB8DD58CD21D28D9">http://localhost/postings/home/changepassword?access_token=FF40923D0F322208EB8DD58CD21D28D9</a></p>', NULL, 1, 0, 1474941334, NULL),
@@ -387,10 +387,10 @@ INSERT INTO `email_logs` (`id`, `email_from`, `email_to`, `email_content`, `emai
 -- --------------------------------------------------------
 
 --
--- Table structure for table `email_templates`
+-- Table structure for table `mob_email_templates`
 --
 
-CREATE TABLE `email_templates` (
+CREATE TABLE `mob_email_templates` (
   `id` int(11) NOT NULL,
   `email_title` varchar(128) NOT NULL,
   `email_subject` varchar(128) NOT NULL,
@@ -405,10 +405,10 @@ CREATE TABLE `email_templates` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `email_templates`
+-- Dumping data for table `mob_email_templates`
 --
 
-INSERT INTO `email_templates` (`id`, `email_title`, `email_subject`, `email_content`, `email_from`, `email_keyword`, `deleted`, `created_by`, `created_dt`, `updated_dt`, `updated_by`) VALUES
+INSERT INTO `mob_email_templates` (`id`, `email_title`, `email_subject`, `email_content`, `email_from`, `email_keyword`, `deleted`, `created_by`, `created_dt`, `updated_dt`, `updated_by`) VALUES
 (1, 'User Registration', 'Welcome', '<p>Hello [RECEIVER_NAME],</p><p>Welcome to our website<br></p><p>Thanks for register with us.</p><p>Also please use follow below link to activate your account,</p><p>[LINK] <br></p>', 'noreplay@website.com', 'CUSTOMER_REGISTRATION', 0, 0, 0, 1474655400, 1),
 (2, 'Video Submited Successfully', 'Video Submited Successfully', ' Dear [RECEIVER_NAME],\r\n \r\nThank you for your order. Please allow 1-2 business days to have your video created.\r\nYou will receive another email once your video is completed. You will be able to download video from your dashboard in your account on www.videos-for-less.com.\r\n \r\nFor help please contact support@videos-for-less.com.\r\n \r\nSincerely,\r\nTeam Videos-For-Less.com', 'support@videos-for-less.com', 'VIDEO_SUBMITED', 1, 1, 1459382400, 1474655400, 1),
 (3, 'Video', 'Video', '<p>Hello [RECEIVER_NAME],</p>Please check your video at below url,<br><br>[LINK] <br>', 'noreply@vidoesforless.com', 'SEND_PACKAGE_EMAIL', 1, 1, 1460592000, 1474655400, 1),
@@ -418,10 +418,10 @@ INSERT INTO `email_templates` (`id`, `email_title`, `email_subject`, `email_cont
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Table structure for table `mob_order`
 --
 
-CREATE TABLE `order` (
+CREATE TABLE `mob_order` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -440,20 +440,20 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `order`
+-- Dumping data for table `mob_order`
 --
 
-INSERT INTO `order` (`id`, `user_id`, `product_id`, `qty`, `address`, `order_amount`, `summary`, `order_date`, `status`, `is_deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`, `ip_address`) VALUES
+INSERT INTO `mob_order` (`id`, `user_id`, `product_id`, `qty`, `address`, `order_amount`, `summary`, `order_date`, `status`, `is_deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`, `ip_address`) VALUES
 (1, 3, 1, 2, 'Address', 255, 'Order Summery Order Summery Order Summery', 1483743600, 2, 0, 1499091260, 3, 0, 0, 0),
 (2, 2, 2, 5, 'Address2', 223, 'Order Summery2', 1486422000, 1, 0, 1499091297, 3, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Table structure for table `mob_posts`
 --
 
-CREATE TABLE `posts` (
+CREATE TABLE `mob_posts` (
   `id` bigint(20) NOT NULL,
   `title` varchar(255) CHARACTER SET latin1 NOT NULL,
   `start_date` int(11) DEFAULT NULL,
@@ -472,10 +472,10 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `posts`
+-- Dumping data for table `mob_posts`
 --
 
-INSERT INTO `posts` (`id`, `title`, `start_date`, `end_date`, `author_id`, `category_id`, `image`, `description`, `deleted`, `status`, `link`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
+INSERT INTO `mob_posts` (`id`, `title`, `start_date`, `end_date`, `author_id`, `category_id`, `image`, `description`, `deleted`, `status`, `link`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
 (1, 'test', NULL, NULL, 12, '1', 'small_images.jpg', 'test', 0, 1, 'https://www.google.com', 1474741800, 1, 1475425714, 1),
 (2, 'Testdfasdf', 1475260200, 1475692200, 12, '1', '', 'Test', 0, 1, '', 1474741800, 1, 1475640424, 1),
 (3, 'Test TEst', NULL, NULL, 10, '1', 'small_Screenshot from 2016-09-11 02-04-32.png', 'TEST tESt', 0, 2, NULL, 1474993401, 10, 1474993402, 10),
@@ -486,10 +486,10 @@ INSERT INTO `posts` (`id`, `title`, `start_date`, `end_date`, `author_id`, `cate
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Table structure for table `mob_product`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE `mob_product` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
@@ -508,20 +508,82 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `product`
+-- Dumping data for table `mob_product`
 --
 
-INSERT INTO `product` (`id`, `title`, `description`, `long_description`, `photo`, `price`, `vendor`, `location`, `status`, `is_deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`, `ip_address`) VALUES
-(1, 'Product1', 'Sort Description Sort Description', '', 'small_images.jpg', 550, 2, 'Location Location', 1, 0, 1499091191, 3, 1499091191, 3, 0),
-(2, 'product2', 'Sort Descreiption2', '', 'small_images.jpg', 660, 0, 'Location2', 2, 0, 1499091231, 3, 1499091231, 3, 0);
+INSERT INTO `mob_product` (`id`, `title`, `description`, `long_description`, `photo`, `price`, `vendor`, `location`, `status`, `is_deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`, `ip_address`) VALUES
+(1, 'Product1', 'Sort Description Sort Description', '', 'small_Image056.jpg', 550, 2, 'Location Location', 1, 0, 1499091191, 3, 1499269499, 3, 0),
+(2, 'product2', 'Sort Descreiption2', '', 'small_Image059.jpg', 660, 0, 'Location2', 2, 0, 1499091231, 3, 1499270390, 3, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `states`
+-- Table structure for table `mob_rating`
 --
 
-CREATE TABLE `states` (
+CREATE TABLE `mob_rating` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `star` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_dt` int(11) DEFAULT NULL,
+  `updated_by` int(11) NOT NULL,
+  `updated_dt` int(11) NOT NULL,
+  `is_deleted` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mob_rating`
+--
+
+INSERT INTO `mob_rating` (`id`, `name`, `star`, `product_id`, `order_id`, `created_by`, `created_dt`, `updated_by`, `updated_dt`, `is_deleted`) VALUES
+(1, '', 3, 1, NULL, 2, 1499365832, 2, 1499367165, 0),
+(2, '', 2, 1, NULL, 2, 1499365841, 2, 1499367173, 0),
+(3, '', 3, 2, NULL, 2, 1499365978, 2, 1499367181, 0),
+(4, '', 2, 2, NULL, 2, 1499366033, 2, 1499367187, 0),
+(5, '', 4, 1, NULL, 2, 1499366727, 2, 1499367195, 0),
+(6, '', 5, 2, NULL, 2, 1499367214, 2, 1499367227, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mob_review`
+--
+
+CREATE TABLE `mob_review` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `comments` text,
+  `order_id` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_dt` int(11) DEFAULT NULL,
+  `updated_by` int(11) NOT NULL,
+  `updated_dt` int(11) NOT NULL,
+  `is_deleted` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mob_review`
+--
+
+INSERT INTO `mob_review` (`id`, `user_id`, `product_id`, `comments`, `order_id`, `created_by`, `created_dt`, `updated_by`, `updated_dt`, `is_deleted`) VALUES
+(1, 1, 2, 'adsfadsfasssssssssssssssssssssss', NULL, 2, 1499308234, 2, 1499364905, 0),
+(2, 1, 2, 'asdfadsf', NULL, 2, 1499308326, 0, 0, 0),
+(3, 1, 2, 'asdfadsf', NULL, 2, 1499308354, 0, 0, 0),
+(4, 1, 2, 'asdfadsf', NULL, 2, 1499308379, 0, 0, 0),
+(5, NULL, 2, 'adasdad', NULL, 2, 1499364878, 0, 0, 0),
+(6, NULL, 1, NULL, NULL, 2, 1499365552, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mob_states`
+--
+
+CREATE TABLE `mob_states` (
   `id` int(10) UNSIGNED NOT NULL,
   `region_id` int(10) UNSIGNED DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
@@ -529,10 +591,10 @@ CREATE TABLE `states` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `states`
+-- Dumping data for table `mob_states`
 --
 
-INSERT INTO `states` (`id`, `region_id`, `name`, `timezone`) VALUES
+INSERT INTO `mob_states` (`id`, `region_id`, `name`, `timezone`) VALUES
 (1, 4, 'Badakhshan', 'Asia/Kabul'),
 (2, 4, 'Badghis Province', 'Asia/Kabul'),
 (3, 4, 'Baghlān', 'Asia/Kabul'),
@@ -1717,7 +1779,7 @@ INSERT INTO `states` (`id`, `region_id`, `name`, `timezone`) VALUES
 (1182, 324, 'Kissidougou', 'Africa/Conakry'),
 (1183, 324, 'Koundara', 'Africa/Conakry'),
 (1184, 324, 'Kouroussa', 'Africa/Conakry');
-INSERT INTO `states` (`id`, `region_id`, `name`, `timezone`) VALUES
+INSERT INTO `mob_states` (`id`, `region_id`, `name`, `timezone`) VALUES
 (1185, 324, 'Macenta', 'Africa/Conakry'),
 (1186, 324, 'Mali', 'Africa/Conakry'),
 (1187, 324, 'Mamou', 'Africa/Conakry'),
@@ -2884,7 +2946,7 @@ INSERT INTO `states` (`id`, `region_id`, `name`, `timezone`) VALUES
 (2348, 566, 'Jigawa', 'Africa/Lagos'),
 (2349, 566, 'Kebbi', 'Africa/Lagos'),
 (2350, 566, 'Kogi', 'Africa/Lagos');
-INSERT INTO `states` (`id`, `region_id`, `name`, `timezone`) VALUES
+INSERT INTO `mob_states` (`id`, `region_id`, `name`, `timezone`) VALUES
 (2351, 566, 'Osun', 'Africa/Lagos'),
 (2352, 566, 'Taraba', 'Africa/Lagos'),
 (2353, 566, 'Yobe', 'Africa/Lagos'),
@@ -4046,7 +4108,7 @@ INSERT INTO `states` (`id`, `region_id`, `name`, `timezone`) VALUES
 (3509, 807, 'Čaška', 'Europe/Skopje'),
 (3510, 807, 'Čegrana', 'Europe/Skopje'),
 (3511, 807, 'Centar', 'Europe/Skopje');
-INSERT INTO `states` (`id`, `region_id`, `name`, `timezone`) VALUES
+INSERT INTO `mob_states` (`id`, `region_id`, `name`, `timezone`) VALUES
 (3512, 807, 'Centar Župa', 'Europe/Skopje'),
 (3513, 807, 'Češinovo', 'Europe/Skopje'),
 (3514, 807, 'Čučer-Sandevo', 'Europe/Skopje'),
@@ -4419,10 +4481,10 @@ INSERT INTO `states` (`id`, `region_id`, `name`, `timezone`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `mob_users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `mob_users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -4453,21 +4515,21 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `mob_users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `salt`, `email_address`, `first_name`, `middle_name`, `last_name`, `phone_number`, `gender`, `birth_date`, `address`, `country_id`, `state_id`, `city`, `zipcode`, `profile_pic`, `user_group`, `status`, `deleted`, `is_verified`, `access_token`, `last_login`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
+INSERT INTO `mob_users` (`id`, `username`, `password`, `salt`, `email_address`, `first_name`, `middle_name`, `last_name`, `phone_number`, `gender`, `birth_date`, `address`, `country_id`, `state_id`, `city`, `zipcode`, `profile_pic`, `user_group`, `status`, `deleted`, `is_verified`, `access_token`, `last_login`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
 (1, 'super.admin', 'e10adc3949ba59abbe56e057f20f883e', '28b206548469ce62182048fd9cf91760', 'admin@admin.com', 'Supertest', '', 'Admin', '9898989898', 1, NULL, '', 356, 1309, 'Ahmedabad', NULL, 'small_images.jpg', 1, 1, 0, 0, NULL, 1495470612, 1413016773, 1, 1495470612, NULL),
-(2, 'super.admin1', '21232f297a57a5a743894a0e4a801fc3', '', 'admin@admin.com', 'Super', '', 'Admin', '9898989898', 1, NULL, '', 356, 1309, 'Ahmedabad', NULL, 'small_images.jpg', 1, 1, 0, 0, NULL, 1499090744, 1413016773, 1, 1499090744, NULL),
-(3, 'admin', '9cf6e3b4a7ea3cc466ef1819b2d7137c', '595a4f21b55874.69833656', 'test@test.com', 'Test ', NULL, 'User', '1234567899', 1, NULL, NULL, 356, NULL, 'Ahmedabad', 3780054, '', 1, 1, 0, NULL, NULL, 1499090890, 1499090721, 2, 1499090890, NULL);
+(2, 'super.admin1', '21232f297a57a5a743894a0e4a801fc3', '', 'admin@admin.com', 'Super', '', 'Admin', '9898989898', 1, NULL, '', 356, 1309, 'Ahmedabad', NULL, 'small_images.jpg', 1, 1, 0, 0, NULL, 1499362812, 1413016773, 1, 1499362812, NULL),
+(3, 'admin', '9cf6e3b4a7ea3cc466ef1819b2d7137c', '595a4f21b55874.69833656', 'test@test.com', 'Test ', NULL, 'User', '1234567899', 1, NULL, NULL, 356, NULL, 'Ahmedabad', 3780054, '', 1, 1, 0, NULL, NULL, 1499269236, 1499090721, 2, 1499269236, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_group`
+-- Table structure for table `mob_users_group`
 --
 
-CREATE TABLE `users_group` (
+CREATE TABLE `mob_users_group` (
   `id` int(11) NOT NULL,
   `group_name` varchar(20) NOT NULL,
   `deleted` int(1) NOT NULL DEFAULT '0',
@@ -4478,78 +4540,126 @@ CREATE TABLE `users_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users_group`
+-- Dumping data for table `mob_users_group`
 --
 
-INSERT INTO `users_group` (`id`, `group_name`, `deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
+INSERT INTO `mob_users_group` (`id`, `group_name`, `deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
 (1, 'Super Admin', 0, 1414301348, 1, 1415448884, 1),
 (2, 'Admin', 1, 1414303066, 1, 1474655400, 1),
 (3, 'Customer', 0, 1415384247, 1, 1474655400, 1),
 (4, 'Vendor', 0, 1427481000, 1, 1474655400, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mob_user_address`
+--
+
+CREATE TABLE `mob_user_address` (
+  `id` int(11) NOT NULL,
+  `user_id` varchar(255) NOT NULL,
+  `address` text NOT NULL,
+  `is_default` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `created_dt` int(11) DEFAULT NULL,
+  `updated_by` int(11) NOT NULL,
+  `updated_dt` int(11) NOT NULL,
+  `is_deleted` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mob_user_address`
+--
+
+INSERT INTO `mob_user_address` (`id`, `user_id`, `address`, `is_default`, `created_by`, `created_dt`, `updated_by`, `updated_dt`, `is_deleted`) VALUES
+(1, '', '0', 3, 2, 1499365832, 2, 1499367165, 0),
+(2, '', '0', 2, 2, 1499365841, 2, 1499367173, 0),
+(3, '', '0', 3, 2, 1499365978, 2, 1499367181, 0),
+(4, '', '0', 2, 2, 1499366033, 2, 1499367187, 0),
+(5, '', '0', 4, 2, 1499366727, 2, 1499367195, 0),
+(6, '', '0', 5, 2, 1499367214, 2, 1499367227, 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `categories`
+-- Indexes for table `mob_categories`
 --
-ALTER TABLE `categories`
+ALTER TABLE `mob_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `countries`
+-- Indexes for table `mob_countries`
 --
-ALTER TABLE `countries`
+ALTER TABLE `mob_countries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `email_logs`
+-- Indexes for table `mob_email_logs`
 --
-ALTER TABLE `email_logs`
+ALTER TABLE `mob_email_logs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `email_templates`
+-- Indexes for table `mob_email_templates`
 --
-ALTER TABLE `email_templates`
+ALTER TABLE `mob_email_templates`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order`
+-- Indexes for table `mob_order`
 --
-ALTER TABLE `order`
+ALTER TABLE `mob_order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `posts`
+-- Indexes for table `mob_posts`
 --
-ALTER TABLE `posts`
+ALTER TABLE `mob_posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `product`
+-- Indexes for table `mob_product`
 --
-ALTER TABLE `product`
+ALTER TABLE `mob_product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `states`
+-- Indexes for table `mob_rating`
 --
-ALTER TABLE `states`
+ALTER TABLE `mob_rating`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mob_review`
+--
+ALTER TABLE `mob_review`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mob_states`
+--
+ALTER TABLE `mob_states`
   ADD PRIMARY KEY (`id`),
   ADD KEY `subregion_region_id` (`region_id`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `mob_users`
 --
-ALTER TABLE `users`
+ALTER TABLE `mob_users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users_group`
+-- Indexes for table `mob_users_group`
 --
-ALTER TABLE `users_group`
+ALTER TABLE `mob_users_group`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mob_user_address`
+--
+ALTER TABLE `mob_user_address`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -4557,55 +4667,70 @@ ALTER TABLE `users_group`
 --
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT for table `mob_categories`
 --
-ALTER TABLE `categories`
+ALTER TABLE `mob_categories`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `countries`
+-- AUTO_INCREMENT for table `mob_countries`
 --
-ALTER TABLE `countries`
+ALTER TABLE `mob_countries`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=895;
 --
--- AUTO_INCREMENT for table `email_logs`
+-- AUTO_INCREMENT for table `mob_email_logs`
 --
-ALTER TABLE `email_logs`
+ALTER TABLE `mob_email_logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
--- AUTO_INCREMENT for table `email_templates`
+-- AUTO_INCREMENT for table `mob_email_templates`
 --
-ALTER TABLE `email_templates`
+ALTER TABLE `mob_email_templates`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT for table `mob_order`
 --
-ALTER TABLE `order`
+ALTER TABLE `mob_order`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT for table `mob_posts`
 --
-ALTER TABLE `posts`
+ALTER TABLE `mob_posts`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT for table `mob_product`
 --
-ALTER TABLE `product`
+ALTER TABLE `mob_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `states`
+-- AUTO_INCREMENT for table `mob_rating`
 --
-ALTER TABLE `states`
+ALTER TABLE `mob_rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `mob_review`
+--
+ALTER TABLE `mob_review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `mob_states`
+--
+ALTER TABLE `mob_states`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3880;
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `mob_users`
 --
-ALTER TABLE `users`
+ALTER TABLE `mob_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `users_group`
+-- AUTO_INCREMENT for table `mob_users_group`
 --
-ALTER TABLE `users_group`
+ALTER TABLE `mob_users_group`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `mob_user_address`
+--
+ALTER TABLE `mob_user_address`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
