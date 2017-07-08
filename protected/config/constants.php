@@ -8,7 +8,7 @@ if (true):
     $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/mobiapp/';
 
     $DB_USERNAME = "root";
-    $DB_PASSWORD = "root";
+    $DB_PASSWORD = "";
     $DB_NAME = "mobiapp";
 else:
     error_reporting(E_ERROR);

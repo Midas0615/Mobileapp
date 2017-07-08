@@ -50,6 +50,7 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li><?php echo CHtml::Link('<span class="icon"><i class="ico-user"></i></span> Profile', array("users/profile")); ?></li>
+                    <li><?php echo CHtml::Link('<span class="icon"><i class="ico-copy"></i></span> Addresses', array("users/address")); ?></li>
                     <li><?php echo CHtml::Link('<span class="icon"><i class="ico-exit"></i></span> Sign Out', array("login/logout")); ?></li>
                 </ul>
             </li>

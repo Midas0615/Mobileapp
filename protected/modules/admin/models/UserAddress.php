@@ -39,7 +39,7 @@ class UserAddress extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('user_id, address, updated_by, updated_dt, is_deleted', 'required'),
+            array('address', 'required'),
             array('is_default, created_by, created_dt, updated_by, updated_dt, is_deleted', 'numerical', 'integerOnly' => true),
             array('user_id', 'length', 'max' => 255),
             // The following rule is used by search().
@@ -55,6 +55,8 @@ class UserAddress extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
+            'countryRel' => array(self::BELONGS_TO, "Countries", "country_id"),
+            'stateRel' => array(self::BELONGS_TO, "States", "state_id"),
         );
     }
 
@@ -66,7 +68,7 @@ class UserAddress extends CActiveRecord {
             'id' => 'ID',
             'user_id' => 'User',
             'address' => 'Address',
-            'is_default' => 'Is Default',
+            'is_default' => 'Is Default Address ?',
             'created_by' => 'Created By',
             'created_dt' => 'Created Dt',
             'updated_by' => 'Updated By',
