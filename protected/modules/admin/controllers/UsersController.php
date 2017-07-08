@@ -91,36 +91,37 @@ class UsersController extends Controller {
         $criteria->condition = "user_id = " . Yii::app()->user->id;
         $modelData = UserAddress::model()->findAll($criteria);
         if (isset($_POST['UserAddress'])) {
-            UserAddress::model()->updateAll(array('is_default'=>0));
             $model->attributes = $_POST['UserAddress'];
-            $model->user_id = Yii::app()->user->id;
             $this->performAjaxValidation($model, "form-profile");
+            $model->user_id = Yii::app()->user->id;
+            if ($model->is_default) {
+                UserAddress::model()->updateAll(array('is_default' => 0));
+            }
             if ($model->validate()) {
                 $model->save();
                 Yii::app()->user->setFlash("success", "Your profie has been updated successfully.");
                 $this->redirect(array("address"));
-            } else {
-                ob_clean();
-                echo "<pre>";
-                print_r($model->getErrors());
-                exit();
             }
         }
         $this->render("address", array("model" => $model, "data" => $modelData));
     }
+
     public function actionUpdateaddress($id) {
         $model = UserAddress::model()->findByPk($_REQUEST['id']);
         $criteria = new CDbCriteria();
         $criteria->condition = "user_id = " . Yii::app()->user->id;
         $modelData = UserAddress::model()->findAll($criteria);
-        $this->performAjaxValidation($model, 'teams-form');
+        $this->performAjaxValidation($model, 'form-address');
         if (isset($_POST["UserAddress"])) {
-            UserAddress::model()->updateAll(array('is_default'=>0));
             $model->attributes = $_POST["UserAddress"];
+            $model->user_id = Yii::app()->user->id;
+            if ($model->is_default) {
+                UserAddress::model()->updateAll(array('is_default' => 0));
+            }
             if ($model->validate()) {
                 $model->update();
                 Yii::app()->user->setFlash('success', 'You have successfully updated record.');
-                $this->redirect(array("settings/teams"));
+                $this->redirect(array("users/address"));
             } else {
                 echo "<pre>";
                 print_r($model->getErrors());
@@ -131,20 +132,15 @@ class UsersController extends Controller {
     }
 
     public function actionDeleteaddress($id) {
-        if (Yii::app()->request->isPostRequest) {
-            if (TeamsMaster::model()->checkDelete($id)) {
-                // we only allow deletion via POST request
-                $model = TeamsMaster::model()->findByPk($id);
-                $model->deleted = 1;
-                $model->update();
-                echo "<div class=\"alert alert-success\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">×</button>You have successfully deleted record.</div>";
-                // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-                if (!isset($_GET['ajax']))
-                    $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('address'));
-            }else {
-                echo "<div class=\"alert alert-error\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">×</button>This record is co-related to other record so it can not be deleted.</div>";
-                Yii::app()->end();
-            }
+        if ($id) {
+            $model = UserAddress::model()->findByPk($id);
+            $model->is_deleted = 1;
+            $model->update();
+            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+            if (!isset($_GET['ajax']))
+                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('address'));
+            echo "<div class=\"alert alert-success\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">×</button>You have successfully deleted record.</div>";
+            Yii::app()->end();
         } else
             throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
     }

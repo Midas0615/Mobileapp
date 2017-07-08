@@ -9,17 +9,17 @@
                 <div class="panel-toolbar-wrapper pl0 pt5 pb5">
                     <div class="panel-toolbar pl10">
                         <div class="pull-left">
-                            <span class="semibold">&nbsp;&nbsp;Products</span>  
+                            <span class="semibold">&nbsp;&nbsp;Vendors</span>  
                         </div>
                     </div>
                     <div class="panel-toolbar text-right">
                         <?php
-                        echo CHtml::Link("Add Product" . ' <i class="ico-plus"></i>', array("add"), array(
-                            "title" => "Add Product",
+                        echo CHtml::Link("Add Vendor" . ' <i class="ico-plus"></i>', array("add"), array(
+                            "title" => "Add Vendor",
                             "data-placement" => "bottom",
                             "rel" => "tooltip",
                             "class" => "btn btn-sm btn-default",
-                            "data-original-title" => "Add Product"
+                            "data-original-title" => "Add Vendor"
                         ));
                         ?>
                     </div>
@@ -31,28 +31,11 @@
                     $deleteRight = true;
                     $columnClass = (!$updateRight && !$deleteRight) ? "hide" : "";
                     $this->widget("zii.widgets.grid.CGridView", array(
-                        "id" => "product-grid",
+                        "id" => "vendor-grid",
                         "dataProvider" => $model->search(),
                         "columns" => array(
-                            "title",
+                            "name",
                             "description",
-                            "price",
-                             array(
-                                'name' => 'price',
-                                'value' => '!empty($data->price) ? $data->price : "--"',
-                                "htmlOptions" => array("width" => "10%")
-                            ),  
-                             array(
-                                'name' => 'vendor',
-                                'value' => '!empty($data->vendor)? $data->vendorRel->name :"--"',
-                                "htmlOptions" => array("width" => "10%")
-                            ),  
-                            array(
-                                "name" => "photo",
-                                "type" => "raw",
-                                "value" => '"<div class=\"media-object\">".CHtml::Image($data->getImage($data->photo,$data->id),"--",array("class"=>"img-circle","height"=>"30","width"=>"100"))."</div>"',
-                                "htmlOptions" => array("width" => "1%", "class" => "text-center")
-                            ),
                             array(
                                 'name' => 'status',
                                 'value' => '!empty($data->statusArr[$data->status]) ? $data->statusArr[$data->status]:"--"',
@@ -79,15 +62,15 @@
                                     "updateRecord" => array(
                                         "label" => '<i class="icon ico-pencil"></i> ' . common::translateText("UPDATE_BTN_TEXT"),
                                         "imageUrl" => false,
-                                        "url" => 'Yii::app()->createUrl("/".Yii::app()->controller->module->id."/Product/update", array("id"=>$data->id))',
-                                        "options" => array("class" => "addUpdateRecord mr5", "title" => "Update Product"),
+                                        "url" => 'Yii::app()->createUrl("/".Yii::app()->controller->module->id."/Vendor/update", array("id"=>$data->id))',
+                                        "options" => array("class" => "addUpdateRecord mr5", "title" => "Update Vendor"),
                                         "visible" => ($updateRight) ? 'true' : 'false',
                                     ),
                                     "deleteRecord" => array(
                                         "label" => '<i class="icon ico-trash"></i> ' . common::translateText("DELETE_BTN_TEXT"),
                                         "imageUrl" => false,
-                                        "url" => 'Yii::app()->createUrl("/".Yii::app()->controller->module->id."/Product/delete", array("id"=>$data->id))',
-                                        "options" => array("class" => "deleteRecord text-danger mr5", "title" => "Delete Product"),
+                                        "url" => 'Yii::app()->createUrl("/".Yii::app()->controller->module->id."/Vendor/delete", array("id"=>$data->id))',
+                                        "options" => array("class" => "deleteRecord text-danger mr5", "title" => "Delete Vendor"),
                                         "visible" => ($deleteRight) ? 'true' : 'false',
                                     ),
                                 ),
@@ -117,7 +100,7 @@
                             if(!confirm('Are you sure to perform this action ?')) return false;                        
                             var url = $(this).attr('href');
                             $.post(url,idList,function(res){
-                                $.fn.yiiGridView.update('Product-grid');
+                                $.fn.yiiGridView.update('Vendor-grid');
                                 $('#flash-message').html(res).animate({opacity: 1.0}, 3000).fadeOut('slow');
                             });
                             return false;

@@ -34,7 +34,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="col-md-4">
         <div class="form-group">
             <?php echo $form->labelEx($model, "vendor", array("class" => "control-label")); ?>
-            <?php echo $form->dropDownList($model, "vendor", $model->vendorArr, array("class" => "form-control")); ?>              
+            <?php echo $form->dropDownList($model, "vendor", Vendor::model()->getAllVendorList(), array("class" => "form-control")); ?>              
             <?php echo $form->error($model, "vendor", array("class" => "parsley-custom-error-message")); ?>
         </div>
     </div>

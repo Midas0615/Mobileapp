@@ -8,12 +8,12 @@
             <div class="panel panel-default">
                 <!-- panel heading/header -->
                 <div class="panel-heading">
-                    <h3 class="panel-title">Profile</h3>
+                    <h3 class="panel-title">Add Address</h3>
                 </div>
                 <!--/ panel heading/header -->
                 <!-- panel body -->
                 <div class="panel-body">
-                    <?php
+                  <?php
                     $form = $this->beginWidget('CActiveForm', array(
                         'id' => 'form-profile',
                         'enableAjaxValidation' => true,
@@ -23,7 +23,7 @@
                             'validateOnSubmit' => true
                         ))
                     );
-                    ?>              
+                    ?>           
                     <div class="row">
                         <div class="col-md-6">
                             <?php echo $form->labelEx($model, "name", array("class" => "label-control")); ?>
@@ -78,7 +78,7 @@
                             <?php echo $form->error($model, "is_default"); ?>
                         </div>
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-primary" style="margin-top:30px;">Create </button>  
+                            <button type="submit" class="btn btn-primary" style="margin-top:30px;"><?=($model->id)?'Update':"Create" ?></button>  
                         </div>
                     </div>
                     <?php $this->endWidget(); ?>
@@ -100,13 +100,17 @@
                             <div class="col-md-12">
                                 <?php if ($val->is_default) { ?>
                                     <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Your Default Address</h3>
+                                        </div>
                                     <?php } else { ?>
                                         <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Address</h3>
+                                            </div>
                                         <?php } ?>
                                         <!-- panel heading/header -->
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Your Addresses</h3>
-                                        </div>
+
                                         <!--/ panel heading/header -->
                                         <!-- panel body -->
                                         <div class="panel-body">
@@ -117,8 +121,8 @@
                                             <strong>City : </strong><?= $val->city ?> <br>
                                             <strong>Zip-code : </strong><?= $val->zipcode ?> <br>
 
-                                            <a href="<?= Yii::app()->params["WEB_URL"] ?>?r=admin/users/updateaddress/id=<?= $val->id ?>"><button  class="btn btn-primary" style="margin-top:30px;">Update </button></a>
-                                            <a href="<?= Yii::app()->params["WEB_URL"] ?>?r=admin/users/deleteaddress/id=<?= $val->id ?>"><button  class="btn btn-danger" style="margin-top:30px;">Delete </button></a>
+                                            <a href="<?= Yii::app()->params["WEB_URL"] ?>admin/users/updateaddress/<?= $val->id ?>"><button  class="btn btn-primary" style="margin-top:30px;">Update </button></a>
+                                            <a href="<?= Yii::app()->params["WEB_URL"] ?>admin/users/deleteaddress/<?= $val->id ?>"><button  class="btn btn-danger" style="margin-top:30px;">Delete </button></a>
                                         </div>
                                     </div>
                                 </div>              

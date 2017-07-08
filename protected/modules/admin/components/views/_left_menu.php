@@ -17,6 +17,9 @@
             <li class="<?php echo!empty(Yii::app()->controller->id == "rating") ? "active" : ""; ?>">
                 <?php echo CHtml::Link('<span class="figure"><i class="ico-file"></i></span><span class="text">Rating</span>', array("/".Yii::app()->controller->module->id."/rating")); ?>
             </li>
+            <li class="<?php echo!empty(Yii::app()->controller->id == "vendor") ? "active" : ""; ?>">
+                <?php echo CHtml::Link('<span class="figure"><i class="ico-file"></i></span><span class="text">Vendors</span>', array("/".Yii::app()->controller->module->id."/vendor")); ?>
+            </li>
 <!--                <li class="<?php echo!empty(Yii::app()->controller->id == "posts") ? "active" : ""; ?>">
                     <?php echo CHtml::Link('<span class="figure"><i class="ico-file"></i></span><span class="text">Posts</span>', array("/".Yii::app()->controller->module->id."/posts")); ?>
                 </li>

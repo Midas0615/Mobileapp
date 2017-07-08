@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2017 at 09:52 AM
+-- Generation Time: Jul 08, 2017 at 09:21 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 7.0.1
 
@@ -512,8 +512,8 @@ CREATE TABLE `mob_product` (
 --
 
 INSERT INTO `mob_product` (`id`, `title`, `description`, `long_description`, `photo`, `price`, `vendor`, `location`, `status`, `is_deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`, `ip_address`) VALUES
-(1, 'Product1', 'Sort Description Sort Description', '', 'small_Image056.jpg', 550, 2, 'Location Location', 1, 0, 1499091191, 3, 1499269499, 3, 0),
-(2, 'product2', 'Sort Descreiption2', '', 'small_Image059.jpg', 660, 0, 'Location2', 2, 0, 1499091231, 3, 1499270390, 3, 0);
+(1, 'Product1', 'Sort Description Sort Description', '', 'small_Image056.jpg', 550, 1, 'Location Location', 1, 0, 1499091191, 3, 1499541121, 2, 0),
+(2, 'product2', 'Sort Descreiption2', '', 'small_Image059.jpg', 660, 2, 'Location2', 2, 0, 1499091231, 3, 1499541103, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -4520,8 +4520,8 @@ CREATE TABLE `mob_users` (
 
 INSERT INTO `mob_users` (`id`, `username`, `password`, `salt`, `email_address`, `first_name`, `middle_name`, `last_name`, `phone_number`, `gender`, `birth_date`, `address`, `country_id`, `state_id`, `city`, `zipcode`, `profile_pic`, `user_group`, `status`, `deleted`, `is_verified`, `access_token`, `last_login`, `created_dt`, `created_by`, `updated_dt`, `updated_by`) VALUES
 (1, 'super.admin', 'e10adc3949ba59abbe56e057f20f883e', '28b206548469ce62182048fd9cf91760', 'admin@admin.com', 'Supertest', '', 'Admin', '9898989898', 1, NULL, '', 356, 1309, 'Ahmedabad', NULL, 'small_images.jpg', 1, 1, 0, 0, NULL, 1495470612, 1413016773, 1, 1495470612, NULL),
-(2, 'super.admin1', '21232f297a57a5a743894a0e4a801fc3', '', 'admin@admin.com', 'Super', '', 'Admin', '9898989898', 1, NULL, '', 356, 1309, 'Ahmedabad', NULL, 'small_images.jpg', 1, 1, 0, 0, NULL, 1499362812, 1413016773, 1, 1499362812, NULL),
-(3, 'admin', '9cf6e3b4a7ea3cc466ef1819b2d7137c', '595a4f21b55874.69833656', 'test@test.com', 'Test ', NULL, 'User', '1234567899', 1, NULL, NULL, 356, NULL, 'Ahmedabad', 3780054, '', 1, 1, 0, NULL, NULL, 1499269236, 1499090721, 2, 1499269236, NULL);
+(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 'admin@admin.com', 'Super', '', 'Admin', '9898989898', 1, NULL, '', 356, 1309, 'Ahmedabad', NULL, 'small_Image010.jpg', 1, 1, 0, 0, NULL, 1499513100, 1413016773, 1, 1499528288, 2),
+(3, 'admin', '9cf6e3b4a7ea3cc466ef1819b2d7137c', '595a4f21b55874.69833656', 'test@test.com', 'Test ', NULL, 'User', '1234567899', 1, NULL, NULL, 356, NULL, 'Ahmedabad', 3780054, 'small_10025.jpg', 1, 1, 0, NULL, NULL, 1499269200, 1499090721, 2, 1499513175, 2);
 
 -- --------------------------------------------------------
 
@@ -4558,8 +4558,13 @@ INSERT INTO `mob_users_group` (`id`, `group_name`, `deleted`, `created_dt`, `cre
 CREATE TABLE `mob_user_address` (
   `id` int(11) NOT NULL,
   `user_id` varchar(255) NOT NULL,
+  `state_id` int(11) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `zipcode` int(11) NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `address` text NOT NULL,
-  `is_default` int(11) DEFAULT NULL,
+  `is_default` int(11) DEFAULT '0',
   `created_by` int(11) DEFAULT NULL,
   `created_dt` int(11) DEFAULT NULL,
   `updated_by` int(11) NOT NULL,
@@ -4571,13 +4576,44 @@ CREATE TABLE `mob_user_address` (
 -- Dumping data for table `mob_user_address`
 --
 
-INSERT INTO `mob_user_address` (`id`, `user_id`, `address`, `is_default`, `created_by`, `created_dt`, `updated_by`, `updated_dt`, `is_deleted`) VALUES
-(1, '', '0', 3, 2, 1499365832, 2, 1499367165, 0),
-(2, '', '0', 2, 2, 1499365841, 2, 1499367173, 0),
-(3, '', '0', 3, 2, 1499365978, 2, 1499367181, 0),
-(4, '', '0', 2, 2, 1499366033, 2, 1499367187, 0),
-(5, '', '0', 4, 2, 1499366727, 2, 1499367195, 0),
-(6, '', '0', 5, 2, 1499367214, 2, 1499367227, 0);
+INSERT INTO `mob_user_address` (`id`, `user_id`, `state_id`, `city`, `zipcode`, `country_id`, `name`, `address`, `is_default`, `created_by`, `created_dt`, `updated_by`, `updated_dt`, `is_deleted`) VALUES
+(1, '2', 1309, 'Ahmedabad', 123456789, 356, 'Dipak Ladani', 'Adani praatham 301', 0, 2, 1499515368, 2, 1499538486, 0),
+(2, '2', 1309, 'Ahmedabad', 123456789, 356, 'Dipak Ladani', 'Adani praatham 301302', 0, 2, 1499515368, 2, 1499537253, 1),
+(3, '2', 0, '', 0, 0, '', 'halsjdfhklasjdhfjklhadsf sad faklsjhdfjklashdf', 0, 2, 1499529761, 2, 1499537229, 1),
+(4, '2', 0, 'asdfasdf', 23452345, 16, 'asdfasdf', 'asdf', 0, 2, 1499530081, 2, 1499537223, 1),
+(5, '2', 1302, 'City', 3622455, 356, 'Dipak Ladani', 'Address Address', 0, 2, 1499537420, 0, 0, 0),
+(6, '2', 272, 'asdfasdf', 4646464, 48, 'asdfadsf', 'asdfasdfadsfasdf', 1, 2, 1499537440, 2, 1499537448, 0),
+(7, '2', 0, '', 0, 0, 'asdf', 'adsf', 0, 2, 1499537681, 0, 0, 0),
+(8, '2', 0, '', 0, 0, 'adsf', 'asdfa', 0, 2, 1499537883, 2, 1499538426, 1),
+(9, '2', 0, '', 0, 0, '', 'asdfadsf', 0, 2, 1499538415, 2, 1499538421, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mob_vendor`
+--
+
+CREATE TABLE `mob_vendor` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL,
+  `is_deleted` int(11) NOT NULL,
+  `created_dt` int(11) NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `updated_dt` int(11) NOT NULL,
+  `updated_by` int(11) NOT NULL,
+  `ip_address` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mob_vendor`
+--
+
+INSERT INTO `mob_vendor` (`id`, `name`, `description`, `location`, `status`, `is_deleted`, `created_dt`, `created_by`, `updated_dt`, `updated_by`, `ip_address`) VALUES
+(1, 'asdfsadf', '', 'sdfasdf', 1, 0, 1499540678, 2, 1499541111, 2, 0),
+(2, 'Khanasdhgf', '', 'asdf', 1, 0, 1499540752, 2, 0, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -4663,6 +4699,12 @@ ALTER TABLE `mob_user_address`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `mob_vendor`
+--
+ALTER TABLE `mob_vendor`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -4730,7 +4772,12 @@ ALTER TABLE `mob_users_group`
 -- AUTO_INCREMENT for table `mob_user_address`
 --
 ALTER TABLE `mob_user_address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `mob_vendor`
+--
+ALTER TABLE `mob_vendor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

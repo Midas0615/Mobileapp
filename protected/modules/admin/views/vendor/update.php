@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <!-- panel heading/header -->
                 <div class="panel-heading">
-                    <h3 class="panel-title">Update Order</h3>
+                    <h3 class="panel-title">Update Vendor</h3>
                 </div>
                 <!--/ panel heading/header -->
                 <!-- panel body -->

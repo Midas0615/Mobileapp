@@ -73,6 +73,7 @@ class Product extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
+            'vendorRel' => array(self::BELONGS_TO, "Vendor", "vendor"),
         );
     }
 
@@ -82,7 +83,7 @@ class Product extends CActiveRecord {
             'condition' => "is_deleted=0 ",
         );
     }
-    
+
     protected function beforeSave() {
         if ($this->isNewRecord):
             $this->created_dt = common::getTimeStamp();
@@ -135,6 +136,16 @@ class Product extends CActiveRecord {
         $criteria->compare('updated_dt', $this->updated_dt);
         $criteria->compare('updated_by', $this->updated_by);
         $criteria->compare('ip_address', $this->ip_address);
+        if ($this->id) {
+            $criteria->compare('id', $this->id);
+            $criteria->compare('title', $this->id, true);
+            $criteria->compare('description', $this->id, true);
+            $criteria->compare('long_description', $this->id, true);
+            $criteria->compare('photo', $this->id, true);
+          //  $criteria->compare('price', $this->id);
+          //  $criteria->compare('vendor', $this->id);
+            $criteria->compare('location', $this->id, true);
+        }
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -143,7 +154,7 @@ class Product extends CActiveRecord {
             )
         ));
     }
-    
+
     public function uploadImage($model) {
         $image = CUploadedFile::getInstance($model, 'photo');
         $directoryPath = Yii::app()->params->paths['productPath'] . $model->id . "/";
@@ -170,9 +181,13 @@ class Product extends CActiveRecord {
             return Yii::app()->params->ADMIN_BT_URL . "image/avatar/avatar.png";
         }
     }
+
     public function getAllProductList() {
-        return CHtml::ListData($this->findAll(), "id", "title");
+        $criteria = new CDbCriteria;
+        $criteria->compare('status', self::Active);
+        return CHtml::ListData($this->findAll($criteria), "id", "title");
     }
+
     public function countByField($field = false, $value = false, $user_id = null) {
         $criteria = new CDbCriteria();
         if (isset($field) && isset($value)):
