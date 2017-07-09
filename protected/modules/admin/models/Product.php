@@ -106,7 +106,7 @@ class Product extends CActiveRecord {
         return array(
             'id' => 'ID',
             'title' => 'Product Title',
-            'description' => 'Sort Description',
+            'description' => 'Short Description',
             'long_description' => 'Long Description',
             'photo' => 'Image',
             'price' => 'Price',

@@ -97,9 +97,9 @@ class Categories extends CActiveRecord {
             'parent_id' => 'Parent',
             'description' => 'Description',
             'deleted' => 'Deleted',
-            'created_dt' => 'Created Dt',
+            'created_dt' => 'Created Date',
             'created_by' => 'Created By',
-            'updated_dt' => 'Updated Dt',
+            'updated_dt' => 'Updated Date',
             'updated_by' => 'Updated By',
         );
     }
