@@ -79,10 +79,12 @@ class Review extends CActiveRecord {
     }
 
     public function defaultScope() {
-        return array(
-            'alias' => $this->getTableAlias(false, false),
-            'condition' => "t.is_deleted=0 ",
-        );
+        $alias = $this->getTableAlias(false, false);
+        if ($alias == '' || $alias == 't') {
+            return array('condition' => "t.deleted=  0 ",);
+        } else {
+            return array('condition' => $alias . ".deleted= 0 ",);
+        }
     }
 
     protected function beforeSave() {
@@ -118,7 +120,7 @@ class Review extends CActiveRecord {
         $criteria->compare('t.is_deleted', $this->is_deleted);
         if ($this->id) {
             $criteria->compare('t.created_dt', common::getTimeStamp($this->id, "d/m/Y"), false, 'OR');
-            $criteria->compare('t.comments', $this->id,true,'OR');
+            $criteria->compare('t.comments', $this->id, true, 'OR');
             //$criteria->compare('t.status', array_search($this->id, self::model()->statusArr), true, 'OR');
             $criteria->compare('product.title', $this->id, true, 'OR');
         }

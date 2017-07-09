@@ -75,14 +75,17 @@ class Product extends CActiveRecord {
         // class name for the relations automatically generated below.
         return array(
             'vendorRel' => array(self::BELONGS_TO, "Vendor", "vendor"),
+            'reviewRel' => array(self::HAS_MANY, 'Review', 'product_id'),
         );
     }
 
     public function defaultScope() {
-        return array(
-            'alias' => $this->getTableAlias(false, false),
-            'condition' => "t.is_deleted=0 ",
-        );
+        $alias = $this->getTableAlias(false, false);
+        if ($alias == '' || $alias == 't') {
+            return array('condition' => "t.deleted=  0 ",);
+        } else {
+            return array('condition' => $alias . ".deleted= 0 ",);
+        }
     }
 
     protected function beforeSave() {
@@ -138,17 +141,17 @@ class Product extends CActiveRecord {
         $criteria->compare('t.updated_by', $this->updated_by);
         $criteria->compare('t.ip_address', $this->ip_address);
         if ($this->id) {
-            $criteria->compare('t.id', $this->id,false,'OR');
-            $criteria->compare('t.title', $this->id, true,'OR');
-            $criteria->compare('t.description', $this->id, true,'OR');
-            $criteria->compare('t.long_description', $this->id, true,'OR');
-            $criteria->compare('t.photo', $this->id, true,'OR');
-            $criteria->compare('t.price', $this->id,false,'OR');
-            $criteria->compare('t.status', array_search ($this->id, self::model()->statusArr),true,'OR');
-            $criteria->compare('vendorRel.name', $this->id,true,'OR');
-            $criteria->compare('t.location', $this->id, true,'OR');
+            $criteria->compare('t.id', $this->id, false, 'OR');
+            $criteria->compare('t.title', $this->id, true, 'OR');
+            $criteria->compare('t.description', $this->id, true, 'OR');
+            $criteria->compare('t.long_description', $this->id, true, 'OR');
+            $criteria->compare('t.photo', $this->id, true, 'OR');
+            $criteria->compare('t.price', $this->id, false, 'OR');
+            $criteria->compare('t.status', array_search($this->id, self::model()->statusArr), true, 'OR');
+            $criteria->compare('vendorRel.name', $this->id, true, 'OR');
+            $criteria->compare('t.location', $this->id, true, 'OR');
         }
-        $criteria->with = array( 'vendorRel' );
+        $criteria->with = array('vendorRel', 'reviewRel');
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => array(

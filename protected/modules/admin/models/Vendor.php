@@ -116,8 +116,9 @@ class Vendor extends CActiveRecord {
         $criteria->compare('t.updated_by', $this->updated_by);
         $criteria->compare('t.ip_address', $this->ip_address);
         if ($this->id) {
-            $criteria->compare('t.name', $this->id,true,'OR');
-            $criteria->compare('t.description', $this->id,true,'OR');
+            $criteria->compare('t.name', $this->id, false, 'OR');
+            $criteria->compare('t.description', $this->id, false, 'OR');
+            $criteria->compare('t.status', array_search($this->id, self::model()->statusArr), true, 'OR');
         }
 
         return new CActiveDataProvider($this, array(

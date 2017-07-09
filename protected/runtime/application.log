@@ -8741,3 +8741,1423 @@ Stack trace:
 REQUEST_URI=/mobiapp/admin/Vendor/update/image/touch/apple-touch-icon.png
 HTTP_REFERER=http://localhost/mobiapp/admin/Vendor/update/2
 ---
+2017/07/09 06:58:46 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "index". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/?r=admin/login
+---
+2017/07/09 06:58:55 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('image/touch/app...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/?r=admin/login
+---
+2017/07/09 06:59:30 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "index". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/?r=admin/login
+---
+2017/07/09 06:59:46 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/image/tou...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/login
+---
+2017/07/09 06:59:50 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/image/tou...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/dashboard
+---
+2017/07/09 07:14:42 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Vendor/up...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Vendor/update/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Vendor/update/1
+---
+2017/07/09 07:17:19 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "image". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('image')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('image')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/i...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/Product/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/1
+---
+2017/07/09 07:19:09 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "image". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('image')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('image')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/product/i...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/product/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/product/1
+---
+2017/07/09 07:19:26 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/view". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/view')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product/1
+---
+2017/07/09 07:19:38 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/view". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/view')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product/1
+---
+2017/07/09 07:36:33 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:36:46 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 07:36:46 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 07:36:46 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 07:37:01 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "image". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('image')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('image')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/users/ima...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/users/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 07:38:36 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 07:38:36 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 07:38:36 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 07:38:44 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/2
+---
+2017/07/09 07:39:03 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:39:51 [error] [exception.CException] CException: Property "Product.name" is not defined. in C:\xampp\htdocs\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('name')
+#1 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(19): CActiveRecord->__get('name')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#7 [internal function]: ProductController->actionViewproduct('1')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:40:00 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:42:45 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:43:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (51)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:43:10 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(51): CActiveRecord->__get('vendorRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:43:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (51)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:43:53 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(51): CActiveRecord->__get('vendorRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:43:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (51)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:43:56 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(51): CActiveRecord->__get('vendorRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:44:36 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (51)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:44:36 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(51): CActiveRecord->__get('vendorRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:44:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (51)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:44:42 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(51): CActiveRecord->__get('vendorRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:45:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (51)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:45:19 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(51): CActiveRecord->__get('vendorRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:45:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (51)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:45:25 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(51): CActiveRecord->__get('vendorRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:45:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (51)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:45:26 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(51): CActiveRecord->__get('vendorRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:46:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (51)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:46:14 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `vendorRel`.`id` AS `t1_c0`, `vendorRel`.`name` AS `t1_c1`, `vendorRel`.`description` AS `t1_c2`, `vendorRel`.`location` AS `t1_c3`, `vendorRel`.`status` AS `t1_c4`, `vendorRel`.`is_deleted` AS `t1_c5`, `vendorRel`.`created_dt` AS `t1_c6`, `vendorRel`.`created_by` AS `t1_c7`, `vendorRel`.`updated_dt` AS `t1_c8`, `vendorRel`.`updated_by` AS `t1_c9`, `vendorRel`.`ip_address` AS `t1_c10` FROM `mob_vendor` `vendorRel`  WHERE (t.is_deleted=0 ) AND (`vendorRel`.`id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(51): CActiveRecord->__get('vendorRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:47:24 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:47:54 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:48:34 [error] [exception.CException] CException: Property "Product.statusarr" is not defined. in C:\xampp\htdocs\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('statusarr')
+#1 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(67): CActiveRecord->__get('statusarr')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#7 [internal function]: ProductController->actionViewproduct('1')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:49:00 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:50:41 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:51:33 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:53:12 [error] [exception.Error] Error: Undefined class constant 'HAS_MENY' in C:\xampp\htdocs\mobiapp\protected\modules\admin\models\Product.php:78
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(2289): Product->relations()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Product))
+#2 C:\xampp\htdocs\mobiapp\protected\modules\admin\models\Product.php(44): CActiveRecord::model('Product')
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): Product::model()
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('1', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('1')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:53:22 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
+2017/07/09 07:53:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (106)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:53:40 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('reviewRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(106): CActiveRecord->__get('reviewRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:54:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (106)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:54:10 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('reviewRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(106): CActiveRecord->__get('reviewRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:54:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (106)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:54:16 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('reviewRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(106): CActiveRecord->__get('reviewRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:54:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (106)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:54:57 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('reviewRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(106): CActiveRecord->__get('reviewRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 07:56:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (107)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 07:56:25 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.is_deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (t.is_deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('reviewRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(107): CActiveRecord->__get('reviewRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:00:15 [error] [exception.Error] Error: Undefined class constant 'MY_ADMIN' in C:\xampp\htdocs\mobiapp\protected\modules\admin\models\Review.php:87
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(231): Review->defaultScope()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(49): CActiveFinder->buildJoinTree(Object(CJoinElement), 'reviewRel')
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(268): CActiveFinder->__construct(Object(Product), 'reviewRel')
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('reviewRel')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(107): CActiveRecord->__get('reviewRel')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#9 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#10 [internal function]: ProductController->actionViewproduct('1')
+#11 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#20 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:00:34 [error] [exception.Error] Error: Undefined class constant 'MY_ADMIN' in C:\xampp\htdocs\mobiapp\protected\modules\admin\models\Review.php:87
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(231): Review->defaultScope()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(49): CActiveFinder->buildJoinTree(Object(CJoinElement), 'reviewRel')
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(268): CActiveFinder->__construct(Object(Product), 'reviewRel')
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('reviewRel')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(107): CActiveRecord->__get('reviewRel')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#9 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#10 [internal function]: ProductController->actionViewproduct('1')
+#11 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#20 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:00:39 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reviewRel.deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (reviewRel.deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php (107)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (41)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:00:39 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reviewRel.deleted' in 'where clause'. The SQL statement executed was: SELECT `reviewRel`.`id` AS `t1_c0`, `reviewRel`.`user_id` AS `t1_c1`, `reviewRel`.`product_id` AS `t1_c2`, `reviewRel`.`comments` AS `t1_c3`, `reviewRel`.`order_id` AS `t1_c4`, `reviewRel`.`created_by` AS `t1_c5`, `reviewRel`.`created_dt` AS `t1_c6`, `reviewRel`.`updated_by` AS `t1_c7`, `reviewRel`.`updated_dt` AS `t1_c8`, `reviewRel`.`is_deleted` AS `t1_c9` FROM `mob_review` `reviewRel`  WHERE (reviewRel.deleted=0 ) AND (`reviewRel`.`product_id`=:ypl0) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Product))
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Product))
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('reviewRel')
+#6 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\view.php(107): CActiveRecord->__get('reviewRel')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#11 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(41): CController->render('view', Array)
+#12 [internal function]: ProductController->actionViewproduct('1')
+#13 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#22 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:01:08 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1.
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (47)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (40)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:01:08 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1 in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): CActiveRecord->findByPk('1')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('1', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('1')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:02:53 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1.
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (47)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (40)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:02:53 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1 in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): CActiveRecord->findByPk('1')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('1', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('1')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:02:53 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1.
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (47)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (40)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:02:53 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1 in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): CActiveRecord->findByPk('1')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('1', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('1')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:06:27 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1.
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (47)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (40)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:06:27 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1 in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): CActiveRecord->findByPk('1')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('1', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('1')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:07:49 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1.
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (47)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (40)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:07:49 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1 in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): CActiveRecord->findByPk('1')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('1', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('1')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:10:08 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1.
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (47)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (40)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:10:08 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1 in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): CActiveRecord->findByPk('1')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('1', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('1')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:10:35 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_product` `t`  LEFT OUTER JOIN `mob_vendor` `vendorRel` ON (`t`.`vendor`=`vendorRel`.`id`) AND (t.is_deleted=0 )  LEFT OUTER JOIN `mob_review` `reviewRel` ON (`reviewRel`.`product_id`=`t`.`id`) AND (reviewRel.deleted= 0 )  WHERE (t.deleted=  0 ).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\index.php (99)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (11)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:10:35 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_product` `t`  LEFT OUTER JOIN `mob_vendor` `vendorRel` ON (`t`.`vendor`=`vendorRel`.`id`) AND (t.is_deleted=0 )  LEFT OUTER JOIN `mob_review` `reviewRel` ON (`reviewRel`.`product_id`=`t`.`id`) AND (reviewRel.deleted= 0 )  WHERE (t.deleted=  0 ) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(762): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(155): CJoinElement->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1540): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#7 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(269): CBaseListView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(148): CGridView->init()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\index.php(99): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(11): CController->render('index', Array)
+#18 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): ProductController->actionIndex()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/product')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#26 {main}
+REQUEST_URI=/mobiapp/admin/product
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/2
+---
+2017/07/09 08:10:44 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=2) LIMIT 1.
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (47)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (40)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:10:44 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=2) LIMIT 1 in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): CActiveRecord->findByPk('2')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('2', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('2')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/2
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:10:45 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_product` `t`  LEFT OUTER JOIN `mob_vendor` `vendorRel` ON (`t`.`vendor`=`vendorRel`.`id`) AND (t.is_deleted=0 )  LEFT OUTER JOIN `mob_review` `reviewRel` ON (`reviewRel`.`product_id`=`t`.`id`) AND (reviewRel.deleted= 0 )  WHERE (t.deleted=  0 ).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\index.php (99)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (11)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:10:45 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_product` `t`  LEFT OUTER JOIN `mob_vendor` `vendorRel` ON (`t`.`vendor`=`vendorRel`.`id`) AND (t.is_deleted=0 )  LEFT OUTER JOIN `mob_review` `reviewRel` ON (`reviewRel`.`product_id`=`t`.`id`) AND (reviewRel.deleted= 0 )  WHERE (t.deleted=  0 ) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(762): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(155): CJoinElement->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1540): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#7 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(269): CBaseListView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(148): CGridView->init()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\index.php(99): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(11): CController->render('index', Array)
+#18 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): ProductController->actionIndex()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/product')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#26 {main}
+REQUEST_URI=/mobiapp/admin/product
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:10:46 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:10:46 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:10:47 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:10:47 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1.
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (47)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (40)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:10:47 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1 in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): CActiveRecord->findByPk('1')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('1', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('1')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/Product//view?id=1
+---
+2017/07/09 08:10:48 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_product` `t`  LEFT OUTER JOIN `mob_vendor` `vendorRel` ON (`t`.`vendor`=`vendorRel`.`id`) AND (t.is_deleted=0 )  LEFT OUTER JOIN `mob_review` `reviewRel` ON (`reviewRel`.`product_id`=`t`.`id`) AND (reviewRel.deleted= 0 )  WHERE (t.deleted=  0 ).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\index.php (99)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (11)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:10:48 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_product` `t`  LEFT OUTER JOIN `mob_vendor` `vendorRel` ON (`t`.`vendor`=`vendorRel`.`id`) AND (t.is_deleted=0 )  LEFT OUTER JOIN `mob_review` `reviewRel` ON (`reviewRel`.`product_id`=`t`.`id`) AND (reviewRel.deleted= 0 )  WHERE (t.deleted=  0 ) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(762): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(155): CJoinElement->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1540): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#7 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(269): CBaseListView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(148): CGridView->init()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\index.php(99): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(11): CController->render('index', Array)
+#18 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): ProductController->actionIndex()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product//...')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#26 {main}
+REQUEST_URI=/mobiapp/admin/Product//view?id=1
+HTTP_REFERER=http://localhost/mobiapp/admin/product
+---
+2017/07/09 08:10:49 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1.
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php (47)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (40)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:10:49 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT * FROM `mob_product` `t` WHERE (t.deleted=  0 ) AND (`t`.`id`=1) LIMIT 1 in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(47): CActiveRecord->findByPk('1')
+#4 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(40): Controller->loadModel('1', 'Product')
+#5 [internal function]: ProductController->actionViewproduct('1')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('viewproduct')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/Product/v...')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#15 {main}
+REQUEST_URI=/mobiapp/admin/Product/viewproduct/1
+HTTP_REFERER=http://localhost/mobiapp/admin/Product//view?id=1
+---
+2017/07/09 08:10:50 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:10:50 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:10:50 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:10:52 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `mob_product` `t` WHERE t.deleted=  0 .
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\models\Product.php (201)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\dashboard\index.php (17)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\DashboardController.php (6)
+2017/07/09 08:10:52 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `mob_product` `t` WHERE t.deleted=  0  in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\mobiapp\protected\modules\admin\models\Product.php(201): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\dashboard\index.php(17): Product->countByField()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\DashboardController.php(6): CController->render('index')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): DashboardController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/dashboard')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/mobiapp/admin/dashboard
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:11:02 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_product` `t`  LEFT OUTER JOIN `mob_vendor` `vendorRel` ON (`t`.`vendor`=`vendorRel`.`id`) AND (t.is_deleted=0 )  LEFT OUTER JOIN `mob_review` `reviewRel` ON (`reviewRel`.`product_id`=`t`.`id`) AND (reviewRel.deleted= 0 )  WHERE (t.deleted=  0 ).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\index.php (99)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php (11)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:11:02 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.deleted' in 'where clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_product` `t`  LEFT OUTER JOIN `mob_vendor` `vendorRel` ON (`t`.`vendor`=`vendorRel`.`id`) AND (t.is_deleted=0 )  LEFT OUTER JOIN `mob_review` `reviewRel` ON (`reviewRel`.`product_id`=`t`.`id`) AND (reviewRel.deleted= 0 )  WHERE (t.deleted=  0 ) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(762): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(155): CJoinElement->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1540): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#7 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(269): CBaseListView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(148): CGridView->init()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\product\index.php(99): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\ProductController.php(11): CController->render('index', Array)
+#18 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): ProductController->actionIndex()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/product')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#26 {main}
+REQUEST_URI=/mobiapp/admin/product
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:11:09 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product.deleted' in 'on clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_order` `t`  LEFT OUTER JOIN `mob_users` `users` ON (`t`.`user_id`=`users`.`id`) AND (users.deleted=0  AND users.id != '1' )  LEFT OUTER JOIN `mob_product` `product` ON (`t`.`product_id`=`product`.`id`) AND (product.deleted= 0 )  WHERE (t.is_deleted=0 ).
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\views\order\index.php (102)
+in C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\OrderController.php (11)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/09 08:11:09 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'product.deleted' in 'on clause'. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `mob_order` `t`  LEFT OUTER JOIN `mob_users` `users` ON (`t`.`user_id`=`users`.`id`) AND (users.deleted=0  AND users.id != '1' )  LEFT OUTER JOIN `mob_product` `product` ON (`t`.`product_id`=`product`.`id`) AND (product.deleted= 0 )  WHERE (t.is_deleted=0 ) in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(762): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(155): CJoinElement->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1540): CActiveFinder->count(Object(CDbCriteria))
+#4 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#5 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#6 C:\xampp\htdocs\yii\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#7 C:\xampp\htdocs\yii\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(269): CBaseListView->init()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(148): CGridView->init()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#12 C:\xampp\htdocs\mobiapp\protected\modules\admin\views\order\index.php(102): CBaseController->widget('zii.widgets.gri...', Array)
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#17 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\OrderController.php(11): CController->render('index', Array)
+#18 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): OrderController->actionIndex()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/order')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#26 {main}
+REQUEST_URI=/mobiapp/admin/order
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:13:26 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:13:26 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/09 08:13:26 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---

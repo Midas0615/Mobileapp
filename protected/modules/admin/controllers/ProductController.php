@@ -1,7 +1,6 @@
 <?php
 
 class ProductController extends Controller {
-
     /* View lising page */
 
     public function actionIndex() {
@@ -29,13 +28,18 @@ class ProductController extends Controller {
                 $model->photo = $model->uploadImage($model);
                 $model->update();
                 Yii::app()->user->setFlash("success", common::translateText("ADD_SUCCESS"));
-                $this->redirect(array("/".Yii::app()->controller->module->id."/Product"));
+                $this->redirect(array("/" . Yii::app()->controller->module->id . "/Product"));
             }
         }
         $this->render('add', array('model' => $model));
     }
 
     /* update Product */
+
+    public function actionViewproduct($id) {
+        $model = $this->loadModel($id, "Product");
+        $this->render('view', array('model' => $model));
+    }
 
     public function actionUpdate($id) {
         $model = $this->loadModel($id, "Product");
@@ -49,7 +53,7 @@ class ProductController extends Controller {
                 $model->photo = !empty($model->photo) ? $model->photo : $old_image;
                 $model->update();
                 Yii::app()->user->setFlash("success", common::translateText("UPDATE_SUCCESS"));
-                $this->redirect(array("/".Yii::app()->controller->module->id."/Product"));
+                $this->redirect(array("/" . Yii::app()->controller->module->id . "/Product"));
             }
         }
         $this->render('update', array('model' => $model));

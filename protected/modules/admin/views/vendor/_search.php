@@ -1,6 +1,5 @@
 <div class="page-header page-header-block">
     <?php
-   
     Yii::app()->clientScript->registerScript('search', "
         $('#search_form').submit(function(){
             $.fn.yiiGridView.update('".$this->id."-grid', {

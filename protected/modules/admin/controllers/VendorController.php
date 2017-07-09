@@ -6,8 +6,8 @@ class VendorController extends Controller {
 
     public function actionIndex() {
         $model = new Vendor("search");
-        if (isset($_GET['vendor'])) {
-            $model->attributes = $_GET['vendor'];
+        if (isset($_GET['Vendor'])) {
+            $model->attributes = $_GET['Vendor'];
         }
         $this->render('index', array("model" => $model));
     }

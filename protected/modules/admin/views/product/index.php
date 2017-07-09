@@ -70,12 +70,20 @@
                                                     <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li>{viewRecord}</li>
                                                     <li>{updateRecord}</li>
                                                     <li>{deleteRecord}</li>
                                                 </ul>
                                             </div>
                                         </div>',
                                 "buttons" => array(
+                                    "viewRecord" => array(
+                                        "label" => '<i class="icon ico-eye"></i> View ',
+                                        "imageUrl" => false,
+                                        "url" => 'Yii::app()->createUrl("/".Yii::app()->controller->module->id."/Product/viewproduct", array("id"=>$data->id))',
+                                        "options" => array("class" => "addUpdateRecord mr5", "title" => "View Product"),
+                                        "visible" => ($updateRight) ? 'true' : 'false',
+                                    ),
                                     "updateRecord" => array(
                                         "label" => '<i class="icon ico-pencil"></i> ' . common::translateText("UPDATE_BTN_TEXT"),
                                         "imageUrl" => false,
