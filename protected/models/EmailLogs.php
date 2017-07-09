@@ -87,7 +87,7 @@ class EmailLogs extends CActiveRecord {
             'email_content' => 'Email Content',
             'email_attachments' => 'Email Attachments',
             'is_email_sent' => 'Is Email Sent',
-            'created_dt' => 'Created Dt',
+            'created_dt' => 'Created Date',
             'created_by' => 'Created By',
         );
     }

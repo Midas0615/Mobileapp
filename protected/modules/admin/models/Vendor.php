@@ -91,7 +91,7 @@ class Vendor extends CActiveRecord {
         return array(
             'id' => 'ID',
             'name' => 'Vendor Name',
-            'description' => 'Sort Description',
+            'description' => 'Short Description',
             'location' => 'Location',
         );
     }

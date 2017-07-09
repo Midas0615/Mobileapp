@@ -71,7 +71,7 @@ class Review extends CActiveRecord {
             'comments' => 'Comments',
             'order_id' => 'Order',
             'created_by' => 'Created By',
-            'created_dt' => 'Created Dt',
+            'created_dt' => 'Created Date',
             'updated_by' => 'Updated By',
             'updated_dt' => 'Updated Date',
             'is_deleted' => 'Is Deleted',

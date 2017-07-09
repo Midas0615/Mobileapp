@@ -70,9 +70,9 @@ class UserAddress extends CActiveRecord {
             'address' => 'Address',
             'is_default' => 'Is Default Address ?',
             'created_by' => 'Created By',
-            'created_dt' => 'Created Dt',
+            'created_dt' => 'Created Date',
             'updated_by' => 'Updated By',
-            'updated_dt' => 'Updated Dt',
+            'updated_dt' => 'Updated Date',
             'is_deleted' => 'Is Deleted',
         );
     }
