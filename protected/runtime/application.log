@@ -8741,3 +8741,152 @@ Stack trace:
 REQUEST_URI=/mobiapp/admin/Vendor/update/image/touch/apple-touch-icon.png
 HTTP_REFERER=http://localhost/mobiapp/admin/Vendor/update/2
 ---
+2017/07/09 11:11:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/html/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/yii/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/yii/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Users))
+#7 /var/www/html/mobiapp/protected/models/Users.php(59): CActiveRecord::model('Users')
+#8 /var/www/html/mobiapp/protected/modules/admin/components/Controller.php(29): Users::model()
+#9 /var/www/html/yii/framework/web/CWebApplication.php(275): Controller->init()
+#10 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/review')
+#11 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#13 {main}
+REQUEST_URI=/mobiapp/admin/review
+HTTP_REFERER=http://localhost/mobiapp/admin/rating
+---
+2017/07/09 11:14:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/html/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/html/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/html/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/html/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/html/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/html/yii/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/html/yii/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Users))
+#7 /var/www/html/mobiapp/protected/models/Users.php(59): CActiveRecord::model('Users')
+#8 /var/www/html/mobiapp/protected/modules/admin/components/Controller.php(29): Users::model()
+#9 /var/www/html/yii/framework/web/CWebApplication.php(275): Controller->init()
+#10 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/review')
+#11 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#13 {main}
+REQUEST_URI=/mobiapp/admin/review
+HTTP_REFERER=http://localhost/mobiapp/admin/rating
+---
+2017/07/09 11:15:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mobiapp.mob_vendor' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `mob_vendor`.
+in /var/www/html/mobiapp/protected/modules/admin/views/product/index.php (96)
+in /var/www/html/mobiapp/protected/modules/admin/controllers/ProductController.php (12)
+in /var/www/html/mobiapp/index.php (16)
+2017/07/09 11:15:12 [error] [exception.CDbException] exception 'CDbException' with message 'The table "mob_vendor" for active record class "Vendor" cannot be found in the database.' in /var/www/html/yii/framework/db/ar/CActiveRecord.php:2264
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Vendor))
+#1 /var/www/html/yii/framework/db/ar/CActiveFinder.php(219): CActiveRecord::model('Vendor')
+#2 /var/www/html/yii/framework/db/ar/CActiveFinder.php(310): CActiveFinder->buildJoinTree(Object(CJoinElement), 'vendorRel')
+#3 /var/www/html/yii/framework/db/ar/CActiveFinder.php(49): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1539): CActiveFinder->__construct(Object(Product), Array)
+#5 /var/www/html/yii/framework/web/CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#6 /var/www/html/yii/framework/web/CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#7 /var/www/html/yii/framework/web/CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#8 /var/www/html/yii/framework/web/CDataProvider.php(137): CActiveDataProvider->fetchData()
+#9 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(105): CDataProvider->getData()
+#10 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(269): CBaseListView->init()
+#11 /var/www/html/yii/framework/web/CBaseController.php(148): CGridView->init()
+#12 /var/www/html/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#13 /var/www/html/mobiapp/protected/modules/admin/views/product/index.php(96): CBaseController->widget('zii.widgets.gri...', Array)
+#14 /var/www/html/yii/framework/web/CBaseController.php(127): require('/var/www/html/m...')
+#15 /var/www/html/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/html/m...', Array, true)
+#16 /var/www/html/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/html/m...', Array, true)
+#17 /var/www/html/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#18 /var/www/html/mobiapp/protected/modules/admin/controllers/ProductController.php(12): CController->render('index', Array)
+#19 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): ProductController->actionIndex()
+#20 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#21 /var/www/html/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#22 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(276): CController->run('')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/product')
+#25 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/mobiapp/admin/product
+HTTP_REFERER=http://localhost/mobiapp/admin/order
+---
+2017/07/09 11:18:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mobiapp.mob_vendor' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `mob_vendor`.
+in /var/www/html/mobiapp/protected/modules/admin/views/product/index.php (96)
+in /var/www/html/mobiapp/protected/modules/admin/controllers/ProductController.php (12)
+in /var/www/html/mobiapp/index.php (16)
+2017/07/09 11:18:04 [error] [exception.CDbException] exception 'CDbException' with message 'The table "{{vendor}}" for active record class "Vendor" cannot be found in the database.' in /var/www/html/yii/framework/db/ar/CActiveRecord.php:2264
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Vendor))
+#1 /var/www/html/yii/framework/db/ar/CActiveFinder.php(219): CActiveRecord::model('Vendor')
+#2 /var/www/html/yii/framework/db/ar/CActiveFinder.php(310): CActiveFinder->buildJoinTree(Object(CJoinElement), 'vendorRel')
+#3 /var/www/html/yii/framework/db/ar/CActiveFinder.php(49): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1539): CActiveFinder->__construct(Object(Product), Array)
+#5 /var/www/html/yii/framework/web/CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#6 /var/www/html/yii/framework/web/CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#7 /var/www/html/yii/framework/web/CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#8 /var/www/html/yii/framework/web/CDataProvider.php(137): CActiveDataProvider->fetchData()
+#9 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(105): CDataProvider->getData()
+#10 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(269): CBaseListView->init()
+#11 /var/www/html/yii/framework/web/CBaseController.php(148): CGridView->init()
+#12 /var/www/html/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#13 /var/www/html/mobiapp/protected/modules/admin/views/product/index.php(96): CBaseController->widget('zii.widgets.gri...', Array)
+#14 /var/www/html/yii/framework/web/CBaseController.php(127): require('/var/www/html/m...')
+#15 /var/www/html/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/html/m...', Array, true)
+#16 /var/www/html/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/html/m...', Array, true)
+#17 /var/www/html/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#18 /var/www/html/mobiapp/protected/modules/admin/controllers/ProductController.php(12): CController->render('index', Array)
+#19 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): ProductController->actionIndex()
+#20 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#21 /var/www/html/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#22 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(276): CController->run('')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/product')
+#25 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/mobiapp/admin/product
+HTTP_REFERER=http://localhost/mobiapp/admin/order
+---
+2017/07/09 11:19:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mobiapp.mob_vendor' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `mob_vendor`.
+in /var/www/html/mobiapp/protected/modules/admin/views/product/index.php (96)
+in /var/www/html/mobiapp/protected/modules/admin/controllers/ProductController.php (12)
+in /var/www/html/mobiapp/index.php (16)
+2017/07/09 11:19:31 [error] [exception.CDbException] exception 'CDbException' with message 'The table "{{vendor}}" for active record class "Vendor" cannot be found in the database.' in /var/www/html/yii/framework/db/ar/CActiveRecord.php:2264
+Stack trace:
+#0 /var/www/html/yii/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Vendor))
+#1 /var/www/html/yii/framework/db/ar/CActiveFinder.php(219): CActiveRecord::model('Vendor')
+#2 /var/www/html/yii/framework/db/ar/CActiveFinder.php(310): CActiveFinder->buildJoinTree(Object(CJoinElement), 'vendorRel')
+#3 /var/www/html/yii/framework/db/ar/CActiveFinder.php(49): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#4 /var/www/html/yii/framework/db/ar/CActiveRecord.php(1539): CActiveFinder->__construct(Object(Product), Array)
+#5 /var/www/html/yii/framework/web/CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#6 /var/www/html/yii/framework/web/CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#7 /var/www/html/yii/framework/web/CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#8 /var/www/html/yii/framework/web/CDataProvider.php(137): CActiveDataProvider->fetchData()
+#9 /var/www/html/yii/framework/zii/widgets/CBaseListView.php(105): CDataProvider->getData()
+#10 /var/www/html/yii/framework/zii/widgets/grid/CGridView.php(269): CBaseListView->init()
+#11 /var/www/html/yii/framework/web/CBaseController.php(148): CGridView->init()
+#12 /var/www/html/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('zii.widgets.gri...', Array)
+#13 /var/www/html/mobiapp/protected/modules/admin/views/product/index.php(96): CBaseController->widget('zii.widgets.gri...', Array)
+#14 /var/www/html/yii/framework/web/CBaseController.php(127): require('/var/www/html/m...')
+#15 /var/www/html/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/html/m...', Array, true)
+#16 /var/www/html/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/html/m...', Array, true)
+#17 /var/www/html/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#18 /var/www/html/mobiapp/protected/modules/admin/controllers/ProductController.php(12): CController->render('index', Array)
+#19 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): ProductController->actionIndex()
+#20 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#21 /var/www/html/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#22 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/www/html/yii/framework/web/CWebApplication.php(276): CController->run('')
+#24 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/product')
+#25 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#27 {main}
+REQUEST_URI=/mobiapp/admin/product
+HTTP_REFERER=http://localhost/mobiapp/admin/order
+---

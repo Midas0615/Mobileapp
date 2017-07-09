@@ -29,7 +29,7 @@ class UserAddress extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'mob_user_address';
+        return '{{user_address}}';
     }
 
     /**

@@ -31,7 +31,7 @@ class EmailTemplates extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'mob_email_templates';
+        return '{{email_templates}}';
     }
 
     /**
