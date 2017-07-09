@@ -28,7 +28,7 @@ class EmailLogs extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'mob_email_logs';
+        return '{{email_logs}}';
     }
 
     /**

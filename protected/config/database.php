@@ -6,6 +6,7 @@ return array(
     'password' => $DB_PASSWORD,
     'charset' => 'utf8',
     'enableProfiling' => true,
+    'tablePrefix' => "mob_",
     'initSQLs' => array(
         "SET time_zone = '+5:30'"
     ),

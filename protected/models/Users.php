@@ -74,7 +74,7 @@ class Users extends CActiveRecord {
      * @return string the associated database table name
      */
     public function tableName() {
-        return 'mob_users';
+        return '{{users}}';
     }
 
     protected function beforeSave() {
