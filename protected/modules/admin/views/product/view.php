@@ -91,6 +91,18 @@
                             <?= common::getDateTimeFromTimeStamp($model->updated_dt, 'd/m/Y') ?>
                         </div>
                     </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            Product Image :
+                        </div>
+                        <div class="col-md-6">
+                            <div class="btn-group pr5">
+                                <?php $model->photo = !empty($model->photo) ? $model->photo : common::translateText("NOT_AVAILABLE_TEXT"); ?>
+                                <img alt="No Image" src="<?php echo $model->getImage($model->photo, $model->id); ?>" class="img-circle img-bordered"  width="<?php echo Users::THUMB_WIDTH; ?>" height="<?php echo Users::THUMB_HEIGHT; ?>" />
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>
@@ -100,10 +112,20 @@
             <div class="panel panel-default">
                 <!-- panel heading/header -->
                 <div class="panel-heading">
+                    <h3 class="panel-title">Product Rating</h3>
+                </div>
+                <div class="panel-body">
+                    <?php $this->widget('CStarRating', array('name' => 'star', 'starCount' => 5, 'minRating' => 1, 'maxRating' => 5, 'value' => Rating::model()->getAverageRating($model->id))); ?>
+                </div>
+                <!-- panel body -->
+            </div>
+            <div class="panel panel-default">
+                <!-- panel heading/header -->
+                <div class="panel-heading">
                     <h3 class="panel-title">Product Reviews</h3>
                 </div>
                 <div class="panel-body">
-                   
+
                     <?php foreach ($model->reviewRel as $val) { ?>
                         <div class="row">
                             <div class="col-md-12">
@@ -112,9 +134,9 @@
                                         <h3 class="panel-title">Review</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <strong>Address : </strong><?= $val->comments ?> <br>
-                                        <!--<a href="<?= Yii::app()->params["WEB_URL"] ?>admin/users/updateaddress/<?= $val->id ?>"><button  class="btn btn-primary" style="margin-top:30px;">Update </button></a>-->
-                                        <!--<a href="<?= Yii::app()->params["WEB_URL"] ?>admin/users/deleteaddress/<?= $val->id ?>"><button  class="btn btn-danger" style="margin-top:30px;">Delete </button></a>-->
+                                        <?= $val->comments ?> <br>
+                                        <a href="<?= Yii::app()->params["WEB_URL"] ?>admin/Review/update/<?= $val->id ?>"><button  class="btn btn-primary" style="margin-top:30px;">Update </button></a>
+                                        <!--<a href="<?= Yii::app()->params["WEB_URL"] ?>admin/Review/delete/<?= $val->id ?>"><button  class="btn btn-danger" style="margin-top:30px;">Delete </button></a>-->
                                     </div>
                                 </div>
                             </div>              
@@ -129,7 +151,4 @@
     <!--/ END row -->
 </div>
 <!--/ END Template Container -->
-<div class="btn-group pr5">
-    <?php $model->photo = !empty($model->photo) ? $model->photo : common::translateText("NOT_AVAILABLE_TEXT"); ?>
-    <img alt="No Image" src="<?php echo $model->getImage($model->photo, $model->id); ?>" class="img-circle img-bordered"  width="<?php echo Users::THUMB_WIDTH; ?>" height="<?php echo Users::THUMB_HEIGHT; ?>" />
-</div>
+

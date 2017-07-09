@@ -81,9 +81,9 @@ class Review extends CActiveRecord {
     public function defaultScope() {
         $alias = $this->getTableAlias(false, false);
         if ($alias == '' || $alias == 't') {
-            return array('condition' => "t.deleted=  0 ",);
+            return array('condition' => "t.is_deleted=  0 ",);
         } else {
-            return array('condition' => $alias . ".deleted= 0 ",);
+            return array('condition' => $alias . ".is_deleted= 0 ",);
         }
     }
 

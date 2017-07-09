@@ -17,6 +17,8 @@
  */
 class Rating extends CActiveRecord {
 
+    public $starcount;
+
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -79,10 +81,12 @@ class Rating extends CActiveRecord {
     }
 
     public function defaultScope() {
-        return array(
-            'alias' => $this->getTableAlias(false, false),
-            'condition' => "t.is_deleted=0 ",
-        );
+        $alias = $this->getTableAlias(false, false);
+        if ($alias == '' || $alias == 't') {
+            return array('condition' => "t.is_deleted=  0 ",);
+        } else {
+            return array('condition' => $alias . ".is_deleted= 0 ",);
+        }
     }
 
     protected function beforeSave() {
@@ -118,13 +122,23 @@ class Rating extends CActiveRecord {
         $criteria->compare('t.is_deleted', $this->is_deleted);
         if ($this->id) {
             $criteria->compare('t.created_dt', common::getTimeStamp($this->id, "d/m/Y"), false, 'OR');
-            $criteria->compare('t.star', $this->id,false,'OR');
+            $criteria->compare('t.star', $this->id, false, 'OR');
             $criteria->compare('product.title', $this->id, true, 'OR');
         }
         $criteria->with = array('product');
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));
+    }
+    public function getAverageRating($product_id) {
+        $criteria = new CDbCriteria;
+        $criteria->select = 'sum(t.star) AS star';
+        $criteria->compare('t.product_id', $product_id);
+        $totlestar = Rating::model()->find($criteria);
+        $criteria1 = new CDbCriteria;
+        $criteria1->compare('t.product_id', $product_id);
+        $model = self::model()->findAll($criteria1);
+        return $totlestar->star / count($model);
     }
 
 }

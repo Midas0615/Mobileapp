@@ -74,10 +74,12 @@ class Order extends CActiveRecord {
     }
 
     public function defaultScope() {
-        return array(
-            'alias' => $this->getTableAlias(false, false),
-            'condition' => "t.is_deleted=0 ",
-        );
+        $alias = $this->getTableAlias(false, false);
+        if ($alias == '' || $alias == 't') {
+            return array('condition' => "t.is_deleted=  0 ",);
+        } else {
+            return array('condition' => $alias . ".is_deleted= 0 ",);
+        }
     }
 
     protected function beforeSave() {
