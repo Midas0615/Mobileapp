@@ -1,0 +1,19 @@
+2017/07/09 08:24:12 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\yii\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Users))
+#7 C:\xampp\htdocs\mobiapp\protected\models\Users.php(59): CActiveRecord::model('Users')
+#8 C:\xampp\htdocs\mobiapp\protected\modules\admin\components\Controller.php(29): Users::model()
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(275): Controller->init()
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/users/add...')
+#11 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#13 {main}
+REQUEST_URI=/mobiapp/admin/users/address
+HTTP_REFERER=http://localhost/mobiapp/admin/Product/viewproduct/1
+---
