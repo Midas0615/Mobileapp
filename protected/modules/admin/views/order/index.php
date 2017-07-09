@@ -46,7 +46,8 @@
                             ),
                             array(
                                 'name' => 'product_id',
-                                'value' => '!empty($data->product_id)?$data->product->title:"--"',
+                                'value' => 'CHtml::link($data->product->title, Yii::app()->createUrl("admin/Product/viewproduct/",array("id"=>$data->product_id)))',
+                                'type' => 'raw',
                                 "htmlOptions" => array("width" => "10%")
                             ),
                             array(
@@ -57,7 +58,7 @@
                             array(
                                 'name' => 'address',
                                 'value' => '!empty($data->address)?$data->address:"--"',
-                                "htmlOptions" => array("width" => "10%")
+                                "htmlOptions" => array("width" => "20%")
                             ),
                             array(
                                 'name' => 'order_amount',

@@ -51,6 +51,8 @@
                 <ul class="dropdown-menu" role="menu">
                     <li><?php echo CHtml::Link('<span class="icon"><i class="ico-user"></i></span> Profile', array("users/profile")); ?></li>
                     <li><?php echo CHtml::Link('<span class="icon"><i class="ico-copy"></i></span> Addresses', array("users/address")); ?></li>
+                    <li><?php echo CHtml::Link('<span class="icon"><i class="ico-book"></i></span> Order History', array("order/history")); ?></li>
+                    <li><?php echo CHtml::Link('<span class="icon"><i class="ico-heart"></i></span> Favorite Products', array("product/favoriteproduct")); ?></li>
                     <li><?php echo CHtml::Link('<span class="icon"><i class="ico-exit"></i></span> Sign Out', array("login/logout")); ?></li>
                 </ul>
             </li>

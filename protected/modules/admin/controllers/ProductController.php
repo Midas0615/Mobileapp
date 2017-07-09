@@ -11,6 +11,47 @@ class ProductController extends Controller {
         $this->render('index', array("model" => $model));
     }
 
+    public function actionMarkasfavorite($id) {
+        $model = new Product();
+        $FavoriteProduct = new FavoriteProduct();
+        $FavoriteProduct->user_id = Yii::app()->user->id;
+        ;
+        $FavoriteProduct->product_id = $id;
+        ;
+        if ($FavoriteProduct->save()) {
+            Yii::app()->user->setFlash("success", common::translateText("UPDATE_SUCCESS"));
+            $this->redirect('../index');
+        } else {
+            echo common::getMessage("danger", common::translateText("DELETE_FAIL"));
+        }
+        Yii::app()->end();
+    }
+
+    public function actionMarkasunfavorite($id) {
+        $model = new Product();
+        $criteria = new CDbCriteria;
+        $criteria->compare('t.user_id', Yii::app()->user->id);
+        $criteria->compare('t.product_id', $id);
+        $model1= FavoriteProduct::model()->find($criteria);
+        if ($model1 && $model1->delete()) {
+            Yii::app()->user->setFlash("success", common::translateText("UPDATE_SUCCESS"));
+            $this->redirect('../index');
+        } else {
+            Yii::app()->user->setFlash("danger", common::translateText("DELETE_FAIL"));
+            $this->redirect('../index');
+        }
+        Yii::app()->end();
+    }
+
+    public function actionFavoriteproduct() {
+        $model = new Product("search");
+        $model->id = FavoriteProduct::model()->getProductlistonuser();
+        if (isset($_GET['Product'])) {
+            $model->attributes = $_GET['Product'];
+        }
+        $this->render('index', array("model" => $model));
+    }
+
     /* add Product */
 
     public function actionAdd() {

@@ -10,6 +10,15 @@ class OrderController extends Controller {
         }
         $this->render('index', array("model" => $model));
     }
+    
+    public function actionHistory() {
+        $model = new Order("search");
+        $model->user_id  = Yii::app()->user->id;
+        if (isset($_GET['Order'])) {
+            $model->attributes = $_GET['Order'];
+        }
+        $this->render('index', array("model" => $model));
+    }
 
     /* add Order */
 

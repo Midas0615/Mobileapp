@@ -76,6 +76,7 @@ class Product extends CActiveRecord {
         return array(
             'vendorRel' => array(self::BELONGS_TO, "Vendor", "vendor"),
             'reviewRel' => array(self::HAS_MANY, 'Review', 'product_id'),
+            'favoriteRel' => array(self::HAS_ONE, 'FavoriteProduct', 'product_id'),
         );
     }
 
@@ -141,7 +142,7 @@ class Product extends CActiveRecord {
         $criteria->compare('t.updated_by', $this->updated_by);
         $criteria->compare('t.ip_address', $this->ip_address);
         if ($this->id) {
-            $criteria->compare('t.id', $this->id, false, 'OR');
+            $criteria->condition= 't.id IN ('. $this->id.')';
             $criteria->compare('t.title', $this->id, true, 'OR');
             $criteria->compare('t.description', $this->id, true, 'OR');
             $criteria->compare('t.long_description', $this->id, true, 'OR');

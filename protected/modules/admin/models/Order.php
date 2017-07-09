@@ -100,8 +100,9 @@ class Order extends CActiveRecord {
         return array(
             'id' => 'ID',
             'product_id' => 'Product',
+            'user_id' => 'User ',
             'qty' => 'Quantity',
-            'address' => 'Address',
+            'address' => 'Order Delivery Address',
             'order_amount' => 'Order Amount',
             'summary' => 'Order Summery',
             'order_date' => 'Order Date',

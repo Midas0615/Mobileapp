@@ -127,10 +127,10 @@ class Users extends CActiveRecord {
             array('password, salt', 'length', 'max' => 255),
             array('email_address, city', 'length', 'max' => 100),
             array('phone_number', 'length', 'max' => 20),
-            array('profile_pic', 'length', 'max' => 128),
+            array('profile_pic,favorite_products', 'length', 'max' => 128),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, username, password, repeat_password,salt, email_address, first_name, middle_name, last_name, phone_number, gender, birth_date, address, country_id, state_id, city, zipcode, profile_pic, user_group, status, deleted, created_dt, created_by, updated_dt, updated_by', 'safe', 'on' => 'search'),
+            array('id, username,favorite_products, password, repeat_password,salt, email_address, first_name, middle_name, last_name, phone_number, gender, birth_date, address, country_id, state_id, city, zipcode, profile_pic, user_group, status, deleted, created_dt, created_by, updated_dt, updated_by', 'safe', 'on' => 'search'),
         );
     }
 
@@ -205,6 +205,7 @@ class Users extends CActiveRecord {
             $criteria->compare("t.phone_number", $search, true, "OR");
             $criteria->compare("t.email_address", $search, true, "OR");
             $criteria->compare("t.address", $search, true, "OR");
+            $criteria->compare("t.favorite_products",$search, true, "OR");
             $criteria->compare("countryRel.country", $search, true, "OR");
             $criteria->compare("stateRel.name", $search, true, "OR");
         }
