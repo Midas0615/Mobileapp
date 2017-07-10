@@ -126,7 +126,7 @@ class Product extends CActiveRecord {
 
         $criteria = new CDbCriteria;
 
-        $criteria->compare('t.id', $this->id);
+        //$criteria->compare('t.id', $this->id);
         $criteria->compare('t.title', $this->title, true);
         $criteria->compare('t.description', $this->description, true);
         $criteria->compare('t.long_description', $this->long_description, true);

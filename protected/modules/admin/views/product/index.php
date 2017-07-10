@@ -87,18 +87,18 @@
                                         "visible" => ($updateRight) ? 'true' : 'false',
                                     ),
                                     "favoriteRecord" => array(
-                                        "label" => '<i class="icon ico-heart"></i> Like ',
+                                        "label" => '<i class="icon ico-heart"></i> Like',
                                         "imageUrl" => false,
                                         "url" => 'Yii::app()->createUrl("/".Yii::app()->controller->module->id."/Product/markasfavorite", array("id"=>$data->id))',
                                         "options" => array("class" => "addUpdateRecord mr5", "title" => "View Product"),
-                                        "visible" => (!$data->favoriteRel) ? 'true' : 'false',
+                                        'visible' => '($data->favoriteRel=="")?true:false',
                                     ),
                                     "unfavoriteRecord" => array(
                                         "label" => '<i class="icon ico-heart"></i> UnLike ',
                                         "imageUrl" => false,
                                         "url" => 'Yii::app()->createUrl("/".Yii::app()->controller->module->id."/Product/markasunfavorite", array("id"=>$data->id))',
                                         "options" => array("class" => "addUpdateRecord mr5", "title" => "View Product"),
-                                        "visible" => (!$data->favoriteRel) ? 'true' : 'false',
+                                        'visible' => '($data->favoriteRel)? true : false ',
                                     ),
                                     "updateRecord" => array(
                                         "label" => '<i class="icon ico-pencil"></i> ' . common::translateText("UPDATE_BTN_TEXT"),

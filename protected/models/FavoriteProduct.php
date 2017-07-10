@@ -126,10 +126,10 @@ class FavoriteProduct extends CActiveRecord {
         // should not be searched.
 
         $criteria = new CDbCriteria;
-        $criteria->select = 'GROUP_CONCAT(t.id) as id';
+        $criteria->select = 'GROUP_CONCAT(t.product_id) as product_id';
         $criteria->compare('t.user_id', Yii::app()->user->id);
-        $model = self::model()->findAll($criteria);
-        return $model->id;
+        $model = self::model()->find($criteria);
+        return $model->product_id;
     }
 
 }

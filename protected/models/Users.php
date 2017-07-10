@@ -153,6 +153,7 @@ class Users extends CActiveRecord {
             "usersGroupRel" => array(self::BELONGS_TO, "UsersGroup", "user_group"),
             'countryRel' => array(self::BELONGS_TO, "Countries", "country_id"),
             'stateRel' => array(self::BELONGS_TO, "States", "state_id"),
+            'favoriteproductRel' => array(self::HAS_MANY, "FavoriteProduct", "user_id"),
         );
     }
 
