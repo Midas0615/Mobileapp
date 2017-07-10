@@ -2,7 +2,7 @@
 $PRODUCT_NAME = "Mobi App";
 $development = file_exists(dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "development");
 $HOST_NAME = "localhost";
-if ($development):
+if (true):
     error_reporting(E_ERROR);
     $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/mobiapp/';
     $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/mobiapp/';

@@ -1,6 +1,7 @@
 <?php
 
-class ProductController extends Controller {
+class ReviewController extends Controller {
+    /* View lising page */
 
     public function actionIndex() {
         $this->render('index');

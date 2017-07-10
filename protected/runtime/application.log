@@ -1,0 +1,385 @@
+2017/07/09 22:01:31 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "rest/product". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('rest/product')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/rest/product
+---
+2017/07/09 22:01:31 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "rest/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('rest/image/touc...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/rest/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/rest/product
+---
+2017/07/09 22:01:35 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "rest/review". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('rest/review')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/rest/review
+---
+2017/07/10 18:29:14 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\yii\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Users))
+#7 C:\xampp\htdocs\mobiapp\protected\models\Users.php(59): CActiveRecord::model('Users')
+#8 C:\xampp\htdocs\mobiapp\protected\modules\admin\controllers\LoginController.php(11): Users::model()
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): LoginController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/login')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/mobiapp/admin/login
+---
+2017/07/10 18:30:46 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/image/tou...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/login
+---
+2017/07/10 18:30:50 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/image/tou...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/dashboard
+---
+2017/07/10 18:40:58 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "review/REST.GET". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('review/REST.GET')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/api/review
+---
+2017/07/10 18:40:59 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "api/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('api/image/touch...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/api/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/api/review
+---
+2017/07/10 18:41:05 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "REST.GET". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('REST.GET')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.GET')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('product/REST.GE...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/api/product
+---
+2017/07/10 18:47:33 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "REST.GET". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('REST.GET')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.GET')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('product/REST.GE...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/api/product
+---
+2017/07/10 18:47:44 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "api". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('api')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('api')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/product/a...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/product/api
+---
+2017/07/10 18:47:44 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "image". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('image')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('image')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/product/i...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/product/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/product/api
+---
+2017/07/10 18:47:53 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/api/product". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/api/produ...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/api/product
+---
+2017/07/10 18:47:53 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/api/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/api/image...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/api/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/api/product
+---
+2017/07/10 18:47:57 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/api". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/api')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/api/
+---
+2017/07/10 18:48:28 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "REST.GET". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('REST.GET')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.GET')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('product/REST.GE...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/api/product
+---
+2017/07/10 18:49:01 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "REST.GET". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('REST.GET')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.GET')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('product/REST.GE...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/api/product
+---
+2017/07/10 18:49:39 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "REST.GET". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('REST.GET')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.GET')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('posts/REST.GET')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/api/posts
+---
+2017/07/10 18:50:02 [error] [exception.Error] Error: Class 'Product' not found in C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php:614
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}()
+#1 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('model.instance', Array)
+#2 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\components\ERestResourceHelper.php(72): ERestBehavior->emitRest('model.instance')
+#3 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(79): ERestResourceHelper->prepareRestModel(NULL)
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestGET.php(34): ERestBaseAction->getModel(NULL)
+#5 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestGET->{closure}(Array, Array)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestGET.php(58): ERestBaseAction->finalRender(Object(Closure))
+#7 [internal function]: EActionRestGET->run(NULL, NULL, NULL)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestGET), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestGET), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestGET))
+#12 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestGET), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.GET')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('product/REST.GE...')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#25 {main}
+REQUEST_URI=/mobiapp/api/product
+---
+2017/07/10 18:51:03 [error] [exception.Error] Error: Class 'Vendor' not found in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:378
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(219): CActiveRecord::model('Vendor')
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(49): CActiveFinder->buildJoinTree(Object(CJoinElement), 'vendorRel')
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(268): CActiveFinder->__construct(Object(Product), 'vendorRel')
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('vendorRel')
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\widgets\ERestJSONOutputWidget.php(160): CActiveRecord->__get('vendorRel')
+#5 [internal function]: ERestJSONOutputWidget->{closure}(Object(Product), 0)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\widgets\ERestJSONOutputWidget.php(164): array_walk(Array, Object(Closure))
+#7 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\widgets\ERestJSONOutputWidget.php(115): ERestJSONOutputWidget->modelsToArray(Array, Array)
+#8 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\widgets\ERestJSONOutputWidget.php(67): ERestJSONOutputWidget->outputRest()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(174): ERestJSONOutputWidget->run()
+#10 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\views\api\JSONResult.php(3): CBaseController->widget('RestfullYii.wid...', Array)
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(212): CController->renderPartial('RestfullYii.vie...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->renderJSON(Array)
+#16 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php(379): CComponent->__call('renderJSON', Array)
+#17 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}(Array, 'Product', Array, '2', Array, Array)
+#18 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('req.get.resourc...', Array)
+#19 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->emitRest('req.get.resourc...', Array)
+#20 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestGET.php(34): CComponent->__call('emitRest', Array)
+#21 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestGET->{closure}(Array, Array)
+#22 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestGET.php(58): ERestBaseAction->finalRender(Object(Closure))
+#23 [internal function]: EActionRestGET->run(NULL, NULL, NULL)
+#24 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestGET), Array)
+#25 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestGET), Object(ReflectionMethod), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#27 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestGET))
+#28 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#29 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#30 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#31 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#32 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#33 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#34 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#35 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#36 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestGET), Array)
+#37 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.GET')
+#38 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('product/REST.GE...')
+#39 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#40 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#41 {main}
+REQUEST_URI=/mobiapp/api/product
+---
+2017/07/10 18:51:50 [error] [exception.Error] Error: Class 'Review' not found in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:378
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(219): CActiveRecord::model('Review')
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(49): CActiveFinder->buildJoinTree(Object(CJoinElement), 'reviewRel')
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(268): CActiveFinder->__construct(Object(Product), 'reviewRel')
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('reviewRel')
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\widgets\ERestJSONOutputWidget.php(160): CActiveRecord->__get('reviewRel')
+#5 [internal function]: ERestJSONOutputWidget->{closure}(Object(Product), 0)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\widgets\ERestJSONOutputWidget.php(164): array_walk(Array, Object(Closure))
+#7 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\widgets\ERestJSONOutputWidget.php(115): ERestJSONOutputWidget->modelsToArray(Array, Array)
+#8 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\widgets\ERestJSONOutputWidget.php(67): ERestJSONOutputWidget->outputRest()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(174): ERestJSONOutputWidget->run()
+#10 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\views\api\JSONResult.php(3): CBaseController->widget('RestfullYii.wid...', Array)
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(212): CController->renderPartial('RestfullYii.vie...', Array, true)
+#15 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->renderJSON(Array)
+#16 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php(379): CComponent->__call('renderJSON', Array)
+#17 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}(Array, 'Product', Array, '2', Array, Array)
+#18 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('req.get.resourc...', Array)
+#19 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->emitRest('req.get.resourc...', Array)
+#20 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestGET.php(34): CComponent->__call('emitRest', Array)
+#21 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestGET->{closure}(Array, Array)
+#22 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestGET.php(58): ERestBaseAction->finalRender(Object(Closure))
+#23 [internal function]: EActionRestGET->run(NULL, NULL, NULL)
+#24 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestGET), Array)
+#25 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestGET), Object(ReflectionMethod), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#27 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestGET))
+#28 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#29 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#30 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#31 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#32 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#33 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#34 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#35 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#36 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestGET), Array)
+#37 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.GET')
+#38 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('product/REST.GE...')
+#39 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#40 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#41 {main}
+REQUEST_URI=/mobiapp/api/product
+---
+2017/07/10 18:53:13 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/product')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#11 {main}
+REQUEST_URI=/mobiapp/admin/product
+---
+2017/07/10 18:53:19 [error] [exception.CHttpException.403] CHttpException: You are not authorized to perform this action. in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(WebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/product')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#11 {main}
+REQUEST_URI=/mobiapp/admin/product
+HTTP_REFERER=http://localhost/mobiapp/admin/dashboard
+---
+2017/07/10 18:59:55 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/10 18:59:55 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/10 18:59:56 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "image". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('image')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('image')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/users/ima...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/users/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/10 18:59:59 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "image". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('image')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('image')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/vendor/im...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/vendor/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/vendor/add
+---
+2017/07/10 19:00:04 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "image". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('image')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('image')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/order/ima...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/order/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/order/history
+---

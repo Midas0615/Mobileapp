@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This is the model class for table "mob_rating".
  *
@@ -16,9 +15,7 @@
  * @property integer $is_deleted
  */
 class Rating extends CActiveRecord {
-
     public $starcount;
-
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -27,14 +24,12 @@ class Rating extends CActiveRecord {
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
-
     /**
      * @return string the associated database table name
      */
     public function tableName() {
         return '{{rating}}';
     }
-
     /**
      * @return array validation rules for model attributes.
      */
@@ -49,7 +44,6 @@ class Rating extends CActiveRecord {
             array('id, name, star, product_id, order_id, created_by, created_dt, updated_by, updated_dt, is_deleted', 'safe', 'on' => 'search'),
         );
     }
-
     /**
      * @return array relational rules.
      */
@@ -61,7 +55,6 @@ class Rating extends CActiveRecord {
             'product' => array(self::BELONGS_TO, "Product", "product_id"),
         );
     }
-
     /**
      * @return array customized attribute labels (name=>label)
      */
@@ -79,7 +72,6 @@ class Rating extends CActiveRecord {
             'is_deleted' => 'Is Deleted',
         );
     }
-
     public function defaultScope() {
         $alias = $this->getTableAlias(false, false);
         if ($alias == '' || $alias == 't') {
@@ -88,7 +80,6 @@ class Rating extends CActiveRecord {
             return array('condition' => $alias . ".is_deleted= 0 ",);
         }
     }
-
     protected function beforeSave() {
         if ($this->isNewRecord):
             $this->created_dt = common::getTimeStamp();
@@ -99,7 +90,6 @@ class Rating extends CActiveRecord {
         endif;
         return parent::beforeSave();
     }
-
     /**
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
@@ -107,9 +97,7 @@ class Rating extends CActiveRecord {
     public function search() {
         // Warning: Please modify the following code to remove attributes that
         // should not be searched.
-
         $criteria = new CDbCriteria;
-
         $criteria->compare('t.id', $this->id);
         $criteria->compare('t.name', $this->name, true);
         $criteria->compare('t.star', $this->star);
@@ -140,5 +128,4 @@ class Rating extends CActiveRecord {
         $model = self::model()->findAll($criteria1);
         return $totlestar->star / count($model);
     }
-
 }

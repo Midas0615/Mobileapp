@@ -2,7 +2,6 @@
 
 class ProductController extends Controller {
     /* View lising page */
-
     public function actionIndex() {
         $model = new Product("search");
         if (isset($_GET['Product'])) {
@@ -10,7 +9,6 @@ class ProductController extends Controller {
         }
         $this->render('index', array("model" => $model));
     }
-
     public function actionMarkasfavorite($id) {
         $model = new Product();
         $FavoriteProduct = new FavoriteProduct();
@@ -26,13 +24,12 @@ class ProductController extends Controller {
         }
         Yii::app()->end();
     }
-
     public function actionMarkasunfavorite($id) {
         $model = new Product();
         $criteria = new CDbCriteria;
         $criteria->compare('t.user_id', Yii::app()->user->id);
         $criteria->compare('t.product_id', $id);
-        $model1= FavoriteProduct::model()->find($criteria);
+        $model1 = FavoriteProduct::model()->find($criteria);
         if ($model1 && $model1->delete()) {
             Yii::app()->user->setFlash("success", common::translateText("UPDATE_SUCCESS"));
             $this->redirect('../index');
