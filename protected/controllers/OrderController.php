@@ -3,9 +3,6 @@
 class OrderController extends Controller {
     /* View lising page */
 
-    public function actionIndex() {
-        $this->render('index');
-    }
 
     public function filters() {
         return array(

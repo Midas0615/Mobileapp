@@ -1,11 +1,10 @@
 <?php
 
-class ReviewController extends Controller {
+class UsersController extends Controller {
     /* View lising page */
 
-
-    public function filters() {
-        return array(
+   public function filters() {
+       return array(
             'accessControl', // perform access control for CRUD operations
             array(
                 'RestfullYii.filters.ERestFilter + 

@@ -2,12 +2,12 @@
 
 class ProductController extends Controller {
 
-    public function actionIndex() {
-        $this->render('index');
-    }
+//    public function actionIndex() {
+//        $this->render('index');
+//    }
 
     public function filters() {
-        return array(
+       return array(
             'accessControl', // perform access control for CRUD operations
             array(
                 'RestfullYii.filters.ERestFilter + 

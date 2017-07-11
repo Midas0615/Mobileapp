@@ -612,3 +612,317 @@ Stack trace:
 REQUEST_URI=/mobiapp/admin/product/favoriteproduct
 HTTP_REFERER=http://localhost/mobiapp/admin/Product/index
 ---
+2017/07/11 18:50:39 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "users/REST.GET". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('users/REST.GET')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/api/users?filter=[{%22property%22:%22id%22,%22value%22:%222%22,%22operator%22:%22==%22}]
+---
+2017/07/11 18:50:55 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "user/REST.GET". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/REST.GET')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/api/user?filter=[{%22property%22:%22id%22,%22value%22:%222%22,%22operator%22:%22==%22}]
+---
+2017/07/11 18:51:00 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "user/REST.GET". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/REST.GET')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/api/user
+---
+2017/07/11 18:52:15 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "user/REST.GET". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/REST.GET')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/api/user
+---
+2017/07/11 18:53:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "user/REST.GET". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/REST.GET')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/api/user
+---
+2017/07/11 19:00:46 [error] [exception.CHttpException.400] CHttpException: {"username":["Username cannot be blank."],"email_address":["Email cannot be blank."],"first_name":["First Name cannot be blank."],"last_name":["Last Name cannot be blank."]} in C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php:887
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}(Object(Users))
+#1 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('model.save', Array)
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->emitRest('model.save', Array)
+#3 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(70): CComponent->__call('emitRest', Array)
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(33): EActionRestPOST->handlePost()
+#5 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestPOST->{closure}(Array, Array)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(50): ERestBaseAction->finalRender(Object(Closure))
+#7 [internal function]: EActionRestPOST->run(NULL, NULL, NULL)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestPOST), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestPOST), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestPOST))
+#12 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestPOST), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.POST')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('users/REST.POST')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#25 {main}
+REQUEST_URI=/mobiapp/api/users
+---
+2017/07/11 19:02:19 [error] [exception.CHttpException.400] CHttpException: {"username":["Username cannot be blank."],"email_address":["Email cannot be blank."],"first_name":["First Name cannot be blank."],"last_name":["Last Name cannot be blank."]} in C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php:887
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}(Object(Users))
+#1 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('model.save', Array)
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->emitRest('model.save', Array)
+#3 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(70): CComponent->__call('emitRest', Array)
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(33): EActionRestPOST->handlePost()
+#5 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestPOST->{closure}(Array, Array)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(50): ERestBaseAction->finalRender(Object(Closure))
+#7 [internal function]: EActionRestPOST->run(NULL, NULL, NULL)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestPOST), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestPOST), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestPOST))
+#12 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestPOST), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.POST')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('users/REST.POST')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#25 {main}
+REQUEST_URI=/mobiapp/api/users
+---
+2017/07/11 19:02:31 [error] [exception.CHttpException.400] CHttpException: {"username":["Username cannot be blank."],"email_address":["Email cannot be blank."],"first_name":["First Name cannot be blank."],"last_name":["Last Name cannot be blank."]} in C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php:887
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}(Object(Users))
+#1 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('model.save', Array)
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->emitRest('model.save', Array)
+#3 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(70): CComponent->__call('emitRest', Array)
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(33): EActionRestPOST->handlePost()
+#5 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestPOST->{closure}(Array, Array)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(50): ERestBaseAction->finalRender(Object(Closure))
+#7 [internal function]: EActionRestPOST->run(NULL, NULL, NULL)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestPOST), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestPOST), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestPOST))
+#12 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestPOST), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.POST')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('users/REST.POST')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#25 {main}
+REQUEST_URI=/mobiapp/api/users
+---
+2017/07/11 19:03:01 [error] [exception.CHttpException.400] CHttpException: {"username":["Username cannot be blank."],"email_address":["Email cannot be blank."],"first_name":["First Name cannot be blank."],"last_name":["Last Name cannot be blank."]} in C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php:887
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}(Object(Users))
+#1 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('model.save', Array)
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->emitRest('model.save', Array)
+#3 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(70): CComponent->__call('emitRest', Array)
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(33): EActionRestPOST->handlePost()
+#5 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestPOST->{closure}(Array, Array)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(50): ERestBaseAction->finalRender(Object(Closure))
+#7 [internal function]: EActionRestPOST->run(NULL, NULL, NULL)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestPOST), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestPOST), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestPOST))
+#12 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestPOST), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.POST')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('users/REST.POST')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#25 {main}
+REQUEST_URI=/mobiapp/api/users
+---
+2017/07/11 19:03:17 [error] [exception.CHttpException.400] CHttpException: {"username":["Username cannot be blank."],"email_address":["Email cannot be blank."],"first_name":["First Name cannot be blank."],"last_name":["Last Name cannot be blank."]} in C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php:887
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}(Object(Users))
+#1 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('model.save', Array)
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->emitRest('model.save', Array)
+#3 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(70): CComponent->__call('emitRest', Array)
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(33): EActionRestPOST->handlePost()
+#5 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestPOST->{closure}(Array, Array)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(50): ERestBaseAction->finalRender(Object(Closure))
+#7 [internal function]: EActionRestPOST->run(NULL, NULL, NULL)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestPOST), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestPOST), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestPOST))
+#12 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestPOST), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.POST')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('users/REST.POST')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#25 {main}
+REQUEST_URI=/mobiapp/api/users
+---
+2017/07/11 19:03:26 [error] [exception.CHttpException.400] CHttpException: {"username":["Username cannot be blank."],"email_address":["Email cannot be blank."],"first_name":["First Name cannot be blank."],"last_name":["Last Name cannot be blank."]} in C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php:887
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}(Object(Users))
+#1 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('model.save', Array)
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->emitRest('model.save', Array)
+#3 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(70): CComponent->__call('emitRest', Array)
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(33): EActionRestPOST->handlePost()
+#5 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestPOST->{closure}(Array, Array)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(50): ERestBaseAction->finalRender(Object(Closure))
+#7 [internal function]: EActionRestPOST->run(NULL, NULL, NULL)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestPOST), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestPOST), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestPOST))
+#12 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestPOST), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.POST')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('users/REST.POST')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#25 {main}
+REQUEST_URI=/mobiapp/api/users
+---
+2017/07/11 19:18:32 [error] [exception.CHttpException.400] CHttpException: {"title":["Product Title cannot be blank."],"description":["Short Description cannot be blank."]} in C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\ERestEventListenerRegistry.php:887
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\events\Eventor\Eventor.php(170): ERestEventListenerRegistry->{closure}(Object(Product))
+#1 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\behaviors\ERestBehavior.php(106): Eventor->emit('model.save', Array)
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(261): ERestBehavior->emitRest('model.save', Array)
+#3 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(70): CComponent->__call('emitRest', Array)
+#4 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(33): EActionRestPOST->handlePost()
+#5 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\ERestBaseAction.php(60): EActionRestPOST->{closure}(Array, Array)
+#6 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\actions\EActionRestPOST.php(50): ERestBaseAction->finalRender(Object(Closure))
+#7 [internal function]: EActionRestPOST->run(NULL, NULL, NULL)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EActionRestPOST), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(73): CAction->runWithParamsInternal(Object(EActionRestPOST), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EActionRestPOST))
+#12 C:\xampp\htdocs\mobiapp\protected\extensions\starship\RestfullYii\filters\ERestFilter.php(87): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): ERestFilter->preFilter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(EActionRestPOST), Array)
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('REST.POST')
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('product/REST.PO...')
+#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#25 {main}
+REQUEST_URI=/mobiapp/api/product
+---
+2017/07/11 19:19:25 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "uploads/2/1/small_Image056.jpg". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('uploads/2/1/sma...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/uploads/2/1/small_Image056.jpg
+---
+2017/07/11 19:19:47 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "index". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/
+---
+2017/07/11 19:20:05 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "index". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/
+---
+2017/07/11 19:20:07 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('image/touch/app...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/
+---
+2017/07/11 19:20:27 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "uploads/2/1/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('uploads/2/1/ima...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/uploads/2/1/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/uploads/2/1/small_Image056.jpg
+---
+2017/07/11 19:20:37 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/image/tou...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/login
+---
+2017/07/11 19:20:43 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/image/tou...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/dashboard
+---
