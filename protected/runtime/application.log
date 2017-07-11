@@ -926,3 +926,654 @@ Stack trace:
 REQUEST_URI=/mobiapp/admin/image/touch/apple-touch-icon.png
 HTTP_REFERER=http://localhost/mobiapp/admin/dashboard
 ---
+2017/07/11 19:48:22 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 19:48:22 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 19:48:22 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 19:48:23 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/users/upd...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/users/update/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 19:50:31 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 19:50:31 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 19:50:32 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 19:50:32 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/users/upd...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/users/update/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 19:57:53 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/usersgroup". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/usersgrou...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/usersgroup
+---
+2017/07/11 19:58:05 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "usersgroup". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('usersgroup')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/usersgroup
+---
+2017/07/11 19:59:48 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "acc". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('acc')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/acc
+---
+2017/07/11 19:59:58 [error] [exception.CHttpException.404] CHttpException: Not Found. Page is requested by you is not available, Please try agin later. in C:\xampp\htdocs\mobiapp\protected\components\Controller.php:45
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\controllers\AccountController.php(8): Controller->loadModel(NULL, 'Users')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AccountController->actionIndex()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('account')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#9 {main}
+REQUEST_URI=/mobiapp/account
+---
+2017/07/11 20:01:07 [error] [exception.CHttpException.404] CHttpException: Not Found. Page is requested by you is not available, Please try agin later. in C:\xampp\htdocs\mobiapp\protected\components\Controller.php:45
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\controllers\AccountController.php(8): Controller->loadModel(NULL, 'Users')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AccountController->actionIndex()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('Account')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#9 {main}
+REQUEST_URI=/mobiapp/Account
+---
+2017/07/11 20:01:51 [error] [exception.CHttpException.404] CHttpException: Not Found. Page is requested by you is not available, Please try agin later. in C:\xampp\htdocs\mobiapp\protected\components\Controller.php:45
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\controllers\AccountController.php(8): Controller->loadModel(NULL, 'Users')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AccountController->actionIndex()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('account/index')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#9 {main}
+REQUEST_URI=/mobiapp/account/index
+---
+2017/07/11 20:01:51 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "image". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('image')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('image')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('account/image/t...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/account/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/account/index
+---
+2017/07/11 20:02:32 [error] [exception.CHttpException.404] CHttpException: Not Found. Page is requested by you is not available, Please try agin later. in C:\xampp\htdocs\mobiapp\protected\components\Controller.php:45
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\controllers\AccountController.php(8): Controller->loadModel(NULL, 'Users')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AccountController->actionIndex()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('account/index')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#9 {main}
+REQUEST_URI=/mobiapp/account/index
+---
+2017/07/11 20:02:51 [error] [exception.CHttpException.404] CHttpException: Not Found. Page is requested by you is not available, Please try agin later. in C:\xampp\htdocs\mobiapp\protected\components\Controller.php:45
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\controllers\AccountController.php(8): Controller->loadModel(NULL, 'Users')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AccountController->actionIndex()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('account/index')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#9 {main}
+REQUEST_URI=/mobiapp/account/index
+---
+2017/07/11 20:02:53 [error] [exception.CHttpException.404] CHttpException: Not Found. Page is requested by you is not available, Please try agin later. in C:\xampp\htdocs\mobiapp\protected\components\Controller.php:45
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\controllers\AccountController.php(8): Controller->loadModel(NULL, 'Users')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AccountController->actionIndex()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('account/index')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#9 {main}
+REQUEST_URI=/mobiapp/account/index
+---
+2017/07/11 20:02:54 [error] [exception.CHttpException.404] CHttpException: Not Found. Page is requested by you is not available, Please try agin later. in C:\xampp\htdocs\mobiapp\protected\components\Controller.php:45
+Stack trace:
+#0 C:\xampp\htdocs\mobiapp\protected\controllers\AccountController.php(8): Controller->loadModel(NULL, 'Users')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AccountController->actionIndex()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('account/index')
+#7 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#9 {main}
+REQUEST_URI=/mobiapp/account/index
+---
+2017/07/11 20:03:58 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "acc". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('acc')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/acc
+---
+2017/07/11 20:03:58 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "usersgroup". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('usersgroup')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/usersgroup
+---
+2017/07/11 20:03:59 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/usersgroup". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/usersgrou...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/usersgroup
+---
+2017/07/11 20:04:00 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 20:04:00 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 20:04:00 [error] [exception.CHttpException.400] CHttpException: Your request is invalid. in C:\xampp\htdocs\yii\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/users/upd...')
+#5 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#7 {main}
+REQUEST_URI=/mobiapp/admin/users/update/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/users/update/2
+---
+2017/07/11 20:06:38 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/orderaccount". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/orderacco...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/orderaccount
+---
+2017/07/11 20:08:00 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "index". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/
+---
+2017/07/11 20:09:17 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/account
+---
+2017/07/11 20:09:17 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/account
+---
+2017/07/11 20:09:17 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/account
+---
+2017/07/11 20:09:25 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/account
+---
+2017/07/11 20:09:25 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/account
+---
+2017/07/11 20:09:25 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/account
+---
+2017/07/11 20:09:39 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/11 20:09:39 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/11 20:09:39 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/11 20:09:39 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "image". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('image')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('image')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/users/ima...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/users/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/11 20:09:41 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
+2017/07/11 20:09:41 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
+2017/07/11 20:09:56 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
+2017/07/11 20:09:56 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
+2017/07/11 20:09:56 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
+2017/07/11 20:09:56 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
+2017/07/11 20:09:57 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
+2017/07/11 20:09:57 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
+2017/07/11 20:10:09 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/account
+---
+2017/07/11 20:10:09 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/account
+---
+2017/07/11 20:10:09 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/account
+---
+2017/07/11 20:12:06 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/user/ChangePassword". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/user/Chan...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/user/ChangePassword
+---
+2017/07/11 20:12:07 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/user/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/user/imag...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/user/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/user/ChangePassword
+---
+2017/07/11 20:12:15 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/user/changepassword". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/user/chan...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/user/changepassword
+---
+2017/07/11 20:12:26 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/user/changepassword". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/user/chan...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/user/changepassword
+---
+2017/07/11 20:13:35 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "account/changepassword". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('account/changep...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/account/changepassword
+HTTP_REFERER=http://localhost/mobiapp/admin/users/changepassword
+---
+2017/07/11 20:16:22 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/11 20:16:22 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/11 20:16:22 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/address
+---
+2017/07/11 20:20:47 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "index". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('users')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/users
+HTTP_REFERER=http://localhost/mobiapp/admin/users/changepassword
+---
+2017/07/11 20:22:20 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/admin/login". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/admin/log...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/admin/login
+HTTP_REFERER=http://localhost/mobiapp/admin/users/changepassword
+---
+2017/07/11 20:22:20 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "admin/admin/image/touch/apple-touch-icon.png". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/admin/ima...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/admin/image/touch/apple-touch-icon.png
+HTTP_REFERER=http://localhost/mobiapp/admin/admin/login
+---
+2017/07/11 20:22:40 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/plugin-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/pl...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/plugin-min.css
+HTTP_REFERER=http://localhost/mobiapp/login
+---
+2017/07/11 20:22:40 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/custom-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/cu...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/custom-min.css
+HTTP_REFERER=http://localhost/mobiapp/login
+---
+2017/07/11 20:22:47 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/custom-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/cu...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/custom-min.css
+HTTP_REFERER=http://localhost/mobiapp/login
+---
+2017/07/11 20:22:47 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/plugin-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/pl...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/plugin-min.css
+HTTP_REFERER=http://localhost/mobiapp/login
+---
+2017/07/11 20:23:37 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "login". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('login')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('login')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/users/log...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/users/login
+HTTP_REFERER=http://localhost/mobiapp/admin/users/changepassword
+---
+2017/07/11 20:23:55 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "login". in C:\xampp\htdocs\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(271): CController->missingAction('login')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('login')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/users/log...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/users/login
+HTTP_REFERER=http://localhost/mobiapp/admin/users/changepassword
+---
+2017/07/11 20:24:33 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
+2017/07/11 20:24:33 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "assets/ed837e3b/select2.js". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('assets/ed837e3b...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
+---
