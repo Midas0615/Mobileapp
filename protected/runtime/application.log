@@ -1577,3 +1577,138 @@ Stack trace:
 REQUEST_URI=/mobiapp/assets/ed837e3b/select2.js
 HTTP_REFERER=http://localhost/mobiapp/admin/users/profile
 ---
+2017/07/11 20:28:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mobiapp.mob_posts' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `mob_posts`.
+in C:\xampp\htdocs\mobiapp\protected\views\dashboard\index.php (15)
+in C:\xampp\htdocs\mobiapp\protected\controllers\DashboardController.php (8)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/11 20:28:58 [error] [exception.CDbException] CDbException: The table "{{posts}}" for active record class "Posts" cannot be found in the database. in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Posts))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('Posts')
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 C:\xampp\htdocs\mobiapp\protected\views\dashboard\index.php(15): CActiveRecord->__construct()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\mobiapp\protected\controllers\DashboardController.php(8): CController->render('index')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): DashboardController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('dashboard')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/mobiapp/dashboard
+HTTP_REFERER=http://localhost/mobiapp/admin/dashboard
+---
+2017/07/11 20:29:11 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mobiapp.mob_posts' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `mob_posts`.
+in C:\xampp\htdocs\mobiapp\protected\views\dashboard\index.php (15)
+in C:\xampp\htdocs\mobiapp\protected\controllers\DashboardController.php (8)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/11 20:29:11 [error] [exception.CDbException] CDbException: The table "{{posts}}" for active record class "Posts" cannot be found in the database. in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Posts))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('Posts')
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 C:\xampp\htdocs\mobiapp\protected\views\dashboard\index.php(15): CActiveRecord->__construct()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\mobiapp\protected\controllers\DashboardController.php(8): CController->render('index')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): DashboardController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('dashboard')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/mobiapp/dashboard
+HTTP_REFERER=http://localhost/mobiapp/admin/dashboard
+---
+2017/07/11 20:29:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mobiapp.mob_posts' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `mob_posts`.
+in C:\xampp\htdocs\mobiapp\protected\views\dashboard\index.php (15)
+in C:\xampp\htdocs\mobiapp\protected\controllers\DashboardController.php (8)
+in C:\xampp\htdocs\mobiapp\index.php (16)
+2017/07/11 20:29:19 [error] [exception.CDbException] CDbException: The table "{{posts}}" for active record class "Posts" cannot be found in the database. in C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Posts))
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('Posts')
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 C:\xampp\htdocs\mobiapp\protected\views\dashboard\index.php(15): CActiveRecord->__construct()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\mobiapp\protected\controllers\DashboardController.php(8): CController->render('index')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): DashboardController->actionIndex()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('dashboard')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#17 {main}
+REQUEST_URI=/mobiapp/dashboard
+HTTP_REFERER=http://localhost/mobiapp/admin/dashboard
+---
+2017/07/11 20:30:12 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/plugin-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/pl...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/plugin-min.css
+HTTP_REFERER=http://localhost/mobiapp/dashboard
+---
+2017/07/11 20:30:12 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/custom-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/cu...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/custom-min.css
+HTTP_REFERER=http://localhost/mobiapp/dashboard
+---
+2017/07/11 20:30:28 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/custom-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/cu...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/custom-min.css
+HTTP_REFERER=http://localhost/mobiapp/dashboard
+---
+2017/07/11 20:30:28 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/plugin-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/pl...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/plugin-min.css
+HTTP_REFERER=http://localhost/mobiapp/dashboard
+---
+2017/07/11 20:31:03 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/plugin-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/pl...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/plugin-min.css
+HTTP_REFERER=http://localhost/mobiapp/dashboard
+---
+2017/07/11 20:31:03 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "front_bt/min/custom-min.css". in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('front_bt/min/cu...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mobiapp\index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/front_bt/min/custom-min.css
+HTTP_REFERER=http://localhost/mobiapp/dashboard
+---

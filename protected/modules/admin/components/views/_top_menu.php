@@ -1,6 +1,6 @@
 <header id="header" class="navbar navbar-fixed-top">
     <div class="navbar-header">
-        <a class="navbar-brand" href="<?php echo Yii::app()->createUrl("dashboard"); ?>">
+        <a class="navbar-brand" href="<?php echo Yii::app()->createUrl("admin/dashboard"); ?>">
             <span class="logo-figure"></span>
             <span class="logo-text-1"></span>
         </a>        
