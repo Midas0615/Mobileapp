@@ -10,6 +10,14 @@ class UsersController extends Controller {
         }
         $this->render('index', array("model" => $model));
     }
+    public function actionDeliveryboy() {
+        $model = new Users("search");
+        $model->user_group = 5;
+        if (isset($_GET['Users'])) {
+            $model->attributes = $_GET['Users'];
+        }
+        $this->render('index', array("model" => $model));
+    }
 
     /* add user group */
 

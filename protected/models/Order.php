@@ -25,9 +25,10 @@ class Order extends CActiveRecord {
     const NEW_ORDER = 1;
     const RECEIVED = 2;
     const OUT_OF_DELIVERY = 3;
-    const COMPLETED = 4;
+    const Dilivered = 4;
+    const COMPLETED = 5;
 
-    public $statusArr = array(self::NEW_ORDER => "New", self::RECEIVED => "Received", self::OUT_OF_DELIVERY => "Out Of Delivery", self::COMPLETED => "Completed");
+    public $statusArr = array(self::NEW_ORDER => "New", self::RECEIVED => "Pick Up", self::OUT_OF_DELIVERY => "On The Way",self::Dilivered=> "Delivered", self::COMPLETED => "Completed");
 
     /**
      * Returns the static model of the specified AR class.

@@ -206,11 +206,13 @@ class Users extends CActiveRecord {
             $criteria->compare("t.phone_number", $search, true, "OR");
             $criteria->compare("t.email_address", $search, true, "OR");
             $criteria->compare("t.address", $search, true, "OR");
-            $criteria->compare("t.favorite_products",$search, true, "OR");
+            $criteria->compare("t.favorite_products", $search, true, "OR");
             $criteria->compare("countryRel.country", $search, true, "OR");
             $criteria->compare("stateRel.name", $search, true, "OR");
         }
+        $criteria->compare("user_group", $this->user_group);
         $criteria->with = array("countryRel", "stateRel");
+
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'sort' => array(

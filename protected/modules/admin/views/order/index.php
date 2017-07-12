@@ -14,13 +14,15 @@
                     </div>
                     <div class="panel-toolbar text-right">
                         <?php
-                        echo CHtml::Link("Add Order" . ' <i class="ico-plus"></i>', array("add"), array(
-                            "title" => "Add Order",
-                            "data-placement" => "bottom",
-                            "rel" => "tooltip",
-                            "class" => "btn btn-sm btn-default",
-                            "data-original-title" => "Add Order"
-                        ));
+                        if (!common::isDeliveryBoy()) {
+                            echo CHtml::Link("Add Order" . ' <i class="ico-plus"></i>', array("add"), array(
+                                "title" => "Add Order",
+                                "data-placement" => "bottom",
+                                "rel" => "tooltip",
+                                "class" => "btn btn-sm btn-default",
+                                "data-original-title" => "Add Order"
+                            ));
+                        }
                         ?>
                     </div>
                 </div>

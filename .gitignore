@@ -2,3 +2,4 @@
 /assets/
 /protected/config/constants.php
 /run
+/protected/runtime

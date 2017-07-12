@@ -236,6 +236,9 @@ class common {
     public static function generateAccessToken() {
         return strtoupper(md5(uniqid(session_id(), true)));
     }
+    public static function isDeliveryBoy() {
+        return (Yii::app()->user->user_group == 5)? true : false;
+    }
 
     public static function getSeconds($str_time = "00:00:00") {
         $str_time = preg_replace("/^([\d]{1,2})\:([\d]{2})$/", "00:$1:$2", $str_time);
