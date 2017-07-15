@@ -3,14 +3,14 @@
 $PRODUCT_NAME = "Mobi App";
 $development = file_exists(dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "development");
 $HOST_NAME = "localhost";
-if ($development):
+if (true):
     ini_set("display_errors",1);
     error_reporting(E_ALL);
     $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/mobiapp/';
     $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/mobiapp/';
 
     $DB_USERNAME = "root";
-    $DB_PASSWORD = "root";
+    $DB_PASSWORD = "";
     $DB_NAME = "mobiapp";
 else:
     $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/mobiapp/';

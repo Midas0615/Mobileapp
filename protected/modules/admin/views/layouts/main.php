@@ -18,6 +18,7 @@
         <!-- START STYLESHEETS -->
         <!-- Application stylesheet : mandatory -->
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/style.css">    
+        <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/fullcalendar.css">    
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>library/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/layout.min.css">
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/uielement.min.css">
@@ -46,6 +47,7 @@
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>plugins/jqueryui/js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>plugins/gritter/js/jquery.gritter.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/custom.js"></script>
+        <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/fullcalendar.min.js"></script>
         <!--/ Library script -->
         <!--/ END JAVASCRIPT SECTION -->
         <script>

@@ -138,21 +138,55 @@
                 </div>
                 <div class="panel-body panel-collapse pull out">
                     <?php
-                    $this->widget('application.extensions.fullcalendar.FullcalendarGraphWidget', array(
-                        'data' => $data,
-                        'options' => array(
-                            'editable' => true,
-                        ),
-                        //'events'=> $data,
-                        'htmlOptions' => array(
-                            'style' => 'width:100%;margin: 0 auto;'
-                        ),
-                            )
-                    );
+                    //
+//                    $this->widget('application.extensions.fullcalendar.FullcalendarGraphWidget', array(
+//                        'data' => $data,
+//                        'options' => array(
+//                            'editable' => true,
+//                        ),
+//                        //'events'=> $data,
+//                        'htmlOptions' => array(
+//                            'style' => 'width:100%;margin: 0 auto;'
+//                        ),
+//                            )
+//                    );
                     ?>
+                    <div class="box-content">
+                        <div id="DRCcalendar"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
+
+<script type="text/javascript">
+    var u1 = '<?php echo Yii::app()->params->WEB_URL . "admin/dashboard/events"; ?>';
+    var source = new Array();
+    $.get(u1, function (data) {
+        source[0] = data;
+    });
+    source[1] = '';
+    var newSource = new Array();
+    newSource[0] = source[0];
+    newSource[1] = source[1];
+    $(document).ready(function () {
+        $("#DRCcalendar").fullCalendar({
+            header: {
+                left: "prev,next",
+                center: "title",
+                right: "month,agendaWeek,agendaDay",
+            },
+            eventSources: [
+                source[0],
+                source[1]
+            ],
+            columnFormat: {
+                month: 'dddd', // Monday, Wednesday, etc
+                week: 'dddd, MMM dS', // Monday 9/7
+                day: 'dddd, MMM dS'  // Monday 9/7
+            }
+        });
+    });
+</script>
