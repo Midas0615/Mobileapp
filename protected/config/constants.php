@@ -1,17 +1,18 @@
 <?php
+
 $PRODUCT_NAME = "Mobi App";
 $development = file_exists(dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "development");
 $HOST_NAME = "localhost";
-if (true):
-    error_reporting(E_ERROR);
+if ($development):
+    ini_set("display_errors",1);
+    error_reporting(E_ALL);
     $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/mobiapp/';
     $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/mobiapp/';
 
     $DB_USERNAME = "root";
-    $DB_PASSWORD = "";
+    $DB_PASSWORD = "root";
     $DB_NAME = "mobiapp";
 else:
-    error_reporting(E_ERROR);
     $WEB_URL = 'http://' . $_SERVER['HTTP_HOST'] . '/mobiapp/';
     $DOCUMENT_PATH = $_SERVER['DOCUMENT_ROOT'] . '/mobiapp/';
 
@@ -25,6 +26,6 @@ $UPLOADS_URL = $WEB_URL . "uploads/";
 $ADMIN_BT_URL = $WEB_URL . "admin_bt/";
 $FRONT_BT_URL = $WEB_URL . "front_bt/";
 
-$MAIL_HOST = "smtp.gmail.com"; 
-$MAIL_USERNAME = "svn@volansystech.com"; 
-$MAIL_PASSWORD = "techvolanssvn"; 
+$MAIL_HOST = "";
+$MAIL_USERNAME = "";
+$MAIL_PASSWORD = "";

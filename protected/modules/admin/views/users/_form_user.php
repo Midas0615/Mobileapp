@@ -44,7 +44,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="col-md-6">
         <div class="form-group">
             <?php echo $form->labelEx($model, "gender", array("class" => "control-label")); ?>
-            <?php echo common::select2($model, "gender", Users::model()->genderArr, array("prompt" => common::translateText("DROPDOWN_TEXT"), "class" => "form-control")); ?>  
+            <?php echo $form->dropDownList($model, "gender", Users::model()->genderArr, array("prompt" => common::translateText("DROPDOWN_TEXT"), "class" => "form-control")); ?>  
             <?php echo $form->error($model, "gender", array("class" => "parsley-custom-error-message")); ?>
         </div>
     </div>
@@ -68,7 +68,7 @@ $form = $this->beginWidget('CActiveForm', array(
         <div class="form-group">
             <?php echo $form->labelEx($model, "country_id", array("class" => "control-label")); ?>
             <?php
-            echo common::select2($model, "country_id", CHtml::ListData(Countries::model()->getCountries(), 'id', "country"), array("prompt" => common::translateText("DROPDOWN_TEXT"), "class" => "form-control",
+            echo $form->dropDownList($model, "country_id", CHtml::ListData(Countries::model()->getCountries(), 'id', "country"), array("prompt" => common::translateText("DROPDOWN_TEXT"), "class" => "form-control",
                 'ajax' =>
                 array('type' => 'POST',
                     'url' => $this->createUrl('common/getstates'), //url to call.
@@ -83,7 +83,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="col-md-3">
         <div class="form-group">
             <?php echo $form->labelEx($model, "state_id", array("class" => "control-label")); ?>
-            <?php echo common::select2($model, "state_id", CHtml::ListData(States::model()->getStates($model->country_id), "id", "name"), array("prompt" => common::translateText("DROPDOWN_TEXT"), "class" => "form-control")); ?>  
+            <?php echo $form->dropDownList($model, "state_id", CHtml::ListData(States::model()->getStates($model->country_id), "id", "name"), array("prompt" => common::translateText("DROPDOWN_TEXT"), "class" => "form-control")); ?>  
             <?php echo $form->error($model, "state_id", array("class" => "parsley-custom-error-message")); ?>                                       
         </div>
     </div>
@@ -138,14 +138,14 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php
             echo $form->labelEx($model, "user_group", array("class" => "control-label"));
             ?>
-            <?php echo common::select2($model, "user_group", CHtml::ListData(UsersGroup::model()->getUsersGroup(), 'id', 'group_name'), array("prompt" => common::translateText("DROPDOWN_TEXT"), "class" => "form-control")); ?>  
+            <?php echo $form->dropDownList($model, "user_group", CHtml::ListData(UsersGroup::model()->getUsersGroup(), 'id', 'group_name'), array("prompt" => common::translateText("DROPDOWN_TEXT"), "class" => "form-control")); ?>  
             <?php echo $form->error($model, "user_group", array("class" => "parsley-custom-error-message")); ?>                                       
         </div>
     </div>
     <div class="col-md-4">
         <div class="form-group">
             <?php echo $form->labelEx($model, "status", array("class" => "control-label")); ?>
-            <?php echo common::select2($model, "status", Users::model()->statusArr, array("class" => "form-control")); ?>  
+            <?php echo $form->dropDownList($model, "status", Users::model()->statusArr, array("class" => "form-control")); ?>  
             <?php echo $form->error($model, "status", array("class" => "parsley-custom-error-message")); ?>                                       
         </div>
     </div>

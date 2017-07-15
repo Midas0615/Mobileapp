@@ -72,9 +72,7 @@ return array(
             'urlFormat' => 'path',
             'showScriptName' => false,
             'appendParams' => false,
-            'rules' => require(
-            dirname(__FILE__) . '/../extensions/starship/restfullyii/config/routes.php'
-            ),
+            'rules' => require dirname(__FILE__) . '/../extensions/starship/RestfullYii/config/routes.php',
         ),
         'widgetFactory' => include_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'widgetFactory.php'),
         'log' => array(

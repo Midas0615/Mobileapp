@@ -2344,3 +2344,182 @@ Stack trace:
 REQUEST_URI=/mobiapp/admin/users/deliveryboy
 HTTP_REFERER=http://localhost/mobiapp/admin/review
 ---
+2017/07/14 00:48:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/www/html/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(271): CController->missingAction('')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(276): CController->run('')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#3 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/
+---
+2017/07/14 00:48:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "image/touch/apple-touch-icon.png".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('image/touch/app...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/image/touch/apple-touch-icon.png
+---
+2017/07/14 00:48:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/image/touch/apple-touch-icon.png".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/image/tou...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/image/touch/apple-touch-icon.png
+---
+2017/07/15 09:55:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/www/html/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(271): CController->missingAction('')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(276): CController->run('')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#3 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/
+---
+2017/07/15 09:55:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "image/touch/apple-touch-icon.png".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('image/touch/app...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/image/touch/apple-touch-icon.png
+---
+2017/07/15 09:55:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/image/touch/apple-touch-icon.png".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/image/tou...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/admin/image/touch/apple-touch-icon.png
+---
+2017/07/15 09:56:08 [error] [exception.CException] exception 'CException' with message 'The asset "/var/www/html/mobiapp/protected/extensions/select2/assets/" to be published does not exist.' in /var/www/html/yii/framework/web/CAssetManager.php:239
+Stack trace:
+#0 /var/www/html/mobiapp/protected/extensions/select2/ESelect2.php(71): CAssetManager->publish('/var/www/html/m...')
+#1 /var/www/html/yii/framework/web/CBaseController.php(174): ESelect2->run()
+#2 /var/www/html/mobiapp/protected/vendors/common.php(195): CBaseController->widget('ext.select2.ESe...', Array)
+#3 /var/www/html/mobiapp/protected/modules/admin/views/users/_form_user.php(47): common::select2(Object(Users), 'gender', Array, Array)
+#4 /var/www/html/yii/framework/web/CBaseController.php(127): require('/var/www/html/m...')
+#5 /var/www/html/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/html/m...', Array, true)
+#6 /var/www/html/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/html/m...', Array, true)
+#7 /var/www/html/mobiapp/protected/modules/admin/views/users/addUser.php(16): CController->renderPartial('_form_user', Array)
+#8 /var/www/html/yii/framework/web/CBaseController.php(127): require('/var/www/html/m...')
+#9 /var/www/html/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/html/m...', Array, true)
+#10 /var/www/html/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/html/m...', Array, true)
+#11 /var/www/html/yii/framework/web/CController.php(783): CController->renderPartial('addUser', Array, true)
+#12 /var/www/html/mobiapp/protected/modules/admin/controllers/UsersController.php(40): CController->render('addUser', Array)
+#13 /var/www/html/yii/framework/web/actions/CInlineAction.php(50): UsersController->actionAdd()
+#14 /var/www/html/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#15 /var/www/html/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii/framework/web/CWebApplication.php(276): CController->run('add')
+#18 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/users/add')
+#19 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#21 {main}
+REQUEST_URI=/mobiapp/admin/users/add
+HTTP_REFERER=http://localhost/mobiapp/admin/users
+---
+2017/07/15 09:56:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/c6b75f4d/select2.css".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('assets/c6b75f4d...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/c6b75f4d/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/15 09:56:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/c6b75f4d/select2.js".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('assets/c6b75f4d...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/c6b75f4d/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/15 09:56:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/c6b75f4d/select2.js".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('assets/c6b75f4d...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/c6b75f4d/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/15 09:56:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "image".' in /var/www/html/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(271): CController->missingAction('image')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(276): CController->run('image')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/users/ima...')
+#3 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/users/image/touch/apple-touch-icon.png
+---
+2017/07/15 09:57:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "image".' in /var/www/html/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/www/html/yii/framework/web/CController.php(271): CController->missingAction('image')
+#1 /var/www/html/yii/framework/web/CWebApplication.php(276): CController->run('image')
+#2 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('admin/order/ima...')
+#3 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobiapp/admin/order/image/touch/apple-touch-icon.png
+---
+2017/07/15 09:57:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/c6b75f4d/select2.css".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('assets/c6b75f4d...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/c6b75f4d/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/15 09:57:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/c6b75f4d/select2.js".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('assets/c6b75f4d...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/c6b75f4d/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/15 09:59:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/c6b75f4d/select2.css".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('assets/c6b75f4d...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/c6b75f4d/select2.css
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/15 09:59:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/c6b75f4d/select2.js".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('assets/c6b75f4d...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/c6b75f4d/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/15 09:59:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/c6b75f4d/select2.js".' in /var/www/html/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/html/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('assets/c6b75f4d...')
+#1 /var/www/html/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/html/mobiapp/index.php(16): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobiapp/assets/c6b75f4d/select2.js
+HTTP_REFERER=http://localhost/mobiapp/admin/users/add
+---
+2017/07/15 10:00:50 [warning] [application] Failed to set unsafe attribute "address" of "Users".
+in /var/www/html/mobiapp/protected/modules/admin/components/Controller.php (41)
+in /var/www/html/mobiapp/protected/modules/admin/controllers/UsersController.php (28)
+in /var/www/html/mobiapp/index.php (16)
+2017/07/15 10:00:52 [warning] [application] Failed to set unsafe attribute "address" of "Users".
+in /var/www/html/mobiapp/protected/modules/admin/components/Controller.php (41)
+in /var/www/html/mobiapp/protected/modules/admin/controllers/UsersController.php (28)
+in /var/www/html/mobiapp/index.php (16)
