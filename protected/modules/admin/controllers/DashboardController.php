@@ -4,9 +4,12 @@ class DashboardController extends Controller {
 
     public function actionIndex() {
         $criteria = new CDbCriteria;
-        $criteria->compare('t.user_id', Yii::app()->user->id);
+        // $criteria->compare('t.user_id', Yii::app()->user->id);
         $model = Order::model()->findAll($criteria);
         $data = array();
+        $events = array();
+
+
 //        ob_clean();
 //        echo "<pre>";
 //        print_r(date('Y-m-j'));
@@ -24,6 +27,10 @@ class DashboardController extends Controller {
 //        exit();
         //common::getDateTimeFromTimeStamp($val->order_date, 'Y-m-j')
         $this->render('index', array('data' => $data));
+    }
+
+    public function actionHowto() {
+        $this->render('howto', array('data' => $data));
     }
 
 }

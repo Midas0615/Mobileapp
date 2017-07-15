@@ -69,6 +69,7 @@
                         'options' => array(
                             'editable' => true,
                         ),
+                        //'events'=> $data,
                         'htmlOptions' => array(
                             'style' => 'width:800px;margin: 0 auto;'
                         ),
