@@ -136,5 +136,12 @@ class Vendor extends CActiveRecord {
         $criteria->compare('status', self::Active);
         return CHtml::ListData($this->findAll($criteria), "id", "name");
     }
+    public function countByField($field = false, $value = false, $user_id = null) {
+        $criteria = new CDbCriteria();
+        if (isset($field) && isset($value)):
+            $criteria->compare($field, $value);
+        endif;
+        return $this->count($criteria);
+    }
 
 }

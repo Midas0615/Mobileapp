@@ -1,12 +1,78 @@
 <div class="container-fluid">
+    <div class="page-header page-header-block">
+        <div class="page-header-section">
+            <h4 class="title semibold">Dashboard</h4>
+        </div>
+    </div>
     <?php
     $this->renderPartial("/layouts/_message");
     $Order = new Order();
     $Product = new Product();
     $Users = new Users();
+    $vendor = new Vendor();
     if (!common::isDeliveryBoy()) {
         ?>
         <div class="row">
+            <div class="col-sm-3">
+                <!-- START Statistic Widget -->
+                <div class="table-layout animation delay animating fadeInDown">
+                    <div class="col-xs-4 panel bgcolor-info">
+                        <div class="ico-users3 fsize24 text-center"></div>
+                    </div>
+                    <div class="col-xs-8 panel">
+                        <div class="panel-body text-center">
+                            <h4 class="semibold nm"><?php echo $Users->countByField(); ?></h4>
+                            <p class="semibold text-muted mb0 mt5">REGISTERED USERS</p>
+                        </div>
+                    </div>
+                </div>
+                <!--/ END Statistic Widget -->
+            </div>
+            <div class="col-sm-3">
+                <!-- START Statistic Widget -->
+                <div class="table-layout animation delay animating fadeInUp">
+                    <div class="col-xs-4 panel bgcolor-teal">
+                        <div class="ico-gift fsize24 text-center"></div>
+                    </div>
+                    <div class="col-xs-8 panel">
+                        <div class="panel-body text-center">
+                            <h4 class="semibold nm"><?php echo $Product->countByField(); ?></h4>
+                            <p class="semibold text-muted mb0 mt5">AVAILABLE PRODUCT</p>
+                        </div>
+                    </div>
+                </div>
+                <!--/ END Statistic Widget -->
+            </div>
+            <div class="col-sm-3">
+                <!-- START Statistic Widget -->
+                <div class="table-layout animation delay animating fadeInDown">
+                    <div class="col-xs-4 panel bgcolor-primary">
+                        <div class="ico-list fsize24 text-center"></div>
+                    </div>
+                    <div class="col-xs-8 panel">
+                        <div class="panel-body text-center">
+                            <h4 class="semibold nm"><?php echo $Order->countByField(); ?></h4>
+                            <p class="semibold text-muted mb0 mt5">ORDERS</p>
+                        </div>
+                    </div>
+                </div>
+                <!--/ END Statistic Widget -->
+            </div>
+            <div class="col-sm-3">
+                <!-- START Statistic Widget -->
+                <div class="table-layout animation delay animating fadeInDown">
+                    <div class="col-xs-4 panel bgcolor-info">
+                        <div class="ico-truck fsize24 text-center"></div>
+                    </div>
+                    <div class="col-xs-8 panel">
+                        <div class="panel-body text-center">
+                            <h4 class="semibold nm"><?php echo $vendor->countByField(); ?></h4>
+                            <p class="semibold text-muted mb0 mt5">REGISTERED VENDOR</p>
+                        </div>
+                    </div>
+                </div>
+                <!--/ END Statistic Widget -->
+            </div>
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-sm-4">
@@ -58,11 +124,19 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
+            <div class="panel panel-inverse">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Calender</h3>
+                    <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-calendar3"></i></span> Calendar</h3>
+                    <div class="panel-toolbar text-right">
+                        <!-- option -->
+                        <div class="option">
+                            <button class="btn up" data-toggle="panelcollapse"><i class="arrow"></i></button>
+                            <button class="btn" data-toggle="panelremove"><i class="remove"></i></button>
+                        </div>
+                        <!--/ option -->
+                    </div>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body panel-collapse pull out">
                     <?php
                     $this->widget('application.extensions.fullcalendar.FullcalendarGraphWidget', array(
                         'data' => $data,
@@ -71,7 +145,7 @@
                         ),
                         //'events'=> $data,
                         'htmlOptions' => array(
-                            'style' => 'width:800px;margin: 0 auto;'
+                            'style' => 'width:100%;margin: 0 auto;'
                         ),
                             )
                     );
@@ -79,5 +153,6 @@
                 </div>
             </div>
         </div>
+        
     </div>
-    </div>
+</div>
