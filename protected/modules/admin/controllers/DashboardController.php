@@ -30,7 +30,7 @@ class DashboardController extends Controller {
     }
 
     public function actionHowto() {
-        $this->render('howto', array('data' => $data));
+        $this->render('howto');
     }
 
 }
