@@ -24,6 +24,7 @@ class Product extends CActiveRecord {
     const THUMB_SMALL = "small_";
     const THUMB_HEIGHT = "600";
     const THUMB_WIDTH = "600";
+    public $image;
 
     public $thumbArr = array(self::THUMB_WIDTH, self::THUMB_HEIGHT); //width,height
     public $search;
@@ -60,10 +61,10 @@ class Product extends CActiveRecord {
         return array(
             array('title, description', 'required'),
             array('price, vendor,status, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'numerical', 'integerOnly' => true),
-            array('title, photo, location', 'length', 'max' => 255),
+            array('title, photo,image_path, location', 'length', 'max' => 255),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, title, description, long_description, photo, price, vendor, location,status, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'safe', 'on' => 'search'),
+            array('id,image_path, title, description, long_description, photo, price, vendor, location,status, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'safe', 'on' => 'search'),
         );
     }
 
@@ -87,6 +88,11 @@ class Product extends CActiveRecord {
         } else {
             return array('condition' => $alias . ".is_deleted= 0 ",);
         }
+    }
+
+    
+    public function afterFind() {
+            $this->image_path = Yii::app()->params['paths']['productURL'].$this->id.'/'.$this->photo ;
     }
 
     protected function beforeSave() {
@@ -142,7 +148,7 @@ class Product extends CActiveRecord {
         $criteria->compare('t.updated_by', $this->updated_by);
         $criteria->compare('t.ip_address', $this->ip_address);
         if ($this->id) {
-            $criteria->condition= 't.id IN ('. $this->id.')';
+            $criteria->condition = 't.id IN (' . $this->id . ')';
             $criteria->compare('t.title', $this->id, true, 'OR');
             $criteria->compare('t.description', $this->id, true, 'OR');
             $criteria->compare('t.long_description', $this->id, true, 'OR');

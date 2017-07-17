@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'mob_comments':
  * @property integer $id
  * @property integer $user_id
+ * @property string $name
  * @property integer $product_id
  * @property string $comments
  * @property integer $order_id
@@ -41,10 +42,10 @@ class Review extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('user_id, product_id, order_id, created_by, created_dt, updated_by, updated_dt, is_deleted', 'numerical', 'integerOnly' => true),
-            array('comments', 'safe'),
+            array('comments,name', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, user_id, product_id, comments, order_id, created_by, created_dt, updated_by, updated_dt, is_deleted', 'safe', 'on' => 'search'),
+            array('id,name, user_id, product_id, comments, order_id, created_by, created_dt, updated_by, updated_dt, is_deleted', 'safe', 'on' => 'search'),
         );
     }
 

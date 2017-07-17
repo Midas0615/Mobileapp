@@ -22,10 +22,10 @@ $vendor = new Vendor();
                     <?php echo CHtml::Link('<span class="figure"><i class="ico-question"></i></span><span class="text">How to ?</span>', array("/" . Yii::app()->controller->module->id . "/dashboard/howto")); ?>
                 </li>
                 <li class="<?php echo!empty(Yii::app()->controller->id . "/" . Yii::app()->controller->action->id == "product/index") ? "active" : ""; ?>">
-                    <?php echo CHtml::Link('<span class="figure"><i class="ico-gift"></i></span><span class="text">Products</span><span class="number"><span class="label label-primary">'.$Product->countByField().'</span>', array("/" . Yii::app()->controller->module->id . "/product")); ?>
+                    <?php echo CHtml::Link('<span class="figure"><i class="ico-gift"></i></span><span class="text">Products</span>', array("/" . Yii::app()->controller->module->id . "/product")); ?>
                 </li>
                 <li class="<?php echo!empty(Yii::app()->controller->id . "/" . Yii::app()->controller->action->id == "order/index") ? "active" : ""; ?>">
-                    <?php echo CHtml::Link('<span class="figure"><i class="ico-list"></i></span><span class="text">All Orders </span><span class="number"><span class="label label-primary">'.$Order->countByField().'</span>', array("/" . Yii::app()->controller->module->id . "/order")); ?>
+                    <?php echo CHtml::Link('<span class="figure"><i class="ico-list"></i></span><span class="text">All Orders </span>', array("/" . Yii::app()->controller->module->id . "/order")); ?>
                 </li>
                 <li class="<?php echo!empty(Yii::app()->controller->id == "review") ? "active" : ""; ?>">
                     <?php echo CHtml::Link('<span class="figure"><i class="ico-vcard"></i></span><span class="text">Product Review</span></span>', array("/" . Yii::app()->controller->module->id . "/review")); ?>
@@ -34,13 +34,13 @@ $vendor = new Vendor();
                     <?php echo CHtml::Link('<span class="figure"><i class="ico-star-half-full"></i></span><span class="text">Product Rating</span>', array("/" . Yii::app()->controller->module->id . "/rating")); ?>
                 </li>
                 <li class="<?php echo!empty(Yii::app()->controller->id == "vendor") ? "active" : ""; ?>">
-                    <?php echo CHtml::Link('<span class="figure"><i class="ico-truck"></i></span><span class="text">Vendors</span><span class="number"><span class="label label-danger">'.$vendor->countByField().'</span>', array("/" . Yii::app()->controller->module->id . "/vendor")); ?>
+                    <?php echo CHtml::Link('<span class="figure"><i class="ico-truck"></i></span><span class="text">Vendors</span>', array("/" . Yii::app()->controller->module->id . "/vendor")); ?>
                 </li>
                 <li class="<?php echo!empty(Yii::app()->controller->id . "/" . Yii::app()->controller->action->id == "users/deliveryboy") ? "active" : ""; ?>">
                     <?php echo CHtml::Link('<span class="figure"><i class="ico-bus"></i></span><span class="text">Delivery Boys</span>', array("/" . Yii::app()->controller->module->id . "/users/deliveryboy")); ?>
                 </li>
                 <li class="<?php echo!empty(Yii::app()->controller->id . "/" . Yii::app()->controller->action->id == "users/index") ? "active" : ""; ?>">
-                    <?php echo CHtml::Link('<span class="figure"><i class="ico-users"></i></span><span class="text">Users</span><span class="number"><span class="label label-success">'.$Users->countByField().'</span>', array("/" . Yii::app()->controller->module->id . "/users")); ?>
+                    <?php echo CHtml::Link('<span class="figure"><i class="ico-users"></i></span><span class="text">Users</span>', array("/" . Yii::app()->controller->module->id . "/users")); ?>
                 </li>
             <?php } ?>
         </ul>

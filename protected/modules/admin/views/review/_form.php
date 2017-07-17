@@ -18,6 +18,13 @@ $form = $this->beginWidget('CActiveForm', array(
  
     <div class="col-md-8">
         <div class="form-group">
+            <?php echo $form->labelEx($model, "name", array("class" => "control-label")); ?>
+            <?php echo $form->textField($model, "name", array("class" => "form-control", "placeholder" => $model->getAttributeLabel("name"))); ?>                
+            <?php echo $form->error($model, "name", array("class" => "parsley-custom-error-message")); ?>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="form-group">
             <?php echo $form->labelEx($model, "comments", array("class" => "control-label")); ?>
             <?php echo $form->textArea($model, "comments", array("class" => "form-control", "placeholder" => $model->getAttributeLabel("comments"))); ?>                
             <?php echo $form->error($model, "comments", array("class" => "parsley-custom-error-message")); ?>
