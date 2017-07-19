@@ -162,10 +162,10 @@
 </div>
 
 <script type="text/javascript">
-    var u1 = '<?php echo Yii::app()->params->WEB_URL . "admin/dashboard/events"; ?>';
+   // var u1 = '<?php echo Yii::app()->params->WEB_URL . "admin/dashboard/events"; ?>';
     var source = new Array();
     $.get(u1, function (data) {
-        source[0] = data;
+  //      source[0] = data;
     });
     source[1] = '';
     var newSource = new Array();

@@ -2,7 +2,7 @@
     <div class="navbar-header">
         <a class="navbar-brand" href="<?php echo Yii::app()->createUrl("admin/dashboard"); ?>">
             <span class="logo-figure"></span>
-            <span class="logo-text-1" style="color: white;font-family: cursive"><strong>MobiApp</strong></span>
+            <span class="logo-text-1" style="color: white;font-family: cursive"><strong></strong></span>
         </a>
     </div>
     <div class="navbar-toolbar clearfix">
@@ -56,14 +56,7 @@
                     <li><?php echo CHtml::Link('<span class="icon"><i class="ico-exit"></i></span> Sign Out', array("login/logout")); ?></li>
                 </ul>
             </li>
-            <li class="navbar-main-1">
-                <!--<a href="javascript:void(0);" data-toggle="offcanvas" data-direction="rtl" rel="tooltip" title="Feed / contact sidebar">-->
-                <a href="javascript:void(0);"  data-direction="rtl" rel="tooltip" title="Feed / contact sidebar">
-                    <span class="meta">
-                        <span class="icon"><i class="ico-users3"></i></span>
-                    </span>
-                </a>
-            </li>
+            
         </ul>
     </div>
 </header>
