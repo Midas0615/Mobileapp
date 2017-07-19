@@ -19,7 +19,11 @@ class Vendor extends CActiveRecord {
 
     const DE_ACTIVE = 0;
     const Active = 1;
+    const THUMB_SMALL = "small_";
+    const THUMB_HEIGHT = "600";
+    const THUMB_WIDTH = "600";
 
+    public $thumbArr = array(self::THUMB_WIDTH, self::THUMB_HEIGHT); //width,height
     public $statusArr = array(self::Active => "Active", self::DE_ACTIVE => "Deactive");
 
     /**
@@ -47,10 +51,10 @@ class Vendor extends CActiveRecord {
         return array(
             array('name', 'required'),
             array('status, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'numerical', 'integerOnly' => true),
-            array('name,description, location', 'length', 'max' => 255),
+            array('name,description, location ,photo,image_path', 'length', 'max' => 255),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, name, description,  location,status, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'safe', 'on' => 'search'),
+            array('id,image_path,photo name, description,  location,status, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'safe', 'on' => 'search'),
         );
     }
 
@@ -73,6 +77,10 @@ class Vendor extends CActiveRecord {
         }
     }
 
+    public function afterFind() {
+        $this->image_path = Yii::app()->params['paths']['vendorURL'] . $this->id . '/' . $this->photo;
+    }
+
     protected function beforeSave() {
         if ($this->isNewRecord):
             $this->created_dt = common::getTimeStamp();
@@ -82,6 +90,32 @@ class Vendor extends CActiveRecord {
             $this->updated_by = Yii::app()->user->id;
         endif;
         return parent::beforeSave();
+    }
+    public function uploadImage($model) {
+        $image = CUploadedFile::getInstance($model, 'photo');
+        $directoryPath = Yii::app()->params->paths['vendorPath'] . $model->id . "/";
+        if (common::checkAndCreateDirectory($directoryPath) && !empty($image)) {
+            $image->saveAs($directoryPath . $image->getName());
+            $origionalPath = $directoryPath . $image->getName();
+            $thumbProfilePic = self::THUMB_SMALL . $image->getName();
+            $thumbPath = $directoryPath . $thumbProfilePic;
+            $image = Yii::app()->image->load($origionalPath);
+            $profilePicThumbArr = $this->thumbArr;
+            $image->resize($profilePicThumbArr[0], $profilePicThumbArr[1]);
+            $image->save($thumbPath);
+            return $thumbProfilePic;
+        } else {
+            return $model->photo;
+        }
+    }
+
+    function getImage($image = null, $id = null) {
+        $uploadPath = Yii::app()->params->paths['vendorPath'] . $id . "/";
+        if (file_exists($uploadPath . $image)) {
+            return Yii::app()->params->paths['vendorURL'] . $id . "/" . $image;
+        } else {
+            return Yii::app()->params->ADMIN_BT_URL . "image/avatar/avatar.png";
+        }
     }
 
     /**
@@ -136,6 +170,7 @@ class Vendor extends CActiveRecord {
         $criteria->compare('status', self::Active);
         return CHtml::ListData($this->findAll($criteria), "id", "name");
     }
+
     public function countByField($field = false, $value = false, $user_id = null) {
         $criteria = new CDbCriteria();
         if (isset($field) && isset($value)):

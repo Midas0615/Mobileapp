@@ -1,7 +1,6 @@
 <?php
 
 class VendorController extends Controller {
-
     /* View lising page */
 
     public function actionIndex() {
@@ -23,13 +22,14 @@ class VendorController extends Controller {
             $model->attributes = $_POST['Vendor'];
             if ($model->validate()) {
                 $model->save();
+                $model->photo = $model->uploadImage($model);
                 Yii::app()->user->setFlash("success", common::translateText("ADD_SUCCESS"));
-                $this->redirect(array("/".Yii::app()->controller->module->id."/vendor"));
+                $this->redirect(array("/" . Yii::app()->controller->module->id . "/vendor"));
             } else {
                 ob_clean();
                 echo "<pre>";
                 print_r($model->getErrors());
-                exit();    
+                exit();
             }
         }
         $this->render('add', array('model' => $model));
@@ -43,9 +43,11 @@ class VendorController extends Controller {
         if (isset($_POST['Vendor'])) {
             $model->attributes = $_POST['Vendor'];
             if ($model->validate()) {
+                $model->photo = $model->uploadImage($model);
+                $model->photo = !empty($model->photo) ? $model->photo : $old_image;
                 $model->update();
                 Yii::app()->user->setFlash("success", common::translateText("UPDATE_SUCCESS"));
-                $this->redirect(array("/".Yii::app()->controller->module->id."/vendor"));
+                $this->redirect(array("/" . Yii::app()->controller->module->id . "/vendor"));
             }
         }
         $this->render('update', array('model' => $model));

@@ -7,6 +7,8 @@ return array(
     "postsURL" => $UPLOADS_URL . "posts/",
     "productPath" => $UPLOADS_PATH . "product/",
     "productURL" => $UPLOADS_URL . "product/",
+    "vendorPath" => $UPLOADS_PATH . "vendor/",
+    "vendorURL" => $UPLOADS_URL . "vendor/",
     "cssURL" => $WEB_URL . "css/",
     "jsURL" => $WEB_URL . "js/",
     "imagesURL" => $WEB_URL . "images/",

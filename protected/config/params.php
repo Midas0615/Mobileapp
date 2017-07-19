@@ -13,7 +13,7 @@ return array(
     "ADMIN_BT_URL" => $ADMIN_BT_URL,
     "FRONT_BT_URL" => $FRONT_BT_URL,
     "WEB_URL" => $WEB_URL,
-    "defaultPageSize" => 2,
+    "defaultPageSize" => 20,
     "dateFormatJS" => "dd/mm/yy",
     "timeFormatJS" => 'h:i A',
     "dateFormatPHP" => "d/m/Y",

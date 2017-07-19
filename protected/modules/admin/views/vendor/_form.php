@@ -38,6 +38,19 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->error($model, "status", array("class" => "parsley-custom-error-message")); ?>
         </div>
     </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            <?php echo $form->labelEx($model, "photo", array("class" => "control-label")); ?>
+            <?php echo $form->fileField($model, "photo", array("class" => "form-control2")); ?>                 
+            <?php echo $form->error($model, "photo", array("class" => "parsley-custom-error-message")); ?>
+        </div>
+    </div>
+    <div class="col-md-2 pull-right">
+        <div class="btn-group pr5">
+            <?php $model->photo = !empty($model->photo) ? $model->photo : common::translateText("NOT_AVAILABLE_TEXT"); ?>
+            <img alt="No Image" src="<?php echo $model->getImage($model->photo, $model->id); ?>" class="img-circle img-bordered"  width="<?php echo Users::THUMB_WIDTH; ?>" height="<?php echo Users::THUMB_HEIGHT; ?>" />
+        </div>
+    </div>
 </div>
 
 <div class="modal-footer">
