@@ -160,33 +160,35 @@
 
     </div>
 </div>
-
 <script type="text/javascript">
-   // var u1 = '<?php echo Yii::app()->params->WEB_URL . "admin/dashboard/events"; ?>';
-    var source = new Array();
-    $.get(u1, function (data) {
-  //      source[0] = data;
-    });
-    source[1] = '';
-    var newSource = new Array();
-    newSource[0] = source[0];
-    newSource[1] = source[1];
-    $(document).ready(function () {
-        $("#DRCcalendar").fullCalendar({
-            header: {
-                left: "prev,next",
-                center: "title",
-                right: "month,agendaWeek,agendaDay",
-            },
-            eventSources: [
-                source[0],
-                source[1]
-            ],
-            columnFormat: {
-                month: 'dddd', // Monday, Wednesday, etc
-                week: 'dddd, MMM dS', // Monday 9/7
-                day: 'dddd, MMM dS'  // Monday 9/7
-            }
-        });
-    });
+//    jQuery.noConflict(true);
+//    var u1 = '<?php echo Yii::app()->params->WEB_URL . "admin/dashboard/events"; ?>';
+//    var source = new Array();
+//    $.get(u1, function (data) {
+//        source[0] = data;
+//        $("#DRCcalendar").fullCalendar({
+//            header: {
+//                left: "prev,next",
+//                center: "title",
+//                right: "month,agendaWeek,agendaDay",
+//            },
+//            eventSources: [
+//                source[0],
+//                source[1]
+//            ],
+//            columnFormat: {
+//                month: 'dddd', // Monday, Wednesday, etc
+//                week: 'dddd, MMM dS', // Monday 9/7
+//                day: 'dddd, MMM dS'  // Monday 9/7
+//            }
+//        });
+//    });
+//    source[1] = '';
+//    var newSource = new Array();
+//    newSource[0] = source[0];
+//    newSource[1] = source[1];
+//    $(document).ready(function () {
+//        debugger;
+//
+//    });
 </script>
