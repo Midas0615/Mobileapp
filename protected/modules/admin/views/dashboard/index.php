@@ -153,6 +153,7 @@
                     ?>
                     <div class="box-content">
                         <div id="DRCcalendar"></div>
+                        <div id='calendar'></div>
                     </div>
                 </div>
             </div>
@@ -160,35 +161,26 @@
 
     </div>
 </div>
+<!--<script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/jquery.min.js"></script>-->
 <script type="text/javascript">
-//    jQuery.noConflict(true);
-//    var u1 = '<?php echo Yii::app()->params->WEB_URL . "admin/dashboard/events"; ?>';
-//    var source = new Array();
-//    $.get(u1, function (data) {
-//        source[0] = data;
-//        $("#DRCcalendar").fullCalendar({
-//            header: {
-//                left: "prev,next",
-//                center: "title",
-//                right: "month,agendaWeek,agendaDay",
-//            },
-//            eventSources: [
-//                source[0],
-//                source[1]
-//            ],
-//            columnFormat: {
-//                month: 'dddd', // Monday, Wednesday, etc
-//                week: 'dddd, MMM dS', // Monday 9/7
-//                day: 'dddd, MMM dS'  // Monday 9/7
-//            }
-//        });
-//    });
-//    source[1] = '';
-//    var newSource = new Array();
-//    newSource[0] = source[0];
-//    newSource[1] = source[1];
-//    $(document).ready(function () {
-//        debugger;
-//
-//    });
+    $(document).ready(function () {
+        var source = new Array();
+        var u1 = '<?php echo Yii::app()->params->WEB_URL . "admin/dashboard/events"; ?>';
+        $.get(u1, function (data) {
+            console.log(data);
+            console.log(JSON.parse(data));
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultView: 'month',
+                editable: true,
+                events: JSON.parse(data),
+            })
+
+        });
+    });
 </script>

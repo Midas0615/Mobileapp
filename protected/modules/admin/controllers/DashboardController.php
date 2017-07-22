@@ -36,7 +36,7 @@ class DashboardController extends Controller {
         $eventsData = Order::model()->findAll($criteria);
         if (!empty($eventsData)) {
             foreach ($eventsData as $value) {
-                $eventArray[] = array("id" => $value["id"], "title" => "Order : " . $value["address"], "start" => common::getDateTimeFromTimeStamp($value["order_date"], "Y-m-d"), "color" => "#86BDC0", "textColor" => "#000000");
+                $eventArray[] = array("url" => 'order/update/'.$value["id"],"id" => $value["id"], "title" => "Order : " . $value["address"], "start" => common::getDateTimeFromTimeStamp($value["order_date"], "Y-m-d"), "color" => "#86BDC0", "textColor" => "#000000");
             }
         }
         return $eventArray;

@@ -29,7 +29,6 @@ class OrderController extends Controller {
 
         if (isset($_POST['Order'])) {
             $model->attributes = $_POST['Order'];
-            $model->order_date = common::getTimeStamp($_POST['Order']['order_date']);
             if ($model->validate()) {
                 $model->save();
                 Yii::app()->user->setFlash("success", common::translateText("ADD_SUCCESS"));
@@ -43,12 +42,9 @@ class OrderController extends Controller {
 
     public function actionUpdate($id) {
         $model = $this->loadModel($id, "Order");
-        // Uncomment the following line if AJAX validation is needed
-        $model->order_date = common::getDateTimeFromTimeStamp($model->order_date,'d/m/Y');
         $this->performAjaxValidation($model, $this->id . "-form");
         if (isset($_POST['Order'])) {
             $model->attributes = $_POST['Order'];
-            $model->order_date = common::getTimeStamp($_POST['Order']['order_date']);
             if ($model->validate()) {
                 $model->update();
                 Yii::app()->user->setFlash("success", common::translateText("UPDATE_SUCCESS"));

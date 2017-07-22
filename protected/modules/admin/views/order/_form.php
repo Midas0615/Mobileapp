@@ -47,9 +47,9 @@ $form = $this->beginWidget('CActiveForm', array(
     </div>
     <div class="col-md-4">
         <div class="form-group">
-            <?php echo $form->labelEx($model, "order_date", array("class" => "control-label")); ?>
-            <?php echo $form->textField($model, "order_date", array("class" => "form-control datepicker",'id'=>'datepicker', "placeholder" => $model->getAttributeLabel("order_date"))); ?>                
-            <?php echo $form->error($model, "order_date", array("class" => "parsley-custom-error-message")); ?>
+            <?php echo $form->labelEx($model, "status", array("class" => "control-label")); ?>
+            <?php echo $form->dropDownList($model, "status", $model->statusArr, array("class" => "form-control")); ?>
+            <?php echo $form->error($model, "status", array("class" => "parsley-custom-error-message")); ?>
         </div>
     </div>
 </div>
@@ -59,13 +59,6 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->labelEx($model, "summary", array("class" => "control-label")); ?>
             <?php echo $form->textarea($model, "summary", array("class" => "form-control", "placeholder" => $model->getAttributeLabel("summary"))); ?>                
             <?php echo $form->error($model, "summary", array("class" => "parsley-custom-error-message")); ?>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="form-group">
-            <?php echo $form->labelEx($model, "status", array("class" => "control-label")); ?>
-            <?php echo $form->dropDownList($model, "status", $model->statusArr, array("class" => "form-control")); ?>
-            <?php echo $form->error($model, "status", array("class" => "parsley-custom-error-message")); ?>
         </div>
     </div>
 </div>

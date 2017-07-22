@@ -28,7 +28,7 @@ class Order extends CActiveRecord {
     const Dilivered = 4;
     const COMPLETED = 5;
 
-    public $statusArr = array(self::NEW_ORDER => "New", self::RECEIVED => "Pick Up", self::OUT_OF_DELIVERY => "On The Way",self::Dilivered=> "Delivered", self::COMPLETED => "Completed");
+    public $statusArr = array(self::NEW_ORDER => "New", self::RECEIVED => "Pick Up", self::OUT_OF_DELIVERY => "On The Way", self::Dilivered => "Delivered", self::COMPLETED => "Completed");
 
     /**
      * Returns the static model of the specified AR class.
@@ -54,8 +54,8 @@ class Order extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('qty,product_id,address,order_amount', 'required'),
-            array('status,order_date,qty, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'numerical', 'integerOnly' => true),
-            array('summary', 'length', 'max' => 50000),
+            array('user_id,status,qty, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'numerical', 'integerOnly' => true),
+            array('summary,order_date', 'length', 'max' => 50000),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id,summary,order_amount,order_date,address,qty,user_id,product_id,status, is_deleted, created_dt, created_by, updated_dt, updated_by, ip_address', 'safe', 'on' => 'search'),
@@ -84,6 +84,7 @@ class Order extends CActiveRecord {
     }
 
     protected function beforeSave() {
+        $this->order_date = common::getTimeStamp();
         if ($this->isNewRecord):
             $this->created_dt = common::getTimeStamp();
             $this->created_by = Yii::app()->user->id;
@@ -138,25 +139,25 @@ class Order extends CActiveRecord {
         $criteria->compare('t.ip_address', $this->ip_address);
 
         if ($this->id) {
-            $criteria->compare('t.qty', $this->id, true,'OR');
-            $criteria->compare('t.address', $this->id, true,'OR');
-            $criteria->compare('t.order_amount', $this->id,true,'OR');
-            $criteria->compare('t.summary', $this->id,true,'OR');
-            $criteria->compare('t.order_date', common::getTimeStamp($this->id,"d/m/Y"),true,'OR');
-            $criteria->compare('t.status', array_search ($this->id, self::model()->statusArr),true,'OR');
-            $criteria->compare('users.first_name', $this->id,true,'OR');
-            $criteria->compare('users.last_name', $this->id,true,'OR');
-            $criteria->compare('product.title', $this->id,true,'OR');
+            $criteria->compare('t.qty', $this->id, true, 'OR');
+            $criteria->compare('t.address', $this->id, true, 'OR');
+            $criteria->compare('t.order_amount', $this->id, true, 'OR');
+            $criteria->compare('t.summary', $this->id, true, 'OR');
+            $criteria->compare('t.order_date', common::getTimeStamp($this->id, "d/m/Y"), true, 'OR');
+            $criteria->compare('t.status', array_search($this->id, self::model()->statusArr), true, 'OR');
+            $criteria->compare('users.first_name', $this->id, true, 'OR');
+            $criteria->compare('users.last_name', $this->id, true, 'OR');
+            $criteria->compare('product.title', $this->id, true, 'OR');
         }
-        $criteria->with = array( 'users','product' );
+        $criteria->with = array('users', 'product');
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'pagination' => array(
                 'pageSize' => Yii::app()->params->defaultPageSize
             )
-            
         ));
     }
+
     public function countByField($field = false, $value = false, $user_id = null) {
         $criteria = new CDbCriteria();
         if (isset($field) && isset($value)):

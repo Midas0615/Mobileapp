@@ -18,8 +18,6 @@
         <!-- START STYLESHEETS -->
         <!-- Application stylesheet : mandatory -->
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/style.css">    
-        <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/fullcalendar.css">    
-        <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/fullcalendar.print.css">    
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>library/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/layout.min.css">
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/uielement.min.css">
@@ -29,6 +27,7 @@
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>plugins/selectize/css/selectize.min.css">        
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>plugins/jqueryui/css/jquery-ui.min.css">
         <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>plugins/gritter/css/jquery.gritter.min.css">
+        <link rel="stylesheet" href="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>stylesheet/fullcalendar.css">    
         <!-- START JAVASCRIPT SECTION - Load only modernizr script here -->
         <script src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>library/modernizr/js/modernizr.min.js"></script>
     </head>
@@ -42,15 +41,15 @@
         <!--/ END To Top Scroller -->
         <!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
         <!-- Library script : mandatory -->
+
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>library/bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>library/core/js/core.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/app.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>plugins/jqueryui/js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>plugins/gritter/js/jquery.gritter.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/custom.js"></script>
-        <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/fullcalendar.js"></script>
-        <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/moment.min.js"></script>
-        <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/jquery.min.js"></script>
+
+<!--<script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/moment.min.js"></script>-->
         <!--/ Library script -->
         <!--/ END JAVASCRIPT SECTION -->
         <script>
@@ -59,31 +58,34 @@
                     event.preventDefault();
                 }
             });/*
-            function doAjax() {
-                $.ajax({
-                    url: "<?php echo Yii::app()->createUrl("/common/notify", array("id" => Yii::app()->user->id)); ?>",
-                    type: "POST",
-                    dataType: 'json',
-                    success: function (response) {
-                        if (response.length > 0) {
-                            $.each(response, function (index, item) {
-                                $.gritter.add({
-                                    title: item.title,
-                                    text: item.text,
-                                    sticky: true,
-                                });
-                            });
-                        }
-                    },
-                    global: false,  
-                    complete: function () {
-                        setTimeout(doAjax, 1000);
-                    }
-                });
-            }
-            doAjax();
-*/
+             function doAjax() {
+             $.ajax({
+             url: "<?php echo Yii::app()->createUrl("/common/notify", array("id" => Yii::app()->user->id)); ?>",
+             type: "POST",
+             dataType: 'json',
+             success: function (response) {
+             if (response.length > 0) {
+             $.each(response, function (index, item) {
+             $.gritter.add({
+             title: item.title,
+             text: item.text,
+             sticky: true,
+             });
+             });
+             }
+             },
+             global: false,  
+             complete: function () {
+             setTimeout(doAjax, 1000);
+             }
+             });
+             }
+             doAjax();
+             */
         </script>
+        <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/moment.min.js"></script>
+        <script type="text/javascript" src="<?php echo Yii::app()->params->ADMIN_BT_URL; ?>javascript/fullcalendar.js"></script>
+
     </body>
     <!--/ END Body -->
 </html>
