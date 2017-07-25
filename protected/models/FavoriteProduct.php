@@ -89,10 +89,10 @@ class FavoriteProduct extends CActiveRecord {
     protected function beforeSave() {
         if ($this->isNewRecord):
             $this->created_dt = common::getTimeStamp();
-            $this->created_by = Yii::app()->user->id;
+            $this->created_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1;
         else:
             $this->updated_dt = common::getTimeStamp();
-            $this->updated_by = Yii::app()->user->id;
+            $this->updated_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1;
         endif;
         return parent::beforeSave();
     }

@@ -83,12 +83,12 @@ class Users extends CActiveRecord {
             $this->password = $this->hashPassword($this->password, $this->salt);
             $this->repeat_password = $this->password;
             $this->created_dt = common::getTimeStamp();
-            $this->created_by = Yii::app()->user->id;
+            $this->created_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1 ;
         else:
             unset($this->created_dt);
             $this->last_login = (!common::isNumeric($this->last_login)) ? common::getTimeStamp($this->last_login) : $this->last_login;
             $this->updated_dt = common::getTimeStamp();
-            $this->updated_by = Yii::app()->user->id;
+            $this->updated_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1;
         endif;
         return parent::beforeSave();
     }
@@ -111,7 +111,7 @@ class Users extends CActiveRecord {
         return array(
             array("email_address", "required", "on" => "forgot_password"),
             array("email_address", "checkEmailExists", "on" => "forgot_password"),
-            array("email_address,first_name,last_name,password,repeat_password,phone_number", "required", "on" => "signup"),
+            array("email_address,first_name,last_name,password,repeat_password,phone_number,user_group", "required", "on" => "signup"),
             array('repeat_password', 'compare', 'compareAttribute' => 'password', 'on' => 'signup'),
             array('username,email_address, first_name, last_name,user_group', 'required'),
             array("username,email_address", "unique", "on" => "signup"),
@@ -127,10 +127,10 @@ class Users extends CActiveRecord {
             array('password, salt', 'length', 'max' => 255),
             array('email_address, city', 'length', 'max' => 100),
             array('phone_number', 'length', 'max' => 20),
-            array('profile_pic,favorite_products', 'length', 'max' => 128),
+            array('profile_pic', 'length', 'max' => 128),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, username,favorite_products, password, repeat_password,salt, email_address, first_name, middle_name, last_name, phone_number, gender, birth_date, address, country_id, state_id, city, zipcode, profile_pic, user_group, status, deleted, created_dt, created_by, updated_dt, updated_by', 'safe', 'on' => 'search'),
+            array('id, username, password, repeat_password,salt, email_address, first_name, middle_name, last_name, phone_number, gender, birth_date, address, country_id, state_id, city, zipcode, profile_pic, user_group, status, deleted, created_dt, created_by, updated_dt, updated_by', 'safe', 'on' => 'search'),
         );
     }
 

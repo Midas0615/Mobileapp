@@ -81,13 +81,13 @@ class Rating extends CActiveRecord {
             return array('condition' => $alias . ".is_deleted= 0 ",);
         }
     }
-    protected function beforeSave() {
+     protected function beforeSave() {
         if ($this->isNewRecord):
             $this->created_dt = common::getTimeStamp();
-            $this->created_by = Yii::app()->user->id;
+            $this->created_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1;
         else:
             $this->updated_dt = common::getTimeStamp();
-            $this->updated_by = Yii::app()->user->id;
+            $this->updated_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1;
         endif;
         return parent::beforeSave();
     }
@@ -127,6 +127,6 @@ class Rating extends CActiveRecord {
         $criteria1 = new CDbCriteria;
         $criteria1->compare('t.product_id', $product_id);
         $model = self::model()->findAll($criteria1);
-        return $totlestar->star / count($model);
+        return ($totlestar->star) ? $totlestar->star / count($model) : 0;
     }
 }

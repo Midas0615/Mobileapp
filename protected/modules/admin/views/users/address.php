@@ -116,8 +116,8 @@
                                         <div class="panel-body">
                                             <strong>Name : </strong><?= $val->name ?> <br>
                                             <strong>Address : </strong><?= $val->address ?> <br>
-                                            <strong>Country : </strong><?= $val->countryRel->country ?> <br>
-                                            <strong>State : </strong><?= $val->stateRel->name ?> <br>
+                                            <strong>Country : </strong><?= ($val->country_id) ? $val->countryRel->country : 'N/A' ?> <br>
+                                            <strong>State : </strong><?= ($val->state_id) ? $val->stateRel->name : 'N/A' ?> <br>
                                             <strong>City : </strong><?= $val->city ?> <br>
                                             <strong>Zip-code : </strong><?= $val->zipcode ?> <br>
 

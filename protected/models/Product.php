@@ -24,8 +24,8 @@ class Product extends CActiveRecord {
     const THUMB_SMALL = "small_";
     const THUMB_HEIGHT = "600";
     const THUMB_WIDTH = "600";
-    public $image;
 
+    public $image;
     public $thumbArr = array(self::THUMB_WIDTH, self::THUMB_HEIGHT); //width,height
     public $search;
 
@@ -90,18 +90,17 @@ class Product extends CActiveRecord {
         }
     }
 
-    
     public function afterFind() {
-            $this->image_path = Yii::app()->params['paths']['productURL'].$this->id.'/'.$this->photo ;
+        $this->image_path = Yii::app()->params['paths']['productURL'] . $this->id . '/' . $this->photo;
     }
 
     protected function beforeSave() {
         if ($this->isNewRecord):
             $this->created_dt = common::getTimeStamp();
-            $this->created_by = Yii::app()->user->id;
+            $this->created_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1;
         else:
             $this->updated_dt = common::getTimeStamp();
-            $this->updated_by = Yii::app()->user->id;
+            $this->updated_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1;
         endif;
         return parent::beforeSave();
     }
