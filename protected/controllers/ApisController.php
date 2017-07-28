@@ -25,13 +25,17 @@ class ApisController extends Controller {
     public function actionList() {
         // Get the respective model instance
         switch ($_GET['model']) {
-            case 'posts':
-                $models = Post::model()->findAll();
+            case 'Users':
+                $models = Users::model()->findAll();
+                break;
+            case 'Product':
+                $models = Product::model()->findAll();
+                break;
+            case 'Vendor':
+                $models = Vendor::model()->findAll();
                 break;
             default:
-                // Model not implemented error
-                $this->_sendResponse(501, sprintf(
-                                'Error: Mode <b>list</b> is not implemented for model <b>%s</b>', $_GET['model']));
+                $this->_sendResponse(501, sprintf('Mode <b>create</b> is not implemented for model <b>%s</b>', $_GET['model']));
                 Yii::app()->end();
         }
         // Did we get some results?
@@ -145,18 +149,12 @@ class ApisController extends Controller {
             $this->_sendResponse(200, CJSON::encode($model));
         } else {
             // Errors occurred
-            $msg = "<h1>Error</h1>";
-            $msg .= sprintf("Couldn't create model <b>%s</b>", $_GET['model']);
-            $msg .= "<ul>";
+//                $i = 0;
+            $msg = array();
             foreach ($model->errors as $attribute => $attr_errors) {
-                $msg .= "<li>Attribute: $attribute</li>";
-                $msg .= "<ul>";
-                foreach ($attr_errors as $attr_error)
-                    $msg .= "<li>$attr_error</li>";
-                $msg .= "</ul>";
+                $msg[] = $attr_errors;
             }
-            $msg .= "</ul>";
-            $this->_sendResponse(500, $msg);
+            $this->_sendResponse(500, json_encode($msg));
         }
     }
 
@@ -217,6 +215,217 @@ class ApisController extends Controller {
             $this->_sendResponse(200, $num);    //this is the only way to work with backbone
         else
             $this->_sendResponse(500, sprintf("Error: Couldn't delete model <b>%s</b> with ID <b>%s</b>.", $_GET['model'], $_GET['id']));
+    }
+
+    public function hashPassword($password, $salt) {
+        return md5($salt . $password);
+    }
+
+    public function generateSalt() {
+        return uniqid('', true);
+    }
+
+    public function validatePassword($password) {
+        return $this->hashPassword($password, $this->salt) === $this->password;
+    }
+
+    public function actionLogin() {
+
+        $username = Yii::app()->request->getPost('username');
+        $password = Yii::app()->request->getPost('password');
+        if (Yii::app()->request->isPostRequest && $password && $username) {
+            $model = new Users();
+            $model->username = $username;
+            $userData1 = $model->search()->getData();
+
+            if (isset($userData1[0]->username)) {
+                $mode2 = new Users();
+                $mode2->username = $username;
+                $mode2->password = md5($userData1[0]->salt . $password);
+                $userData2 = $mode2->search()->getData();
+                if (isset($userData2[0]->username)) {
+                    $access_token = bin2hex(openssl_random_pseudo_bytes(16));
+                    $modelSaveToken = Users::model()->findByPk($userData2[0]->id);
+                    $modelSaveToken->access_token = $access_token;
+                    if ($modelSaveToken->update(false)) {
+                        $data = ["success" => 1, "message" => 'Login Success', 'token' => $access_token, 'name' => $modelSaveToken->first_name . ' ' . $modelSaveToken->last_name, "data" => $modelSaveToken->attributes];
+                        echo json_encode($data);
+                        Yii::app()->end();
+                    } else {
+                        $data = ["success" => 0, array("message" => 'Login Fail')];
+                        echo json_encode($data);
+                        Yii::app()->end();
+                    }
+                } else {
+                    $data = ["success" => 0, "message" => 'Invalid Username and Password'];
+                    echo json_encode($data);
+                    Yii::app()->end();
+                }
+            } else {
+                $data = ["success" => 0, "message" => 'Invalid Username and Password'];
+                echo json_encode($data);
+                Yii::app()->end();
+            }
+        } else {
+            $data = ["success" => 0, "message" => 'Parameter missing'];
+            echo json_encode($data);
+            Yii::app()->end();
+        }
+    }
+
+    /**
+     * Logs out the current user and redirect to homepage.
+     */
+    public function actionLogout() {
+        $access_token = Yii::app()->request->getPost('access_token');
+        if (Yii::app()->request->isPostRequest && isset($access_token)) {
+            $Criteria = new CDbCriteria();
+            $Criteria->compare('access_token', $access_token, true);
+            $model = Users::model()->find($Criteria);
+            if (isset($model->access_token) && $model->access_token == $access_token) {
+                $model->access_token = '';
+                $model->update(false);
+                $data = ["status" => 1, array("message" => 'Logout Sucess..!')];
+                echo json_encode($data);
+                Yii::app()->end();
+            } else {
+                $data = ["status" => 0, "message" => 'Invalid access access token / You are not logged in...!'];
+                echo json_encode($data);
+                Yii::app()->end();
+            }
+        } else {
+            $data = ["status" => 0, "message" => 'Invalid request/You are not logged in...!'];
+            echo json_encode($data);
+            Yii::app()->end();
+        }
+    }
+
+    /**
+     * Forget password API
+     */
+    public function actionForgotpassword() {
+
+        $email = Yii::app()->request->getPost('email');
+        $required = ["email"];
+        $valid = RESTValidator::validate($required, $_POST);
+        if (Yii::app()->request->isPostRequest && $valid['status'] == 1) {
+
+            $criteria = new CDbCriteria;
+            $criteria->condition = "LOWER(email_id)=:email";
+            $criteria->params = array(':email' => $email);
+            $user = User::model()->find($criteria);
+
+            if (NULL == $user) {
+                $data = ["success" => 0, "message" => 'Invalid email address'];
+                echo json_encode($data);
+                Yii::app()->end();
+            } else {
+                $userDetails = $user;
+                //generate random code and add in user table for restricting link hit multiple time
+                $code = $this->generateCode($userDetails->id);
+
+                //send email process
+                $emailTo = $userDetails->email_id;
+                // Send email and display relative message to user
+
+                $data = array(
+                    'subject' => "Forgot password [" . Yii::app()->name . "]",
+                    'username' => $userDetails->first_name . " " . $userDetails->last_name,
+                    'email' => $userDetails->email_id,
+                    'link' => 'http://localhost/life_inventory_angular/#/resetpassword/' . $code, //Yii::app()->createAbsoluteUrl('/reset/', array('dt' => common::encode5t($code))),
+                    'view_file' => 'forgot_password'
+                );
+                $isMailSend = common::mailSendWeb($data, $viewPath = 'application.admin.views.email');
+
+                if ($isMailSend !== false) {
+
+                    $data = ["success" => 1, "message" => 'Reset password link sent successfully.'];
+                    echo json_encode($data);
+                    Yii::app()->end();
+                } else {
+                    $data = ["success" => 0, "message" => 'Error sending email'];
+                    echo json_encode($data);
+                    Yii::app()->end();
+                }
+            }
+        } else {
+            $data = ["success" => 0, "message" => $valid['error']];
+            echo json_encode($data);
+            Yii::app()->end();
+        }
+    }
+
+    /**
+     * Reset password API
+     */
+    public function actionResetpassword() {
+        $password = Yii::app()->request->getPost('password');
+        $hash = Yii::app()->request->getPost('hash');
+        $required = ["password", "hash"];
+        $valid = RESTValidator::validate($required, $_POST);
+        if (Yii::app()->request->isPostRequest && $valid['status'] == 1) {
+
+            $criteria = new CDbCriteria;
+            $criteria->condition = "activation_code=:act_code";
+            $criteria->params = array(':act_code' => $hash);
+            $user_model = User::model();
+            $data = $user_model->find($criteria);
+
+            if (null === $data) {
+                $data = ["success" => 0, "message" => 'Reset link is invalid'];
+                echo json_encode($data);
+                Yii::app()->end();
+            } else {
+                $criteria = new CDbCriteria;
+                $criteria->condition = "activation_code=:act_code";
+                $criteria->params = array(':act_code' => $hash);
+                $user_model = User::model()->find($criteria);
+                $user_model->activation_code = "";
+                $user_model->password = common::passencrypt($password);
+                $stat = $user_model->update();
+                if ($stat) {
+                    $data = ["success" => 1, "message" => 'Password Reset Successfully. click here to'];
+                    echo json_encode($data);
+                    Yii::app()->end();
+                } else {
+                    $data = ["success" => 0, "message" => 'Password Reset failed. Please try again.'];
+                    echo json_encode($data);
+                    Yii::app()->end();
+                }
+            }
+        } else {
+            $data = ["success" => 0, "message" => $valid['error']];
+            echo json_encode($data);
+            Yii::app()->end();
+        }
+    }
+
+//    public function actionPayment() {
+//        if (!isset(Yii::app()->user->userData)) {
+//            $this->redirect(array("/login"));
+//        }
+//        if (isset(Yii::app()->user->lastPaymentId) || !empty(Yii::app()->user->userData->payment_id)) {
+//            Yii::app()->user->setFlash("error", "Your payment has already done. Please login to continue.");
+//            $this->redirect(array("/login"));
+//        }
+//        $this->render('payment');
+//    }
+    public function actionError() {
+        if ($error = Yii::app()->errorHandler->error) {
+            if (Yii::app()->request->isAjaxRequest)
+                echo $error['message'];
+            else
+            //$this->render('error', $error);
+                echo $error['message'];
+        }
+    }
+
+    private function generateCode($user_id, $length = 10) {
+        $code = bin2hex(openssl_random_pseudo_bytes($length));
+        $model = User::model()->findByPk($user_id);
+        $model->activation_code = $code;
+        $model->update();
+        return $code;
     }
 
     private function _sendResponse($status = 200, $body = '', $content_type = 'text/html') {

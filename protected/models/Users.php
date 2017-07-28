@@ -83,7 +83,7 @@ class Users extends CActiveRecord {
             $this->password = $this->hashPassword($this->password, $this->salt);
             $this->repeat_password = $this->password;
             $this->created_dt = common::getTimeStamp();
-            $this->created_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1 ;
+            $this->created_by = (isset(Yii::app()->user->id)) ? Yii::app()->user->id : 1;
         else:
             unset($this->created_dt);
             $this->last_login = (!common::isNumeric($this->last_login)) ? common::getTimeStamp($this->last_login) : $this->last_login;
@@ -123,14 +123,14 @@ class Users extends CActiveRecord {
             array('password,repeat_password', 'required', 'on' => 'change_password'),
             array('repeat_password', 'compare', 'compareAttribute' => 'password', 'on' => 'change_password'),
             array('gender, country_id, state_id, zipcode, user_group, status, deleted, created_by, updated_by', 'numerical', 'integerOnly' => true),
-            array('username, first_name, middle_name, last_name', 'length', 'max' => 50),
+            array('username,facebook_id, first_name, middle_name, last_name', 'length', 'max' => 50),
             array('password, salt', 'length', 'max' => 255),
             array('email_address, city', 'length', 'max' => 100),
             array('phone_number', 'length', 'max' => 20),
             array('profile_pic', 'length', 'max' => 128),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, username, password, repeat_password,salt, email_address, first_name, middle_name, last_name, phone_number, gender, birth_date, address, country_id, state_id, city, zipcode, profile_pic, user_group, status, deleted, created_dt, created_by, updated_dt, updated_by', 'safe', 'on' => 'search'),
+            array('id, username,facebook_id, password, repeat_password,salt, email_address, first_name, middle_name, last_name, phone_number, gender, birth_date, address, country_id, state_id, city, zipcode, profile_pic, user_group, status, deleted, created_dt, created_by, updated_dt, updated_by', 'safe', 'on' => 'search'),
         );
     }
 
@@ -209,6 +209,12 @@ class Users extends CActiveRecord {
             $criteria->compare("t.favorite_products", $search, true, "OR");
             $criteria->compare("countryRel.country", $search, true, "OR");
             $criteria->compare("stateRel.name", $search, true, "OR");
+        }
+        if (!empty($this->username)) {
+            $criteria->compare("username", $this->username);
+        }
+        if (!empty($this->password)) {
+            $criteria->compare("password", $this->password,true);
         }
         if (!empty($this->user_group)) {
             $criteria->compare("user_group", $this->user_group);
