@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+ini_set('error_reporting',0);
 define('DS', DIRECTORY_SEPARATOR);
 define('DEVELOPMENT', file_exists(dirname(__FILE__) . DS . "development") ? true : true);
 

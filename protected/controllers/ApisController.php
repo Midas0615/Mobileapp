@@ -1,5 +1,9 @@
 <?php
 
+header('Content-type: application/json');
+error_reporting(0);
+ini_set('error_reporting', 0);
+
 class ApisController extends Controller {
 
     // Members
@@ -25,30 +29,42 @@ class ApisController extends Controller {
     public function actionList() {
         // Get the respective model instance
         switch ($_GET['model']) {
-            case 'Users':
-                $models = Users::model()->findAll();
-                break;
             case 'Product':
                 $models = Product::model()->findAll();
                 break;
             case 'Vendor':
                 $models = Vendor::model()->findAll();
                 break;
+            case 'FavoriteProduct':
+                $models = FavoriteProduct::model()->findAll();
+                break;
+            case 'Order':
+                $models = Order::model()->findAll();
+                break;
+            case 'Rating':
+                $models = Rating::model()->findAll();
+                break;
+            case 'Review':
+                $models = Review::model()->findAll();
+                break;
+            case 'UserAddress':
+                $models = UserAddress::model()->findAll();
+                break;
             default:
-                $this->_sendResponse(501, sprintf('Mode <b>create</b> is not implemented for model <b>%s</b>', $_GET['model']));
+                $this->_sendResponse(0, 'You have pass invalid modal name');
                 Yii::app()->end();
         }
         // Did we get some results?
         if (empty($models)) {
             // No
-            $this->_sendResponse(200, sprintf('No items where found for model <b>%s</b>', $_GET['model']));
+            $this->_sendResponse(0, 'No Record found ');
         } else {
             // Prepare response
             $rows = array();
             foreach ($models as $model)
                 $rows[] = $model->attributes;
             // Send the response
-            $this->_sendResponse(200, CJSON::encode($rows));
+            $this->_sendResponse(1, '', $rows);
         }
     }
 
@@ -86,8 +102,23 @@ class ApisController extends Controller {
             case 'Vendor':
                 $model = new Vendor();
                 break;
+            case 'FavoriteProduct':
+                $model = new FavoriteProduct();
+                break;
+            case 'Order':
+                $model = new Order();
+                break;
+            case 'Rating':
+                $model = new Rating();
+                break;
+            case 'Review':
+                $model = new Review();
+                break;
+            case 'UserAddress':
+                $model = new UserAddress();
+                break;
             default:
-                $this->_sendResponse(501, sprintf('Mode <b>create</b> is not implemented for model <b>%s</b>', $_GET['model']));
+                $this->_sendResponse(0, 'You have pass invalid modal name');
                 Yii::app()->end();
         }
         // Try to assign POST values to attributes
@@ -96,7 +127,7 @@ class ApisController extends Controller {
             if ($model->hasAttribute($var))
                 $model->$var = $value;
             else
-                $this->_sendResponse(500, sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>', $var, $_GET['model']));
+                $this->_sendResponse(0, 'Parameter ' . $var . ' is not allowed for model ' . $_GET['model']);
         }
         // Try to save the model
         $model->created_by = 1;
@@ -116,7 +147,7 @@ class ApisController extends Controller {
                         if (move_uploaded_file($_FILES['profile_pic']['tmp_name'], $uploadfile)) {
                             $model->profile_pic = $_FILES['profile_pic']['name'];
                             $model->update();
-                            $this->_sendResponse(200, CJSON::encode($model));
+                            $this->_sendResponse(1, 'Record created successfully', $model);
                         }
                     }
                 case 'Product':
@@ -129,7 +160,7 @@ class ApisController extends Controller {
                         if (move_uploaded_file($_FILES['photo']['tmp_name'], $uploadfile)) {
                             $model->photo = $_FILES['photo']['name'];
                             $model->update();
-                            $this->_sendResponse(200, CJSON::encode($model));
+                            $this->_sendResponse(1, 'Record created successfully', $model);
                         }
                     }
                 case 'Vendor':
@@ -142,19 +173,18 @@ class ApisController extends Controller {
                         if (move_uploaded_file($_FILES['photo']['tmp_name'], $uploadfile)) {
                             $model->photo = $_FILES['photo']['name'];
                             $model->update();
-                            $this->_sendResponse(200, CJSON::encode($model));
                         }
                     }
+                default:
+                    $this->_sendResponse(1, 'Record created successfully', $model);
+                    Yii::app()->end();
             }
-            $this->_sendResponse(200, CJSON::encode($model));
         } else {
-            // Errors occurred
-//                $i = 0;
             $msg = array();
             foreach ($model->errors as $attribute => $attr_errors) {
-                $msg[] = $attr_errors;
+                $msg[] = array($attr_errors[0]);
             }
-            $this->_sendResponse(500, json_encode($msg));
+            $this->_sendResponse(0, 'Errors !', '', $msg);
         }
     }
 
@@ -249,26 +279,26 @@ class ApisController extends Controller {
                     $modelSaveToken->access_token = $access_token;
                     if ($modelSaveToken->update(false)) {
                         $data = ["success" => 1, "message" => 'Login Success', 'token' => $access_token, 'name' => $modelSaveToken->first_name . ' ' . $modelSaveToken->last_name, "data" => $modelSaveToken->attributes];
-                        echo json_encode($data);
+                        echo CJSON::encode($data);
                         Yii::app()->end();
                     } else {
                         $data = ["success" => 0, array("message" => 'Login Fail')];
-                        echo json_encode($data);
+                        echo CJSON::encode($data);
                         Yii::app()->end();
                     }
                 } else {
                     $data = ["success" => 0, "message" => 'Invalid Username and Password'];
-                    echo json_encode($data);
+                    echo CJSON::encode($data);
                     Yii::app()->end();
                 }
             } else {
                 $data = ["success" => 0, "message" => 'Invalid Username and Password'];
-                echo json_encode($data);
+                echo CJSON::encode($data);
                 Yii::app()->end();
             }
         } else {
             $data = ["success" => 0, "message" => 'Parameter missing'];
-            echo json_encode($data);
+            echo CJSON::encode($data);
             Yii::app()->end();
         }
     }
@@ -286,16 +316,16 @@ class ApisController extends Controller {
                 $model->access_token = '';
                 $model->update(false);
                 $data = ["status" => 1, array("message" => 'Logout Sucess..!')];
-                echo json_encode($data);
+                echo CJSON::encode($data);
                 Yii::app()->end();
             } else {
                 $data = ["status" => 0, "message" => 'Invalid access access token / You are not logged in...!'];
-                echo json_encode($data);
+                echo CJSON::encode($data);
                 Yii::app()->end();
             }
         } else {
             $data = ["status" => 0, "message" => 'Invalid request/You are not logged in...!'];
-            echo json_encode($data);
+            echo CJSON::encode($data);
             Yii::app()->end();
         }
     }
@@ -317,7 +347,7 @@ class ApisController extends Controller {
 
             if (NULL == $user) {
                 $data = ["success" => 0, "message" => 'Invalid email address'];
-                echo json_encode($data);
+                echo CJSON::encode($data);
                 Yii::app()->end();
             } else {
                 $userDetails = $user;
@@ -340,17 +370,17 @@ class ApisController extends Controller {
                 if ($isMailSend !== false) {
 
                     $data = ["success" => 1, "message" => 'Reset password link sent successfully.'];
-                    echo json_encode($data);
+                    echo CJSON::encode($data);
                     Yii::app()->end();
                 } else {
                     $data = ["success" => 0, "message" => 'Error sending email'];
-                    echo json_encode($data);
+                    echo CJSON::encode($data);
                     Yii::app()->end();
                 }
             }
         } else {
             $data = ["success" => 0, "message" => $valid['error']];
-            echo json_encode($data);
+            echo CJSON::encode($data);
             Yii::app()->end();
         }
     }
@@ -373,7 +403,7 @@ class ApisController extends Controller {
 
             if (null === $data) {
                 $data = ["success" => 0, "message" => 'Reset link is invalid'];
-                echo json_encode($data);
+                echo CJSON::encode($data);
                 Yii::app()->end();
             } else {
                 $criteria = new CDbCriteria;
@@ -385,17 +415,17 @@ class ApisController extends Controller {
                 $stat = $user_model->update();
                 if ($stat) {
                     $data = ["success" => 1, "message" => 'Password Reset Successfully. click here to'];
-                    echo json_encode($data);
+                    echo CJSON::encode($data);
                     Yii::app()->end();
                 } else {
                     $data = ["success" => 0, "message" => 'Password Reset failed. Please try again.'];
-                    echo json_encode($data);
+                    echo CJSON::encode($data);
                     Yii::app()->end();
                 }
             }
         } else {
             $data = ["success" => 0, "message" => $valid['error']];
-            echo json_encode($data);
+            echo CJSON::encode($data);
             Yii::app()->end();
         }
     }
@@ -428,65 +458,71 @@ class ApisController extends Controller {
         return $code;
     }
 
-    private function _sendResponse($status = 200, $body = '', $content_type = 'text/html') {
-        // set the status
-        $status_header = 'HTTP/1.1 ' . $status . ' ' . $this->_getStatusCodeMessage($status);
-        header($status_header);
-        // and the content type
-        header('Content-type: ' . $content_type);
-
-        // pages with body are easy
-        if ($body != '') {
-            // send the body
-            echo $body;
-        }
-        // we need to create the body if none is passed
-        else {
-            // create some body messages
-            $message = '';
-
-            // this is purely optional, but makes the pages a little nicer to read
-            // for your users.  Since you won't likely send a lot of different status codes,
-            // this also shouldn't be too ponderous to maintain
-            switch ($status) {
-                case 401:
-                    $message = 'You must be authorized to view this page.';
-                    break;
-                case 404:
-                    $message = 'The requested URL ' . $_SERVER['REQUEST_URI'] . ' was not found.';
-                    break;
-                case 500:
-                    $message = 'The server encountered an error processing your request.';
-                    break;
-                case 501:
-                    $message = 'The requested method is not implemented.';
-                    break;
-            }
-
-            // servers don't always have a signature turned on 
-            // (this is an apache directive "ServerSignature On")
-            $signature = ($_SERVER['SERVER_SIGNATURE'] == '') ? $_SERVER['SERVER_SOFTWARE'] . ' Server at ' . $_SERVER['SERVER_NAME'] . ' Port ' . $_SERVER['SERVER_PORT'] : $_SERVER['SERVER_SIGNATURE'];
-
-            // this should be templated in a real-world solution
-            $body = '
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>' . $status . ' ' . $this->_getStatusCodeMessage($status) . '</title>
-</head>
-<body>
-    <h1>' . $this->_getStatusCodeMessage($status) . '</h1>
-    <p>' . $message . '</p>
-    <hr />
-    <address>' . $signature . '</address>
-</body>
-</html>';
-
-            echo $body;
-        }
+    private function _sendResponse($status = 0, $message = '', $data = '', $errors = '') {
+        $data = ["success" => $status, 'message' => $message, "data" => $data, 'errors' => $errors];
+        echo CJSON::encode($data);
         Yii::app()->end();
     }
+
+//    private function _sendResponse($status = 200, $body = '', $content_type = 'text/html') {
+//        // set the status
+//        $status_header = 'HTTP/1.1 ' . $status . ' ' . $this->_getStatusCodeMessage($status);
+//        header($status_header);
+//        // and the content type
+//     //   header('Content-type: ' . $content_type);
+//
+//        // pages with body are easy
+//        if ($body != '') {
+//            // send the body
+//            echo $body;
+//        }
+//        // we need to create the body if none is passed
+//        else {
+//            // create some body messages
+//            $message = '';
+//
+//            // this is purely optional, but makes the pages a little nicer to read
+//            // for your users.  Since you won't likely send a lot of different status codes,
+//            // this also shouldn't be too ponderous to maintain
+//            switch ($status) {
+//                case 401:
+//                    $message = 'You must be authorized to view this page.';
+//                    break;
+//                case 404:
+//                    $message = 'The requested URL ' . $_SERVER['REQUEST_URI'] . ' was not found.';
+//                    break;
+//                case 500:
+//                    $message = 'The server encountered an error processing your request.';
+//                    break;
+//                case 501:
+//                    $message = 'The requested method is not implemented.';
+//                    break;
+//            }
+//
+//            // servers don't always have a signature turned on 
+//            // (this is an apache directive "ServerSignature On")
+//            $signature = ($_SERVER['SERVER_SIGNATURE'] == '') ? $_SERVER['SERVER_SOFTWARE'] . ' Server at ' . $_SERVER['SERVER_NAME'] . ' Port ' . $_SERVER['SERVER_PORT'] : $_SERVER['SERVER_SIGNATURE'];
+//
+//            // this should be templated in a real-world solution
+//            $body = '
+//<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+//<html>
+//<head>
+//    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+//    <title>' . $status . ' ' . $this->_getStatusCodeMessage($status) . '</title>
+//</head>
+//<body>
+//    <h1>' . $this->_getStatusCodeMessage($status) . '</h1>
+//    <p>' . $message . '</p>
+//    <hr />
+//    <address>' . $signature . '</address>
+//</body>
+//</html>';
+//
+//            echo $body;
+//        }
+//        Yii::app()->end();
+//    }
 
     private function _getStatusCodeMessage($status) {
         // these could be stored in a .ini file and loaded
