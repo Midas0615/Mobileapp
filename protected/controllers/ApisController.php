@@ -261,16 +261,16 @@ class ApisController extends Controller {
 
     public function actionLogin() {
 
-        $username = Yii::app()->request->getPost('username');
+        $username = Yii::app()->request->getPost('email');
         $password = Yii::app()->request->getPost('password');
         if (Yii::app()->request->isPostRequest && $password && $username) {
             $model = new Users();
-            $model->username = $username;
+            $model->email_address = $username;
             $userData1 = $model->search()->getData();
 
-            if (isset($userData1[0]->username)) {
+            if (isset($userData1[0]->email_address)) {
                 $mode2 = new Users();
-                $mode2->username = $username;
+                $mode2->email_address = $username;
                 $mode2->password = md5($userData1[0]->salt . $password);
                 $userData2 = $mode2->search()->getData();
                 if (isset($userData2[0]->username)) {
@@ -297,7 +297,7 @@ class ApisController extends Controller {
                 Yii::app()->end();
             }
         } else {
-            $data = ["success" => 0, "message" => 'Parameter missing'];
+            $data = ["success" => 0, "message" => 'Parameter missing(email,password required)'];
             echo CJSON::encode($data);
             Yii::app()->end();
         }

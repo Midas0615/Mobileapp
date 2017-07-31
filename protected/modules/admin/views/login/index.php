@@ -40,7 +40,7 @@ $form = $this->beginWidget('CActiveForm', array(
     </div>
     <div class="form-group">
         <div class="form-stack has-icon pull-left">
-            <input name="AdminLoginForm[username]" id="AdminLoginForm_username" type="text" class="form-control input-lg" placeholder="Username / email" data-parsley-errors-container="#error-container" data-parsley-error-message="" data-parsley-required>
+            <input name="AdminLoginForm[username]" id="AdminLoginForm_username" type="text" class="form-control input-lg" placeholder="Email" data-parsley-errors-container="#error-container" data-parsley-error-message="" data-parsley-required>
             <i class="ico-user2 form-control-icon"></i>
         </div>
         <div class="form-stack has-icon pull-left">

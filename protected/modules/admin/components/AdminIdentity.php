@@ -14,7 +14,7 @@ class AdminIdentity extends CUserIdentity {
      * @return boolean whether authentication succeeds.
      */
     public function authenticate() {
-        $user = Users::model()->resetScope()->find('(LOWER(username)=:username OR email_address=:email_address) AND deleted=:deleted AND user_group!=:user_group', array(":username" => strtolower($this->username), "email_address" => strtolower($this->username), ":deleted" => 0, "user_group" => UsersGroup::AUTHOR));
+        $user = Users::model()->resetScope()->find('(LOWER(email_address)=:email_address) AND deleted=:deleted AND user_group!=:user_group', array("email_address" => strtolower($this->username), ":deleted" => 0, "user_group" => UsersGroup::AUTHOR));
         if (!empty($user)) {
             if (!$user->validatePassword($this->password)) {
                 $this->errorCode = self::ERROR_PASSWORD_INVALID;

@@ -216,6 +216,9 @@ class Users extends CActiveRecord {
         if (!empty($this->password)) {
             $criteria->compare("password", $this->password,true);
         }
+        if (!empty($this->email_address)) {
+            $criteria->compare("email_address", $this->email_address,true);
+        }
         if (!empty($this->user_group)) {
             $criteria->compare("user_group", $this->user_group);
         }
