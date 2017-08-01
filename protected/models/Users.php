@@ -78,6 +78,10 @@ class Users extends CActiveRecord {
     }
 
     protected function beforeSave() {
+
+        if (empty($this->username)) {
+            $this->username = $this->email_address;
+        }
         if ($this->isNewRecord):
             $this->salt = $this->generateSalt();
             $this->password = $this->hashPassword($this->password, $this->salt);
@@ -113,9 +117,9 @@ class Users extends CActiveRecord {
             array("email_address", "checkEmailExists", "on" => "forgot_password"),
             array("email_address,first_name,last_name,password,repeat_password,phone_number,user_group", "required", "on" => "signup"),
             array('repeat_password', 'compare', 'compareAttribute' => 'password', 'on' => 'signup'),
-            array('username,email_address, first_name, last_name,user_group', 'required'),
-            array("username,email_address", "unique", "on" => "signup"),
-            array("username,email_address", "unique", "on" => "add"),
+            array('email_address, first_name, last_name,user_group', 'required'),
+            array("email_address", "unique", "on" => "signup"),
+            array("email_address", "unique", "on" => "add"),
             array("email_address", "email"),
             array('password,repeat_password', 'required', 'on' => 'add'),
             array('profile_pic', 'file', 'allowEmpty' => true, 'types' => implode(",", Yii::app()->params->allowedImages)),
@@ -214,10 +218,10 @@ class Users extends CActiveRecord {
             $criteria->compare("username", $this->username);
         }
         if (!empty($this->password)) {
-            $criteria->compare("password", $this->password,true);
+            $criteria->compare("password", $this->password, true);
         }
         if (!empty($this->email_address)) {
-            $criteria->compare("email_address", $this->email_address,true);
+            $criteria->compare("email_address", $this->email_address, true);
         }
         if (!empty($this->user_group)) {
             $criteria->compare("user_group", $this->user_group);
