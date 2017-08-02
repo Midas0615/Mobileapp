@@ -13,11 +13,11 @@ class BaseController extends Controller {
      * Declares class-based actions.
      */
     public function init() {
-        
-    }
-
-    public function actionIndex() {
-        $token = Yii::app()->request->getPost('token');
+        ob_clean();
+        echo "<pre>";
+        print_r($variable);
+        exit();
+        $token = Yii::app()->request->getPost('access_token');
         if (Yii::app()->request->isPostRequest && isset($token)) {
             $Criteria = new CDbCriteria();
             $Criteria->compare('token', $token);
@@ -25,10 +25,6 @@ class BaseController extends Controller {
             if (isset($model->token)) {
                 if (!isset($model->token) && $model->token != $token) {
                     $data = ["status" => 2, "message" => 'Sesson timeout please login again'];
-                    echo json_encode($data);
-                    Yii::app()->end();
-                } else {
-                    $data = ["status" => 1, "message" => 'Sucess'];
                     echo json_encode($data);
                     Yii::app()->end();
                 }
@@ -42,6 +38,14 @@ class BaseController extends Controller {
             echo json_encode($data);
             Yii::app()->end();
         }
+    }
+
+    public function actionIndex() {
+        ob_clean();
+        echo "<pre>";
+        print_r($variable);
+        exit();
+        
     }
 
 }

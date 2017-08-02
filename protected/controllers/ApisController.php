@@ -21,6 +21,33 @@ class ApisController extends Controller {
     /**
      * @return array action filters
      */
+    public function init() {
+
+        if (Yii::app()->urlManager->parseUrl(Yii::app()->request) != 'apis/login') {
+            $token = Yii::app()->request->getPost('access_token');
+            if (Yii::app()->request->isPostRequest && isset($token)) {
+                $Criteria = new CDbCriteria();
+                $Criteria->compare('access_token', $token);
+                $model = Users::model()->find($Criteria);
+                if (isset($model->access_token)) {
+                    if (!isset($model->access_token) && $model->access_token != $token) {
+                        $data = ["status" => 0, "message" => 'Sesson timeout please login again'];
+                        echo json_encode($data);
+                        Yii::app()->end();
+                    }
+                } else {
+                    $data = ["status" => 0, "message" => 'Sesson timeout please login again'];
+                    echo json_encode($data);
+                    Yii::app()->end();
+                }
+            } else {
+                $data = ["status" => 0, "message" => 'Access token required'];
+                echo json_encode($data);
+                Yii::app()->end();
+            }
+        }
+    }
+
     public function filters() {
         return array();
     }
@@ -273,7 +300,7 @@ class ApisController extends Controller {
                 $mode2->email_address = $username;
                 $mode2->password = md5($userData1[0]->salt . $password);
                 $userData2 = $mode2->search()->getData();
-                if (isset($userData2[0]->username)) {
+                if (isset($userData2[0]->email_address)) {
                     $access_token = bin2hex(openssl_random_pseudo_bytes(16));
                     $modelSaveToken = Users::model()->findByPk($userData2[0]->id);
                     $modelSaveToken->access_token = $access_token;
@@ -292,7 +319,7 @@ class ApisController extends Controller {
                     Yii::app()->end();
                 }
             } else {
-                $data = ["success" => 0, "message" => 'Invalid Username and Password'];
+                $data = ["success" => 0, "message" => 'Invalid Email and Password'];
                 echo CJSON::encode($data);
                 Yii::app()->end();
             }

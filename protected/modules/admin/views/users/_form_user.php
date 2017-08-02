@@ -126,14 +126,8 @@ $form = $this->beginWidget('CActiveForm', array(
 <!-- Security  -->
 <div class="row nm">
     <h5 class="semibold mb15">Security:</h5>
-    <div class="col-md-4">
-        <div class="form-group">
-            <?php echo $form->labelEx($model, "username", array("class" => "control-label")); ?>
-            <?php echo $form->textField($model, "username", array("class" => "form-control")); ?>
-            <?php echo $form->error($model, "username", array("class" => "parsley-custom-error-message")); ?>                                       
-        </div>
-    </div>
-    <div class="col-md-4">
+   
+    <div class="col-md-6">
         <div class="form-group">
             <?php
             echo $form->labelEx($model, "user_group", array("class" => "control-label"));
@@ -142,7 +136,7 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->error($model, "user_group", array("class" => "parsley-custom-error-message")); ?>                                       
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="form-group">
             <?php echo $form->labelEx($model, "status", array("class" => "control-label")); ?>
             <?php echo $form->dropDownList($model, "status", Users::model()->statusArr, array("class" => "form-control")); ?>  
