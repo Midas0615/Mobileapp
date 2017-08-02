@@ -23,7 +23,7 @@ class ApisController extends Controller {
      */
     public function init() {
 
-        if (Yii::app()->urlManager->parseUrl(Yii::app()->request) != 'apis/login') {
+        if (Yii::app()->urlManager->parseUrl(Yii::app()->request) != 'apis/login' && Yii::app()->urlManager->parseUrl(Yii::app()->request) != 'apis/forgotpassword') {
             $token = Yii::app()->request->getPost('access_token');
             if (Yii::app()->request->isPostRequest && isset($token)) {
                 $Criteria = new CDbCriteria();
@@ -360,42 +360,23 @@ class ApisController extends Controller {
     /**
      * Forget password API
      */
+
     public function actionForgotpassword() {
-
-        $email = Yii::app()->request->getPost('email');
-        $required = ["email"];
-        $valid = RESTValidator::validate($required, $_POST);
-        if (Yii::app()->request->isPostRequest && $valid['status'] == 1) {
-
-            $criteria = new CDbCriteria;
-            $criteria->condition = "LOWER(email_id)=:email";
-            $criteria->params = array(':email' => $email);
-            $user = User::model()->find($criteria);
-
-            if (NULL == $user) {
-                $data = ["success" => 0, "message" => 'Invalid email address'];
-                echo CJSON::encode($data);
-                Yii::app()->end();
-            } else {
-                $userDetails = $user;
-                //generate random code and add in user table for restricting link hit multiple time
-                $code = $this->generateCode($userDetails->id);
-
-                //send email process
-                $emailTo = $userDetails->email_id;
-                // Send email and display relative message to user
-
-                $data = array(
-                    'subject' => "Forgot password [" . Yii::app()->name . "]",
-                    'username' => $userDetails->first_name . " " . $userDetails->last_name,
-                    'email' => $userDetails->email_id,
-                    'link' => 'http://localhost/life_inventory_angular/#/resetpassword/' . $code, //Yii::app()->createAbsoluteUrl('/reset/', array('dt' => common::encode5t($code))),
-                    'view_file' => 'forgot_password'
-                );
-                $isMailSend = common::mailSendWeb($data, $viewPath = 'application.admin.views.email');
-
+        $email = Yii::app()->request->getPost('email_address');
+        if (Yii::app()->request->isPostRequest && $email) {
+            $model = new Users();
+            $Criteria = new CDbCriteria();
+            $Criteria->compare('email_address', $email);
+            $modelData = Users::model()->find($Criteria);
+            if ($modelData->email_address) {
+                $modelData->password_reset_token = bin2hex(openssl_random_pseudo_bytes(16));
+                $modelData->save();
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                $headers .= 'From: A Life\'s Invetory <ladanidipak2014@gmail.com>' . "\r\n";
+                $htmlContent = 'http://www.freewebs.co.in/mobiapp/admin/login/resetpassword?password_reset_token=' . $modelData->password_reset_token;
+                $isMailSend = mail($modelData->email_address, 'Password Reset', $htmlContent, $headers);
                 if ($isMailSend !== false) {
-
                     $data = ["success" => 1, "message" => 'Reset password link sent successfully.'];
                     echo CJSON::encode($data);
                     Yii::app()->end();
@@ -404,12 +385,17 @@ class ApisController extends Controller {
                     echo CJSON::encode($data);
                     Yii::app()->end();
                 }
+            } else {
+                $data = ["success" => 0, "message" => 'invalid email address '];
+                echo CJSON::encode($data);
+                Yii::app()->end();
             }
         } else {
-            $data = ["success" => 0, "message" => $valid['error']];
+            $data = ["success" => 0, "message" => 'invalid request(email_address required)'];
             echo CJSON::encode($data);
             Yii::app()->end();
         }
+        $this->render('forgot_password', array('model' => $model));
     }
 
     /**

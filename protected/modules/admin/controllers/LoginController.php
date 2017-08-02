@@ -47,6 +47,7 @@ class LoginController extends BackendController {
             $modelData->save();
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            $headers .= 'From: A Life\'s Invetory <ladanidipak2014@gmail.com>' . "\r\n";
             $htmlContent = 'http://www.freewebs.co.in/mobiapp/admin/login/resetpassword?password_reset_token='.$modelData->password_reset_token;
             $isAdminMailSend = mail($modelData->email_address, 'Password Reset', $htmlContent, $headers);
             $this->redirect(Yii::app()->user->returnUrl);
