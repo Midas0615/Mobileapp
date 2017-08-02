@@ -34,4 +34,41 @@ class LoginController extends BackendController {
         $this->redirect(Yii::app()->user->loginUrl);
     }
 
+    public function actionForgotpassword() {
+        $model = new Users();
+        if (Users::model()->isAdminLoggedIn()) {
+            $this->redirect(Yii::app()->user->returnUrl);
+        }
+        if (isset($_POST['Users'])) {
+            $Criteria = new CDbCriteria();
+            $Criteria->compare('email_address', $_POST['Users']['email_address']);
+            $modelData = Users::model()->find($Criteria);
+            $modelData->password_reset_token = bin2hex(openssl_random_pseudo_bytes(16));
+            $modelData->save();
+            $headers = "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            $htmlContent = 'http://www.freewebs.co.in/mobiapp/admin/login/resetpassword?password_reset_token='.$modelData->password_reset_token;
+            $isAdminMailSend = mail($modelData->email_address, 'Password Reset', $htmlContent, $headers);
+            $this->redirect(Yii::app()->user->returnUrl);
+        }
+        $this->render('forgot_password', array('model' => $model));
+    }
+
+    public function actionResetpassword() {
+        $model = new Users();
+        if (isset($_GET['password_reset_token']) && $_POST['Users']) {
+            $Criteria = new CDbCriteria();
+            $Criteria->compare('password_reset_token', $_GET['password_reset_token']);
+            $modelData = Users::model()->find($Criteria);
+            $modelData->password = $_POST['Users']['password'];
+            $modelData->salt = Users::model()->generateSalt();
+            $modelData->password = Users::model()->hashPassword($modelData->password, $modelData->salt);
+            $modelData->repeat_password = $modelData->password;
+            $modelData->password_reset_token = '';
+            $modelData->update();
+            $this->redirect(Yii::app()->user->returnUrl);
+        }
+        $this->render('reset_password', array('model' => $model));
+    }
+
 }

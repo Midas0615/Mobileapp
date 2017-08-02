@@ -5,3 +5,5 @@ ALTER TABLE `mob_product` CHANGE `status` `status` INT(11) NULL DEFAULT '0';
 ALTER TABLE `mob_order` CHANGE `status` `status` INT(11) NULL DEFAULT '1';
 -- =====================================================================================
 ALTER TABLE `mob_users` ADD `facebook_id` VARCHAR(50) NULL AFTER `username`;
+--------------------------------------------------------------------------------------
+ALTER TABLE `mob_users` ADD `password_reset_token` VARCHAR(255) NULL AFTER `access_token`;

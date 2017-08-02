@@ -65,7 +65,7 @@ $form = $this->beginWidget('CActiveForm', array(
                 </div>
             </div>
             <div class="col-xs-6">
-                <?php //echo CHtml::Link('Forgot Password', array("login/forgotpassword")); ?>
+                <?php echo CHtml::Link('Forgot Password', array("login/forgotpassword")); ?>
             </div>
         </div>
     </div>
