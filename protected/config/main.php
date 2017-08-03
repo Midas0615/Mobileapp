@@ -55,9 +55,9 @@ return array(
         'mail' => array('class' => 'ext.yii-mail.YiiMail',
             'transportType' => 'smtp',
             'transportOptions' => array(
-                'host' => $MAIL_HOST,
-                'username' => $MAIL_USERNAME,
-                'password' => $MAIL_PASSWORD,
+                'host' => "smtp.gmail.com",
+                'username' => "smtp.alpesh@gmail.com",
+                'password' => "AlpeshVaghela",
                 'port' => '465',
                 'encryption' => 'tls'
             ),

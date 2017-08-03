@@ -48,8 +48,15 @@ class LoginController extends BackendController {
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             $headers .= 'From: A Life\'s Invetory <ladanidipak2014@gmail.com>' . "\r\n";
-            $htmlContent = 'http://www.freewebs.co.in/mobiapp/admin/login/resetpassword?password_reset_token='.$modelData->password_reset_token;
+            $htmlContent = Yii::app()->params['WEB_URL'] . 'admin/login/resetpassword?password_reset_token=' . $modelData->password_reset_token;
             $isAdminMailSend = mail($modelData->email_address, 'Password Reset', $htmlContent, $headers);
+            $SendMail = new SendMail("FORGOT_PASSWORD");
+            $SendMail->EMAIL_TAGS = array(
+                "[RECEIVER_NAME]" => 'Dipak',
+                "[LINK]" => $htmlContent,
+            );
+            $SendMail->EMAIL_TO[] = $modelData->email_address;
+            $flag = $SendMail->send();
             $this->redirect(Yii::app()->user->returnUrl);
         }
         $this->render('forgot_password', array('model' => $model));

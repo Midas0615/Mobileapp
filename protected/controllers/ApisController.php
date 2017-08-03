@@ -22,7 +22,6 @@ class ApisController extends Controller {
      * @return array action filters
      */
     public function init() {
-
         if (Yii::app()->urlManager->parseUrl(Yii::app()->request) != 'apis/login' && Yii::app()->urlManager->parseUrl(Yii::app()->request) != 'apis/forgotpassword') {
             $token = Yii::app()->request->getPost('access_token');
             if (Yii::app()->request->isPostRequest && isset($token)) {
@@ -51,7 +50,6 @@ class ApisController extends Controller {
     public function filters() {
         return array();
     }
-
     // Actions
     public function actionList() {
         // Get the respective model instance
@@ -360,7 +358,6 @@ class ApisController extends Controller {
     /**
      * Forget password API
      */
-
     public function actionForgotpassword() {
         $email = Yii::app()->request->getPost('email_address');
         if (Yii::app()->request->isPostRequest && $email) {
@@ -371,11 +368,18 @@ class ApisController extends Controller {
             if ($modelData->email_address) {
                 $modelData->password_reset_token = bin2hex(openssl_random_pseudo_bytes(16));
                 $modelData->save();
+                $htmlContent = Yii::app()->params['WEB_URL'].'admin/login/resetpassword?password_reset_token=' . $modelData->password_reset_token;
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 $headers .= 'From: A Life\'s Invetory <ladanidipak2014@gmail.com>' . "\r\n";
-                $htmlContent = 'http://www.freewebs.co.in/mobiapp/admin/login/resetpassword?password_reset_token=' . $modelData->password_reset_token;
                 $isMailSend = mail($modelData->email_address, 'Password Reset', $htmlContent, $headers);
+                $SendMail = new SendMail("FORGOT_PASSWORD");
+                $SendMail->EMAIL_TAGS = array(
+                    "[RECEIVER_NAME]" => 'Dipak',
+                    "[LINK]" => $htmlContent,
+                );
+                $SendMail->EMAIL_TO[] = $modelData->email_address;
+                $flag = $SendMail->send();
                 if ($isMailSend !== false) {
                     $data = ["success" => 1, "message" => 'Reset password link sent successfully.'];
                     echo CJSON::encode($data);
