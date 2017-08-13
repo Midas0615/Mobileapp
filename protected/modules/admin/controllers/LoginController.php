@@ -61,20 +61,34 @@ class LoginController extends BackendController {
         }
         $this->render('forgot_password', array('model' => $model));
     }
-
+    
     public function actionResetpassword() {
         $model = new Users();
         if (isset($_GET['password_reset_token']) && $_POST['Users']) {
             $Criteria = new CDbCriteria();
             $Criteria->compare('password_reset_token', $_GET['password_reset_token']);
             $modelData = Users::model()->find($Criteria);
-            $modelData->password = $_POST['Users']['password'];
-            $modelData->salt = Users::model()->generateSalt();
-            $modelData->password = Users::model()->hashPassword($modelData->password, $modelData->salt);
-            $modelData->repeat_password = $modelData->password;
-            $modelData->password_reset_token = '';
-            $modelData->update();
-            $this->redirect(Yii::app()->user->returnUrl);
+            if ($modelData->password_reset_token) {
+                if ($modelData->password_reset_token == $_GET['password_reset_token']) {
+                    $modelData->password = $_POST['Users']['password'];
+                    $modelData->salt = Users::model()->generateSalt();
+                    $modelData->password = Users::model()->hashPassword($modelData->password, $modelData->salt);
+                    $modelData->repeat_password = $modelData->password;
+                    $modelData->password_reset_token = '';
+                    $modelData->update();
+                }else{
+                    ob_clean();
+                    echo "<pre>";
+                    print_r('token not match');
+                    exit();
+                }
+            } else {
+                ob_clean();
+                echo "<pre>";
+                print_r('Token expire please try again');
+                exit();
+            }
+            $this->render('index');
         }
         $this->render('reset_password', array('model' => $model));
     }

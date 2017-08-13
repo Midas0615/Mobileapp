@@ -22,7 +22,7 @@ class ApisController extends Controller {
      * @return array action filters
      */
     public function init() {
-        if (Yii::app()->urlManager->parseUrl(Yii::app()->request) != 'apis/login' && Yii::app()->urlManager->parseUrl(Yii::app()->request) != 'apis/forgotpassword') {
+        if (!in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/login', 'apis/forgotpassword')) && !(in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/create')) && isset($_REQUEST['model']) && in_array($_REQUEST['model'], array('Users', 'Vendor', 'Review', 'Rating')))) {
             $token = Yii::app()->request->getPost('access_token');
             if (Yii::app()->request->isPostRequest && isset($token)) {
                 $Criteria = new CDbCriteria();
@@ -30,12 +30,14 @@ class ApisController extends Controller {
                 $model = Users::model()->find($Criteria);
                 if (isset($model->access_token)) {
                     if (!isset($model->access_token) && $model->access_token != $token) {
-                        $data = ["status" => 0, "message" => 'Sesson timeout please login again'];
+                        $data = ["status" => 0, "message" => 'Access token is expire or pass wrong access token please login again'];
                         echo json_encode($data);
                         Yii::app()->end();
+                    } else {
+                        unset($_POST['access_token']);
                     }
                 } else {
-                    $data = ["status" => 0, "message" => 'Sesson timeout please login again'];
+                    $data = ["status" => 0, "message" => 'Access token is expire or pass wrong access token please login again'];
                     echo json_encode($data);
                     Yii::app()->end();
                 }
@@ -50,6 +52,7 @@ class ApisController extends Controller {
     public function filters() {
         return array();
     }
+
     // Actions
     public function actionList() {
         // Get the respective model instance
@@ -119,7 +122,10 @@ class ApisController extends Controller {
         switch ($_GET['model']) {
             // Get an instance of the respective model
             case 'Users':
-                $model = new Users();
+                $model = new Users('apiadd');
+                $model->status = 1;
+                $model->user_group = 5;
+                $model->is_verified = Users::VERIFIED;
                 break;
             case 'Product':
                 $model = new Product();
@@ -161,8 +167,6 @@ class ApisController extends Controller {
             switch ($_GET['model']) {
                 // Get an instance of the respective model
                 case 'Users':
-                    $model->status = Users::IN_ACTIVE;
-                    $model->is_verified = Users::NOT_VERIFIED;
                     if (isset($_FILES['profile_pic'])) {
                         $uploaddir = Yii::app()->params->paths['usersPath'] . $model->id . "/";
                         $uploadfile = $uploaddir . basename($_FILES['profile_pic']['name']);
@@ -175,6 +179,10 @@ class ApisController extends Controller {
                             $this->_sendResponse(1, 'Record created successfully', $model);
                         }
                     }
+                    $model->unsetAttributes(array('password', 'access_token', 'salt', 'password_reset_token'));
+//                    unset($model['password']);
+//                    unset($model['access_token']);
+//                    unset($model['salt']);
                 case 'Product':
                     if (isset($_FILES['photo'])) {
                         $uploaddir = Yii::app()->params->paths['productPath'] . $model->id . "/";
@@ -217,11 +225,10 @@ class ApisController extends Controller {
         // Parse the PUT parameters. This didn't work: parse_str(file_get_contents('php://input'), $put_vars);
         $json = file_get_contents('php://input'); //$GLOBALS['HTTP_RAW_POST_DATA'] is not preferred: http://www.php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data
         $put_vars = CJSON::decode($json, true);  //true means use associative array
-
         switch ($_GET['model']) {
             // Find respective model
-            case 'posts':
-                $model = Post::model()->findByPk($_GET['id']);
+            case 'Order':
+                $model = Order::model()->findByPk($_GET['id']);
                 break;
             default:
                 $this->_sendResponse(501, sprintf('Error: Mode <b>update</b> is not implemented for model <b>%s</b>', $_GET['model']));
@@ -232,17 +239,18 @@ class ApisController extends Controller {
             $this->_sendResponse(400, sprintf("Error: Didn't find any model <b>%s</b> with ID <b>%s</b>.", $_GET['model'], $_GET['id']));
 
         // Try to assign PUT parameters to attributes
-        foreach ($put_vars as $var => $value) {
+        unset($_POST['id']);
+        foreach ($_POST as $var => $value) {
             // Does model have this attribute? If not, raise an error
             if ($model->hasAttribute($var))
                 $model->$var = $value;
             else {
-                $this->_sendResponse(500, sprintf('Parameter <b>%s</b> is not allowed for model <b>%s</b>', $var, $_GET['model']));
+                $this->_sendResponse(500, sprintf('Parameter %s is not allowed for model %s', $var, $_GET['model']));
             }
         }
         // Try to save the model
-        if ($model->save())
-            $this->_sendResponse(200, CJSON::encode($model));
+        if ($model->update())
+            $this->_sendResponse(200, '', $model);
         else
         // prepare the error $msg
         // see actionCreate
@@ -253,23 +261,23 @@ class ApisController extends Controller {
     public function actionDelete() {
         switch ($_GET['model']) {
             // Load the respective model
-            case 'posts':
-                $model = Post::model()->findByPk($_GET['id']);
+            case 'Order':
+                $model = Order::model()->findByPk($_GET['id']);
+                $model->is_deleted = 1;
                 break;
             default:
-                $this->_sendResponse(501, sprintf('Error: Mode <b>delete</b> is not implemented for model <b>%s</b>', $_GET['model']));
+                $this->_sendResponse(501, sprintf('Error: Mode delete is not implemented for model %s', $_GET['model']));
                 Yii::app()->end();
         }
         // Was a model found? If not, raise an error
-        if ($model === null)
-            $this->_sendResponse(400, sprintf("Error: Didn't find any model <b>%s</b> with ID <b>%s</b>.", $_GET['model'], $_GET['id']));
+        if (!isset($model->id) && empty($model->id))
+            $this->_sendResponse(400, sprintf("Error: Didn't find any model %s with ID %s.", $_GET['model'], $_GET['id']));
 
         // Delete the model
-        $num = $model->delete();
-        if ($num > 0)
-            $this->_sendResponse(200, $num);    //this is the only way to work with backbone
+        if ($model->update())
+            $this->_sendResponse(200, 'Record deleted sucessfully');    //this is the only way to work with backbone
         else
-            $this->_sendResponse(500, sprintf("Error: Couldn't delete model <b>%s</b> with ID <b>%s</b>.", $_GET['model'], $_GET['id']));
+            $this->_sendResponse(500, sprintf("Error: Couldn't delete model %s with ID %s", $_GET['model'], $_GET['id']));
     }
 
     public function hashPassword($password, $salt) {
@@ -365,21 +373,22 @@ class ApisController extends Controller {
             $Criteria = new CDbCriteria();
             $Criteria->compare('email_address', $email);
             $modelData = Users::model()->find($Criteria);
+            $token = bin2hex(openssl_random_pseudo_bytes(16));
             if ($modelData->email_address) {
-                $modelData->password_reset_token = bin2hex(openssl_random_pseudo_bytes(16));
+                $modelData->password_reset_token = $token;
                 $modelData->save();
-                $htmlContent = Yii::app()->params['WEB_URL'].'admin/login/resetpassword?password_reset_token=' . $modelData->password_reset_token;
+                $htmlContent = Yii::app()->params['WEB_URL'] . 'admin/login/resetpassword?password_reset_token=' . $token;
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= 'From: A Life\'s Invetory <ladanidipak2014@gmail.com>' . "\r\n";
+                $headers .= 'From: MobiApp Reset Password' . "\r\n";
                 $isMailSend = mail($modelData->email_address, 'Password Reset', $htmlContent, $headers);
-                $SendMail = new SendMail("FORGOT_PASSWORD");
-                $SendMail->EMAIL_TAGS = array(
-                    "[RECEIVER_NAME]" => 'Dipak',
-                    "[LINK]" => $htmlContent,
-                );
-                $SendMail->EMAIL_TO[] = $modelData->email_address;
-                $flag = $SendMail->send();
+//                $SendMail = new SendMail("FORGOT_PASSWORD");
+//                $SendMail->EMAIL_TAGS = array(
+//                    "[RECEIVER_NAME]" => 'Dipak',
+//                    "[LINK]" => $htmlContent,
+//                );
+//                $SendMail->EMAIL_TO[] = $modelData->email_address;
+//                $flag = $SendMail->send();
                 if ($isMailSend !== false) {
                     $data = ["success" => 1, "message" => 'Reset password link sent successfully.'];
                     echo CJSON::encode($data);
