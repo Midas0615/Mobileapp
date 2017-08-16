@@ -1,5 +1,5 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');  
 header('Content-type: application/json');
 error_reporting(0);
 ini_set('error_reporting', 0);
@@ -23,26 +23,27 @@ class ApisController extends Controller {
      */
     public function init() {
         if (!in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/login', 'apis/forgotpassword')) && !(in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/create')) && isset($_REQUEST['model']) && in_array($_REQUEST['model'], array('Users', 'Vendor', 'Review', 'Rating')))) {
-            $token = Yii::app()->request->getPost('access_token');
+            $headers = apache_request_headers();
+            $token = $headers['access_token'];
             if (Yii::app()->request->isPostRequest && isset($token)) {
                 $Criteria = new CDbCriteria();
                 $Criteria->compare('access_token', $token);
                 $model = Users::model()->find($Criteria);
                 if (isset($model->access_token)) {
                     if (!isset($model->access_token) && $model->access_token != $token) {
-                        $data = ["status" => 0, "message" => 'Access token is expire or pass wrong access token please login again'];
+                        $data = ["success" => 0, "message" => 'Access token is expire or pass wrong access token please login again'];
                         echo json_encode($data);
                         Yii::app()->end();
                     } else {
                         unset($_POST['access_token']);
                     }
                 } else {
-                    $data = ["status" => 0, "message" => 'Access token is expire or pass wrong access token please login again'];
+                    $data = ["success" => 0, "message" => 'Access token is expire or pass wrong access token please login again'];
                     echo json_encode($data);
                     Yii::app()->end();
                 }
             } else {
-                $data = ["status" => 0, "message" => 'Access token required'];
+                $data = ["success" => 0, "message" => 'Access token required in headers'];
                 echo json_encode($data);
                 Yii::app()->end();
             }
@@ -348,16 +349,16 @@ class ApisController extends Controller {
             if (isset($model->access_token) && $model->access_token == $access_token) {
                 $model->access_token = '';
                 $model->update(false);
-                $data = ["status" => 1, array("message" => 'Logout Sucess..!')];
+                $data = ["success" => 1, array("message" => 'Logout Sucess..!')];
                 echo CJSON::encode($data);
                 Yii::app()->end();
             } else {
-                $data = ["status" => 0, "message" => 'Invalid access access token / You are not logged in...!'];
+                $data = ["success" => 0, "message" => 'Invalid access access token / You are not logged in...!'];
                 echo CJSON::encode($data);
                 Yii::app()->end();
             }
         } else {
-            $data = ["status" => 0, "message" => 'Invalid request/You are not logged in...!'];
+            $data = ["success" => 0, "message" => 'Invalid request/You are not logged in...!'];
             echo CJSON::encode($data);
             Yii::app()->end();
         }
