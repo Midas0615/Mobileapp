@@ -15,7 +15,14 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->error($model, "product_id", array("class" => "parsley-custom-error-message")); ?>
         </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-4">
+        <div class="form-group">
+            <?php echo $form->labelEx($model, "user_id", array("class" => "control-label")); ?>
+            <?php echo $form->dropDownList($model, "user_id", Users::model()->getAllUserList(), array("class" => "form-control")); ?>
+            <?php echo $form->error($model, "user_id", array("class" => "parsley-custom-error-message")); ?>
+        </div>
+    </div>
+    <div class="col-md-4">
         <div class="form-group" style="display: grid;">
             <?php echo $form->labelEx($model, "star", array("class" => "control-label")); ?>
             <?php $form->widget('CStarRating', array('name' => 'star','starCount' => 5, 'minRating' => 1, 'maxRating' => 5,'value'=>$model->star)); ?>

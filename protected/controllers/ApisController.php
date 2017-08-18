@@ -1,5 +1,6 @@
 <?php
-header('Access-Control-Allow-Origin: *');  
+
+header('Access-Control-Allow-Origin: *');
 header('Content-type: application/json');
 error_reporting(0);
 ini_set('error_reporting', 0);
@@ -22,8 +23,9 @@ class ApisController extends Controller {
      * @return array action filters
      */
     public function init() {
-        if (!in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/login', 'apis/forgotpassword')) && !(in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/create')) && isset($_REQUEST['model']) && in_array($_REQUEST['model'], array('Users', 'Vendor', 'Review', 'Rating')))) {
-            $headers = apache_request_headers();
+        if (false) {
+            // if (!in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/login', 'apis/forgotpassword', 'apis/search')) && !(in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/create')) && isset($_REQUEST['model']) && in_array($_REQUEST['model'], array('Users', 'Vendor', 'Review', 'Rating')))) {
+            $headers = getallheaders();
             $token = $headers['access_token'];
             if (Yii::app()->request->isPostRequest && isset($token)) {
                 $Criteria = new CDbCriteria();
@@ -215,8 +217,9 @@ class ApisController extends Controller {
             }
         } else {
             $msg = array();
+            
             foreach ($model->errors as $attribute => $attr_errors) {
-                $msg[] = array($attr_errors[0]);
+                $msg[] = str_replace(array("'", "\""),'',array($attr_errors[0]));
             }
             $this->_sendResponse(0, 'Errors !', '', $msg);
         }
@@ -483,6 +486,22 @@ class ApisController extends Controller {
         $model->activation_code = $code;
         $model->update();
         return $code;
+    }
+
+    public function actionSearch() {
+        $key = Yii::app()->request->getPost('key');
+        if (!empty($key)) {
+            $model = new Product();
+            $model->key = $key;
+            $modeldata = $model->search()->getData();
+            $this->_sendResponse(1, 'Success', $modeldata);
+            echo CJSON::encode($data);
+            Yii::app()->end();
+        } else {
+            $data = ["success" => 0, "message" => 'key required (search term required)'];
+            echo CJSON::encode($data);
+            Yii::app()->end();
+        }
     }
 
     private function _sendResponse($status = 0, $message = '', $data = '', $errors = '') {

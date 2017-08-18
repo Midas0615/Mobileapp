@@ -30,6 +30,13 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->error($model, "comments", array("class" => "parsley-custom-error-message")); ?>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <?php echo $form->labelEx($model, "user_id", array("class" => "control-label")); ?>
+            <?php echo $form->dropDownList($model, "user_id", Users::model()->getAllUserList(), array("class" => "form-control")); ?>
+            <?php echo $form->error($model, "user_id", array("class" => "parsley-custom-error-message")); ?>
+        </div>
+    </div>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-default" onclick="js:history.go(-1);"><?php echo common::translateText("CANCEL_BTN_TEXT"); ?></button>

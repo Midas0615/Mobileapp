@@ -105,7 +105,7 @@ class ERestEventListenerRegistry
 		$onRest(ERestEvent::REQ_EXCEPTION, function($errorCode, $message=null) {
 			return $this->renderJSON([
 				'type'			=> 'error',
-				'success'		=> false,
+				'success'		=> 0,
 				'message'		=> (is_null($message)? $this->getHttpStatus()->message: $message),
 				'errorCode' => $errorCode,
 			]);
@@ -343,7 +343,7 @@ class ERestEventListenerRegistry
 			$this->setHttpStatus(200);
 			return $this->renderJSON([
 				'type'							=> 'rest',
-				'success'						=> (($count > 0)? true: false),
+				'success'						=> (($count > 0)? 1: 0),
 				'message'						=> (($count > 0)? "Record Found": "No Record Found"),
 				'totalCount'				=> $count,
 				'modelName'					=> $model_name,
@@ -369,7 +369,7 @@ class ERestEventListenerRegistry
 			$this->setHttpStatus(200);
 			return $this->renderJSON([
 				'type'							=> 'rest',
-				'success'						=> (($count > 0)? true: false),
+				'success'						=> (($count > 0)? 1: 0),
 				'message'						=> (($count > 0)? "Record(s) Found": "No Record(s) Found"),
 				'totalCount'				=> $count,
 				'modelName'					=> $model_name,
@@ -394,7 +394,7 @@ class ERestEventListenerRegistry
 			
 			return $this->renderJSON([
 				'type'							=> 'rest',
-				'success'						=> (($count > 0)? true: false),
+				'success'						=> (($count > 0)? 1: 0),
 				'message'						=> (($count > 0)? "Record(s) Found": "No Record(s) Found"),
 				'totalCount'				=> $count,
 				'modelName'					=> $subresource_name,
@@ -418,7 +418,7 @@ class ERestEventListenerRegistry
 
 			return $this->renderJSON([
 				'type'				=> 'rest',
-				'success'			=> true,
+				'success'			=> 1,
 				'message'			=> (($count > 0)? "Record(s) Found": "No Record(s) Found"),
 				'totalCount'	=> $count,
 				'modelName'		=> $subresource_name,
@@ -441,7 +441,7 @@ class ERestEventListenerRegistry
 
 			return $this->renderJSON([
 				'type'							=> 'rest',
-				'success'						=> true,
+				'success'						=> 1,
 				'message'						=> "Record Created",
 				'totalCount'				=> 1,
 				'modelName'					=> get_class($model),
@@ -463,7 +463,7 @@ class ERestEventListenerRegistry
 		$onRest(ERestEvent::REQ_PUT_RESOURCE_RENDER, function($model, $relations, $visibleProperties=[], $hiddenProperties=[]) {
 			return $this->renderJSON([
 				'type'							=> 'rest',
-				'success'						=> true,
+				'success'						=> 1,
 				'message'						=> "Record Updated",
 				'totalCount'				=> 1,
 				'modelName'					=> get_class($model),
@@ -486,7 +486,7 @@ class ERestEventListenerRegistry
 		$onRest(ERestEvent::REQ_PUT_SUBRESOURCE_RENDER, function($model, $subresource_name, $subresource_id, $visibleProperties=[], $hiddenProperties=[]) {
 			return $this->renderJSON([
 				'type'							=> 'rest',
-				'success'						=> true,
+				'success'						=> 1,
 				'message'						=> "Subresource Added",
 				'totalCount'				=> 1,
 				'modelName'					=> get_class($model),
@@ -507,7 +507,7 @@ class ERestEventListenerRegistry
 		$onRest(ERestEvent::REQ_DELETE_RESOURCE_RENDER, function($model, $visibleProperties=[], $hiddenProperties=[]) {
 			return $this->renderJSON([
 				'type'							=> 'rest',
-				'success'						=> true,
+				'success'						=> 1,
 				'message'						=> "Record Deleted",
 				'totalCount'				=> 1,
 				'modelName'					=> get_class($model),
@@ -530,7 +530,7 @@ class ERestEventListenerRegistry
 		$onRest(ERestEvent::REQ_DELETE_SUBRESOURCE_RENDER, function($model, $subresource_name, $subresource_id, $visibleProperties=[], $hiddenProperties=[]) {
 			return $this->renderJSON([
 				'type'							=> 'rest',
-				'success'						=> true,
+				'success'						=> 1,
 				'message'						=> "Sub-Resource Deleted",
 				'totalCount'				=> 1,
 				'modelName'					=> get_class($model),

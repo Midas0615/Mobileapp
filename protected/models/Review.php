@@ -41,7 +41,7 @@ class Review extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('product_id,comments', 'required'),
+            array('product_id,comments,user_id', 'required'),
             array('user_id, product_id, order_id, created_by, created_dt, updated_by, updated_dt, is_deleted', 'numerical', 'integerOnly' => true),
             array('comments,name', 'safe'),
             // The following rule is used by search().

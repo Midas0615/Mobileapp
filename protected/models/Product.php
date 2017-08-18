@@ -28,6 +28,7 @@ class Product extends CActiveRecord {
     public $image;
     public $thumbArr = array(self::THUMB_WIDTH, self::THUMB_HEIGHT); //width,height
     public $search;
+    public $key;
 
     const DE_ACTIVE = 0;
     const Active = 1;
@@ -139,8 +140,8 @@ class Product extends CActiveRecord {
         $criteria->compare('t.price', $this->price);
         $criteria->compare('t.vendor', $this->vendor);
         $criteria->compare('t.location', $this->location, true);
-        $criteria->compare('t.status', $this->status, true);
-        $criteria->compare('t.is_deleted', $this->is_deleted);
+       // $criteria->compare('t.status', $this->status, true);
+       // $criteria->compare('t.is_deleted', $this->is_deleted);
         $criteria->compare('t.created_dt', $this->created_dt);
         $criteria->compare('t.created_by', $this->created_by);
         $criteria->compare('t.updated_dt', $this->updated_dt);
@@ -157,6 +158,12 @@ class Product extends CActiveRecord {
             $criteria->compare('vendorRel.name', $this->id, true, 'OR');
             $criteria->compare('t.location', $this->id, true, 'OR');
         }
+        if ($this->key) {
+            $criteria->compare('t.title', $this->key, true, 'OR');
+            $criteria->compare('t.description', $this->key, true, 'OR');
+            $criteria->compare('t.long_description', $this->key, true, 'OR');
+        }
+        
         $criteria->with = array('vendorRel', 'reviewRel');
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
