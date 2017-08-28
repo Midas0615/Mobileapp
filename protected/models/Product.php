@@ -205,6 +205,11 @@ class Product extends CActiveRecord {
         $criteria->compare('status', self::Active);
         return CHtml::ListData($this->findAll($criteria), "id", "title");
     }
+    public function getProducts($ids) {
+        $criteria = new CDbCriteria;
+        $criteria->condition="id IN($ids)";
+        return $this->findAll($criteria);
+    }
 
     public function countByField($field = false, $value = false, $user_id = null) {
         $criteria = new CDbCriteria();

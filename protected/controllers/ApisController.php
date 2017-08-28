@@ -23,6 +23,7 @@ class ApisController extends Controller {
      * @return array action filters
      */
     public function init() {
+
         if (false) {
             // if (!in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/login', 'apis/forgotpassword', 'apis/search')) && !(in_array(Yii::app()->urlManager->parseUrl(Yii::app()->request), array('apis/create')) && isset($_REQUEST['model']) && in_array($_REQUEST['model'], array('Users', 'Vendor', 'Review', 'Rating')))) {
             $headers = getallheaders();
@@ -57,6 +58,15 @@ class ApisController extends Controller {
     }
 
     // Actions
+    public function actionIndex() {
+        ob_clean();
+        echo "<pre>";
+        print_r(getallheaders());
+        print_r(apache_request_headers());
+        print_r($_SERVER);
+        exit();
+    }
+
     public function actionList() {
         // Get the respective model instance
         switch ($_GET['model']) {
@@ -81,6 +91,9 @@ class ApisController extends Controller {
             case 'UserAddress':
                 $models = UserAddress::model()->findAll();
                 break;
+            case 'OrderDetail':
+                $models = OrderDetail::model()->findAll();
+                break;
             default:
                 $this->_sendResponse(0, 'You have pass invalid modal name');
                 Yii::app()->end();
@@ -92,33 +105,75 @@ class ApisController extends Controller {
         } else {
             // Prepare response
             $rows = array();
-            foreach ($models as $model)
+            $i = 0;
+            foreach ($models as $model) {
                 $rows[] = $model->attributes;
+                if ($_GET['model'] == 'Order') {
+                    $rows[$i]['cart_items'] = Product::model()->getProducts($model->product_id);
+                    $rows[$i]['order_detail'] = OrderDetail::model()->findAll(array('condition' => 'order_id ='.$model->id));
+                }
+                $i = $i + 1;
+            }
             // Send the response
             $this->_sendResponse(1, '', $rows);
         }
     }
 
     public function actionView() {
-        // Check if id was submitted via GET
-        if (!isset($_GET['id']))
-            $this->_sendResponse(500, 'Error: Parameter <b>id</b> is missing');
-
+        // Get the respective model instance
         switch ($_GET['model']) {
-            // Find respective model    
-            case 'posts':
-                $model = Post::model()->findByPk($_GET['id']);
+            case 'Product':
+                $models = Product::model()->findAll();
+                break;
+            case 'Vendor':
+                $models = Vendor::model()->findAll();
+                break;
+            case 'FavoriteProduct':
+                $models = FavoriteProduct::model()->findAll();
+                break;
+            case 'Order':
+                $models = Order::model()->findByPk($_GET['id']);
+                break;
+            case 'OrderDetail':
+                $Criteria = new CDbCriteria();
+                $Criteria->compare('order_id', $_GET['order_id']);
+                $models = OrderDetail::model()->findAll($Criteria);
+                break;
+            case 'Rating':
+                $models = Rating::model()->findAll();
+                break;
+            case 'Review':
+                $models = Review::model()->findAll();
+                break;
+            case 'UserAddress':
+                $models = UserAddress::model()->findAll();
                 break;
             default:
-                $this->_sendResponse(501, sprintf(
-                                'Mode <b>view</b> is not implemented for model <b>%s</b>', $_GET['model']));
+                $this->_sendResponse(0, 'You have pass invalid modal name');
                 Yii::app()->end();
         }
-        // Did we find the requested model? If not, raise an error
-        if (is_null($model))
-            $this->_sendResponse(404, 'No Item found with id ' . $_GET['id']);
-        else
-            $this->_sendResponse(200, CJSON::encode($model));
+        // Did we get some results?
+        if (empty($models)) {
+            // No
+            $this->_sendResponse(0, 'No Record found ');
+        } else { 
+            // Prepare response
+            $i = 0;
+            $rows[] = $models->attributes;
+            if ($_GET['model'] == 'Order') {
+                $rows[0]['cart_items'] = Product::model()->getProducts($models->product_id);
+                $rows[0]['order_detail'] = OrderDetail::model()->findAll(array('condition' => 'order_id ='.$_GET['id']));
+            }
+            if ($_GET['model'] == 'OrderDetail') {
+                $rows =array();
+                foreach ($models as $model) {
+                    $rows[] = $model->attributes;
+                }
+                $this->_sendResponse(1, '', $rows);
+            }
+            // Send the response
+            $this->_sendResponse(1, '', $rows);
+        }
     }
 
     public function actionCreate() {
@@ -150,6 +205,9 @@ class ApisController extends Controller {
                 break;
             case 'UserAddress':
                 $model = new UserAddress();
+                break;
+            case 'OrderDetail':
+                $model = new OrderDetail();
                 break;
             default:
                 $this->_sendResponse(0, 'You have pass invalid modal name');
@@ -217,9 +275,8 @@ class ApisController extends Controller {
             }
         } else {
             $msg = array();
-            
             foreach ($model->errors as $attribute => $attr_errors) {
-                $msg[] = str_replace(array("'", "\""),'',array($attr_errors[0]));
+                $msg[] = str_replace(array("'", "\""), '', array($attr_errors[0]))[0];
             }
             $this->_sendResponse(0, 'Errors !', '', $msg);
         }
@@ -234,13 +291,37 @@ class ApisController extends Controller {
             case 'Order':
                 $model = Order::model()->findByPk($_GET['id']);
                 break;
+            case 'Users':
+                $model = Users::model()->findByPk($_GET['id']);
+                break;
+            case 'Product':
+                $model = Product::model()->findByPk($_GET['id']);
+                break;
+            case 'Vendor':
+                $model = Vendor::model()->findByPk($_GET['id']);
+                break;
+            case 'FavoriteProduct':
+                $model = FavoriteProduct::model()->findByPk($_GET['id']);
+                break;
+            case 'Rating':
+                $model = Rating::model()->findByPk($_GET['id']);
+                break;
+            case 'Review':
+                $model = Review::model()->findByPk($_GET['id']);
+                break;
+            case 'UserAddress':
+                $model = UserAddress::model()->findByPk($_GET['id']);
+                break;
+            case 'OrderDetail':
+                $model = OrderDetail::model()->findByPk($_GET['id']);
+                break;
             default:
-                $this->_sendResponse(501, sprintf('Error: Mode <b>update</b> is not implemented for model <b>%s</b>', $_GET['model']));
+                $this->_sendResponse(0, sprintf('Error: Mode update is not implemented for model ', $_GET['model']));
                 Yii::app()->end();
         }
         // Did we find the requested model? If not, raise an error
         if ($model === null)
-            $this->_sendResponse(400, sprintf("Error: Didn't find any model <b>%s</b> with ID <b>%s</b>.", $_GET['model'], $_GET['id']));
+            $this->_sendResponse(0, sprintf("Error: Didn't find any model  with ID .", $_GET['model'], $_GET['id']));
 
         // Try to assign PUT parameters to attributes
         unset($_POST['id']);
@@ -249,17 +330,17 @@ class ApisController extends Controller {
             if ($model->hasAttribute($var))
                 $model->$var = $value;
             else {
-                $this->_sendResponse(500, sprintf('Parameter %s is not allowed for model %s', $var, $_GET['model']));
+                $this->_sendResponse(0, sprintf('Parameter %s is not allowed for model ', $var, $_GET['model']));
             }
         }
         // Try to save the model
         if ($model->update())
-            $this->_sendResponse(200, '', $model);
+            $this->_sendResponse(1, '', $model);
         else
+            $this->_sendResponse(0, $msg);
         // prepare the error $msg
         // see actionCreate
         // ...
-            $this->_sendResponse(500, $msg);
     }
 
     public function actionDelete() {
@@ -267,12 +348,34 @@ class ApisController extends Controller {
             // Load the respective model
             case 'Order':
                 $model = Order::model()->findByPk($_GET['id']);
-                $model->is_deleted = 1;
+
+                break;
+            case 'Users':
+                $model = Users::model()->findByPk($_GET['id']);
+                break;
+            case 'Product':
+                $model = Product::model()->findByPk($_GET['id']);
+                break;
+            case 'Vendor':
+                $model = Vendor::model()->findByPk($_GET['id']);
+                break;
+            case 'FavoriteProduct':
+                $model = FavoriteProduct::model()->findByPk($_GET['id']);
+                break;
+            case 'Rating':
+                $model = Rating::model()->findByPk($_GET['id']);
+                break;
+            case 'Review':
+                $model = Review::model()->findByPk($_GET['id']);
+                break;
+            case 'UserAddress':
+                $model = UserAddress::model()->findByPk($_GET['id']);
                 break;
             default:
                 $this->_sendResponse(501, sprintf('Error: Mode delete is not implemented for model %s', $_GET['model']));
                 Yii::app()->end();
         }
+        $model->is_deleted = 1;
         // Was a model found? If not, raise an error
         if (!isset($model->id) && empty($model->id))
             $this->_sendResponse(400, sprintf("Error: Didn't find any model %s with ID %s.", $_GET['model'], $_GET['id']));
