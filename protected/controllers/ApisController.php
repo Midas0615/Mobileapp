@@ -348,7 +348,6 @@ class ApisController extends Controller {
             // Load the respective model
             case 'Order':
                 $model = Order::model()->findByPk($_GET['id']);
-
                 break;
             case 'Users':
                 $model = Users::model()->findByPk($_GET['id']);
@@ -375,7 +374,12 @@ class ApisController extends Controller {
                 $this->_sendResponse(501, sprintf('Error: Mode delete is not implemented for model %s', $_GET['model']));
                 Yii::app()->end();
         }
-        $model->is_deleted = 1;
+		if($_GET['model']=='Users'){
+			$model->deleted = 1;
+		}else{
+			$model->is_deleted = 1;
+		}
+        
         // Was a model found? If not, raise an error
         if (!isset($model->id) && empty($model->id))
             $this->_sendResponse(400, sprintf("Error: Didn't find any model %s with ID %s.", $_GET['model'], $_GET['id']));
